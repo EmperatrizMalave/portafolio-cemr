@@ -3,7 +3,7 @@
   height: 100%;
   position: fixed;
   z-index: 99999;
-  background: #000;
+  background: white;
   right: -320px;
   top: 0;
   transition: all 0.4s;
@@ -12,7 +12,7 @@
     width: 40px;
     height: 40px;
     margin: 10px;
-    background: var(--base);
+    background: var(--buttoncolor);
     padding: 5px;
     border-radius: 6px;
     margin-left: auto;
@@ -21,18 +21,38 @@
     }
     i {
       font-size: 22px;
-      color: var(--mtitle);
+      color: var(--subtitle);
     }
   }
   .sub__contact__wrapper {
     padding: 40px 20px;
     .side-logo {
+      display: flex;
+      align-items: center; 
+      justify-content: center;
+      gap: 10px; 
       margin-bottom: 20px;
     }
+    .logo-drawer{
+      width: 70px;             /* Ajusta el tamaño del logo */
+      height: auto;
+    }
+    p.text-logo-drawer {
+      font-size: 18px;
+      color: var(--bgsection);
+      margin: 0;
+      font-weight: bold;
+    }
+
     p {
       font-size: 14px;
+      color: var(--bgsection);
+      margin: 0;
       margin-bottom: 40px;
+      font-weight: bold;
     }
+
+
     .sub__contact-left {
       gap: 24px;
       margin-bottom: 40px;
@@ -42,10 +62,10 @@
         a {
           width: 45px;
           height: 45px;
-          background: var(--base);
-          border: 1px solid var(--base);
+          background: var(--buttoncolor);
+          border: 1px solid var(--hover);
           i {
-            color: var(--title);
+            color: white;
           }
         }
       }
@@ -77,7 +97,7 @@
   }
   .content {
     .address {
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--buttoncolor);
       @include bodyfont;
       font-size: 14px;
       font-style: normal;
@@ -87,7 +107,7 @@
       margin-bottom: 8px;
     }
     .textp {
-      color: var(--white);
+      color: var(--bgsection);
       @include bodyfont;
       font-size: 16px;
       font-style: normal;
@@ -95,4 +115,11 @@
       line-height: 120%;
     }
   }
+}
+
+
+.text-logo-drawer {
+margin-top: 10px;
+font-size: 16px;
+text-align: center;
 }

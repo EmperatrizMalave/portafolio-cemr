@@ -114,7 +114,6 @@
 }
 .about__onethumb{
     height: 500px;
-    width: 496px;     // O lo que necesites
     object-fit: cover;
     img{
         width: 100%;
@@ -127,10 +126,10 @@
     object-fit: cover; // O 'contain' si prefieres que no se recorte
 }
 .about__onecontent{
-    padding-left: 40px;
     h2{
         font-size: 42px;
         margin-bottom: 20px;
+        color: var(--bgsection);
     }
     .about__contactwrap{
         flex-wrap: wrap;

@@ -1,6 +1,6 @@
 import React from "react";
 import { XLg, ChevronRight } from "react-bootstrap-icons";
-import logo from "../../../assets/img/logo/logo.png";
+import logo from "../../../assets/img/logo/logo.webp";
 import { socialIcons } from "../../../Utlits/socilIcons";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,8 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
       </div>
       <div className="sub__contact__wrapper d-grid">
         <Link to={""} className="side-logo">
-          <img src={logo} alt="img" />
+          <img src={logo} className="logo-drawer" alt="img" />
+          <p className="text-logo-drawer">Coromoto Malave</p>
         </Link>
         <p>
           Neque porro quisquam est, qui dolorem ipsum quia dolor sit
