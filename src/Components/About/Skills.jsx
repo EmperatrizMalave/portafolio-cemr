@@ -1,5 +1,5 @@
-import React from "react";
-import personalInfothumb from "../../assets/img/about/personal-infothumb.png";
+import "react";
+import personalInfothumb from "../../assets/img/about/personal-infothumb.webp";
 import figma from "../../assets/img/about/figma.png";
 import word from "../../assets/img/about/word.png";
 import html from "../../assets/img/about/html.png";

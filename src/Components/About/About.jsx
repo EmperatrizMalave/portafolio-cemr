@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import sectionStar from "../../assets/img/about/section-star.png";
 import Experience from "./Experience";

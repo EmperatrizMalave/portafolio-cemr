@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { List, ArrowRight } from "react-bootstrap-icons";
 
 import Drawer from "../Drawer/Drawer";
-import logo from "../../../assets/img/logo/logo.png";
+import logo from "../../../assets/img/logo/logo-portafolio-CEMR.webp";
 
 const menuList = [
   {

@@ -1,5 +1,5 @@
 import React from "react";
-import personalInfothumb from "../../assets/img/about/personal-infothumb.png"
+import personalInfothumb from "../../assets/img/about/personal-infothumb.webp"
 
 const Experience = ({isTabActive}) => {
   return (

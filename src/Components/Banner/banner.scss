@@ -180,7 +180,7 @@
     margin-top: 200px;
     a{
         font-size: 20px;
-        color: var(--white);
+        color:black;
         img{
             transform: rotate(-90deg);
         }
@@ -209,7 +209,7 @@
     }
     .scroll{
         font-size: 18px;
-        color: var(--pra);
+        color:black;
         text-transform: uppercase;
     }
     @include breakpoint(max-xxxl){
@@ -243,12 +243,12 @@
                     width: 46px;
                     height: 46px;
                     border-radius: 50%;
-                    background-color: rgb(18, 18, 18);
+                    background-color:white;
                     display: flex;  
                     align-items: center;
                     justify-content: center;
                     i{
-                        color: var(--white);
+                        color:black;
                         transition: all 0.4s;
                     }
                     &:hover{
@@ -315,6 +315,11 @@
     }
 }
 
+
+
+.hone {
+    color: black;
+}
 //animation text
 
 //banner
