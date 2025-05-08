@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import sectionStar from "../../assets/img/about/section-star.png";
+import sectionStar from "../../assets/img/about/section-star.webp";
 import Experience from "./Experience";
 import Education from "./Education";
 import Skills from "./Skills";
@@ -50,7 +50,7 @@ const About = () => {
           <div className="personal__head text-center">
             <img
               src={sectionStar}
-              className="mb-30"
+              className="mb-20"
               alt="star"
               data-aos="fade-up"
               data-aos-duration="1000"
