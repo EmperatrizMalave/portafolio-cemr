@@ -12,8 +12,8 @@ import {
 
 import bannerMan from "../../assets/img/banner/banner-man.png";
 import scrollDown from "../../assets/img/banner/scroll-down.png";
+{/*import bnArrow from "../../assets/img/banner/bn-arrow.png"; agregar imagen en este espacio*/}
 import dial from "../../assets/img/banner/dial.png";
-import bnArrow from "../../assets/img/banner/bn-arrow.png";
 import VideoPlay from "../Shared/VideoPlay/VideoPlay";
 
 const socalIcon = [
@@ -74,10 +74,10 @@ const Banner = () => {
                 </span>
               </h1>
               <div className="video__area">
-                <img src={bnArrow} className="vid__arrow" alt="img" />
+                  {/*<img src={bnArrow} className="vid__arrow" alt="img" />*/}
                 <div onClick={openLightbox} className="video__80 video-btn">
                   <i>
-                    <PlayFill />
+                    <PlayFill color="#000" />
                   </i>
                 </div>
                 <span className="proces">Work Process</span>

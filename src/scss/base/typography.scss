@@ -164,6 +164,7 @@ p {
   @include breakpoint(max-xxl) {
     width: 60px;
     height: 60px;
+    border-color: var(--subtitle);
     i {
       font-size: 32px;
     }

@@ -108,7 +108,7 @@ const ServiceDetails = () => {
                     className="video__80 video-btn"
                   >
                     <i>
-                      <PlayFill />
+                      <PlayFill/>
                     </i>
                   </a>
                 </div>

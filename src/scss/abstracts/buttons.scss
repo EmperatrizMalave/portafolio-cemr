@@ -22,7 +22,7 @@
     position: absolute;
     content: "";
     bottom: 100%;
-    background: var(--ratting);
+    background: var(--hover);
     left: 0;
     width: 100%;
     height: 100%;
@@ -51,7 +51,7 @@
   cursor: pointer;
   &::before {
     position: absolute;
-    border: 2px solid #fff;
+    border: 2px solid var(--buttoncolor);
     width: 100%;
     height: 100%;
     content: "";
