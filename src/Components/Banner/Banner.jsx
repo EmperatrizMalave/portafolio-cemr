@@ -12,7 +12,6 @@ import {
 
 import bannerMan from "../../assets/img/banner/banner-man.png";
 import scrollDown from "../../assets/img/banner/scroll-down.png";
-import dial from "../../assets/img/banner/dial.png";
 import VideoPlay from "../Shared/VideoPlay/VideoPlay";
 
 const socalIcon = [
@@ -57,15 +56,6 @@ const Banner = () => {
         <div className="row g-4">
           <div className="col-lg-8">
             <div className="banner__content">
-              <Link to={""} className="bn__currently">
-                <span className="d-block">
-                  Currently available for freelance
-                </span>
-                <span className="d-flex gap-4 align-items-center">
-                  worldwide
-                  <i className="bi bi-arrow-up-right"></i>
-                </span>
-              </Link>
               <h1>
                 <span className="hone">Tecnología con visión contable</span>
                 <span className="d-block profile-heading" data-text="CP + Dev Web">
@@ -95,12 +85,6 @@ const Banner = () => {
         </div>
       </div>
       <div className="banner__leftinfo">
-        <div className="left__infomobile">
-          <Link to={""}>
-            <img src={dial} alt="img" />
-          </Link>
-          <Link to={""}>(+02)-574-328-301</Link>
-        </div>
         <div className="right__infoscroll">
           <Link className="scroll">
             scroll down
