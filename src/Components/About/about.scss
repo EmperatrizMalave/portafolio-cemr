@@ -106,11 +106,11 @@
 }
 
 .h2-head {
-    color: black;
+    color: bla;
 }
 
 .p-descrip {
-    color: black;
+    color: #999999;
 }
 .about__onethumb{
     height: 500px;
@@ -128,7 +128,6 @@
 .about__onecontent{
     h2{
         font-size: 42px;
-        margin-bottom: 20px;
         color: var(--bgsection);
     }
     .about__contactwrap{
@@ -158,7 +157,7 @@
                 }
             }
             &:hover{
-                border-color: var(--base);
+                border-color:var(--buttonhover);
             }
             @include breakpoint(max-xxxl){
                 padding: 28px 24px;
@@ -264,12 +263,9 @@
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid var(--cusborder);
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     transition: all 0.4s;
-    &:last-child{
-        border-bottom: 1px solid var(--cusborder);
-    }
     &:hover{
         border-color: var(--hover);
     }

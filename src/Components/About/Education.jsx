@@ -1,4 +1,3 @@
-import React from "react";
 import personalInfothumb from "../../assets/img/about/personal-infothumb.webp"
 
 const Education = ({isTabActive}) => {
@@ -13,33 +12,51 @@ const Education = ({isTabActive}) => {
           </div>
           <div className="col-lg-7">
             <div className="about__onecontent">
-              <h2>My Education</h2>
+              <h2>Mi Educacion</h2>
               <p>
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                consectetur, aliquam quaerats voluptatem. Ut enim ad minima
-                veniam, exercitationem laboriosam, nisi ut aliquid ex ea autem
-                velit esse quam nihil
+              Formación sólida en Contaduría Pública, complementada con Desarrollo Web, Análisis de Datos y fundamentos de IA en Google. Esta trayectoria me permite aplicar una visión analítica al diseño de soluciones tecnológicas innovadoras.
               </p>
               <div className="exprience__box mt-30">
                 <div className="exri__item">
-                  <span className="fz-18 fw-500 base">2011-2013</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>2025</span>
                   <div className="expri__cont">
                     <h4 className="mb-15 text-white">Programming Course</h4>
-                    <p className="fz-18 pra d-block">New York University</p>
+                    <p className="fz-18 pra d-block"> Acelere su búsqueda de empleo con IA-google</p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500 base">2013-2016</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">University of Design</h4>
-                    <p className="fz-18 pra d-block">Kingston, United States</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500 base">2016-2018</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>2025</span>
                   <div className="expri__cont">
                     <h4 className="mb-15 text-white">Web Design Course</h4>
-                    <p className="fz-18 pra d-block">New York University</p>
+                    <p className="fz-18 pra d-block">Analisis de datos de google</p>
+                  </div>
+                </div>
+                <div className="exri__item">
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>2024</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">University of Design</h4>
+                    <p className="fz-18 pra d-block">Fundamentos de IA de Google</p>
+                  </div>
+                </div>
+                <div className="exri__item">
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>2024</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">Web Design Course</h4>
+                    <p className="fz-18 pra d-block">Mendix developer</p>
+                  </div>
+                </div>
+                <div className="exri__item">
+                  <span className="fz-18 fw-500"  style={{ color: "#38A3D6" }}>2024</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">Web Design Course</h4>
+                    <p className="fz-18 pra d-block">Desarrollador Java Full Stack</p>
+                  </div>
+                </div>
+                <div className="exri__item">
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>2012-2018</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">Web Design Course</h4>
+                    <p className="fz-18 pra d-block">Contadora Pública. UDO Venezuela</p>
                   </div>
                 </div>
               </div>

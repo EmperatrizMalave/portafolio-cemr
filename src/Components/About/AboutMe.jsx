@@ -16,22 +16,22 @@ import "aos/dist/aos.css";
 const contactInfo = [
   {
     id: 1,
-    system: "Email",
-    contact: "emperatriz@Gmail.Com",
+    system: "Correo",
+    contact: "emperatriz.668@gmail.com",
   },
   {
     id: 2,
-    system: "Phone",
-    contact: "+(2) 33 17 382 023",
+    system: "Modalidad Preferida",
+    contact: "Empleo Remoto",
   },
   {
     id: 3,
-    system: "Phone",
-    contact: "Victoria Street London,",
+    system: "Direccion",
+    contact: "Guadalajara Jalisco, Mexico",
   },
   {
     id: 4,
-    system: "Follow",
+    system: "Seguidores",
     socalContact: [
       <Facebook />,
       <Twitter />,
@@ -66,18 +66,16 @@ const AboutMe = ({ isTabActive }) => {
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                Personal Info
+                Informacion personal
               </h2>
               <p
                 className="p-descrip"
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                consectetur, aliquam quaerats voluptatem. Ut enim ad minima
-                veniam, exercitationem laboriosam, nisi ut aliquid ex ea autem
-                velit esse quam nihil
-              </p>
+              Contadora Pública y Desarrolladora Web Jr. especializada en integrar soluciones tecnológicas innovadoras para optimizar procesos contables y administrativos.
+              Mi expertise se centra en aprovechar el análisis de datos para mejorar la eficiencia operativa y la toma de decisiones, así como potenciar la experiencia del usuario a través del desarrollo web y la automatización de flujos de trabajo.
+                </p>
               <div className="about__contactwrap">
                 <div className="row g-4">
                   {contactInfo.map(({ id, contact, socalContact, system }) => {

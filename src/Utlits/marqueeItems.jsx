@@ -152,4 +152,36 @@ export const images2 = [
     id: 9,
     image: ts9,
   },
+   {
+    id: 1,
+    image: ts5,
+  },
+  {
+    id: 2,
+    image: ts6,
+  },
+  {
+    id: 3,
+    image: ts7,
+  },
+  {
+    id: 4,
+    image: ts8,
+  },
+  {
+    id: 5,
+    image: ts5,
+  },
+  {
+    id: 6,
+    image: ts7,
+  },
+  {
+    id: 8,
+    image: ts8,
+  },
+    {
+    id: 9,
+    image: ts9,
+  },
 ];

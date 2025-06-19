@@ -56,9 +56,7 @@ const About = () => {
               data-aos-duration="1000"
             />
             <p className="descrp" data-aos="fade-up" data-aos-duration="1500">
-            Soy CEMR, Contadora Pública y Desarrolladora Web. Creo herramientas
-            administrativas y contables que simplifican procesos y mejoran la
-            eficiencia de las empresas.
+            Soy CEMR, Contadora Pública y Desarrolladora Web. Aplico el análisis de datos para crear herramientas administrativas y contables que simplifican procesos y mejoran la eficiencia de las empresas.
             </p>
           </div>
           <div className="singletab">

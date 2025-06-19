@@ -1,4 +1,3 @@
-import React from "react";
 import personalInfothumb from "../../assets/img/about/personal-infothumb.webp"
 
 const Experience = ({isTabActive}) => {
@@ -13,33 +12,39 @@ const Experience = ({isTabActive}) => {
           </div>
           <div className="col-lg-7">
             <div className="about__onecontent">
-              <h2>My Experience</h2>
+              <h2>Mi Experiencia</h2>
               <p>
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                consectetur, aliquam quaerats voluptatem. Ut enim ad minima
-                veniam, exercitationem laboriosam, nisi ut aliquid ex ea autem
-                velit esse quam nihil
+                Profesional apasionada por la intersección entre finanzas y tecnología, con experiencia en contaduría. Me especializo en el desarrollo de soluciones digitales que optimizan la eficiencia y la toma de decisiones, transformando conceptos complejos en herramientas funcionales y estratégicas
               </p>
-              <div className="exprience__box mt-30">
+              <div className="exprience_box mt-30">
                 <div className="exri__item">
-                  <span className="fz-18 fw-500 base">In 2011</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2024</span>
                   <div className="expri__cont">
                     <h4 className="mb-15 text-white">Software Engineer</h4>
-                    <p className="fz-18 pra d-block">UI Head & Manager</p>
+                    <p className="fz-18 pra d-block">Asistente de Control de Gastos </p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500 base">In 2016</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2023</span>
                   <div className="expri__cont">
                     <h4 className="mb-15 text-white">Product Designer</h4>
-                    <p className="fz-18 pra d-block">Head of Department</p>
+                    <p className="fz-18 pra d-block">Desarrolladora Frontend Jr</p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500 base">In 2023</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2022</span>
                   <div className="expri__cont">
                     <h4 className="mb-15 text-white">Senior UI Designer</h4>
-                    <p className="fz-18 pra d-block">Fiverr.com</p>
+                    <p className="fz-18 pra d-block">Desarrollo de sitio web publicitario — Proyecto freelance</p>
+                  </div>
+                </div>
+              </div>
+              <div className="exprience__box mt-30">
+                <div className="exri__item">
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2020-2021</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">Software Engineer</h4>
+                    <p className="fz-18 pra d-block">Operador CRC</p>
                   </div>
                 </div>
               </div>
