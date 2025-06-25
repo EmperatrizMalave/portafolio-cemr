@@ -121,8 +121,8 @@
 }
 
 .personal-image {
-    height: 500px;
-    width: 496px;     // O lo que necesites
+    height: 600px;
+    width: 596px;     // O lo que necesites
     object-fit: cover; // O 'contain' si prefieres que no se recorte
 }
 .about__onecontent{
@@ -137,7 +137,7 @@
         .abox{
             border-radius: 10px;
             background-color: var(--white);
-            padding: 35px 35px;
+            padding: 12px 12px;
             border: 1px solid rgb(29, 29, 29);
             a{
                 font-size: 20px;

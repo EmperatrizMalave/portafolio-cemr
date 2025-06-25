@@ -21,28 +21,19 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
           <p className="text-logo-drawer">Coromoto Malave</p>
         </Link>
         <p>
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-          consectetur, aliquam quaerats voluptatem. Ut enim ad minima veniam,
-          exercitationem laboriosam, nisi ut aliquid ex ea autem velit esse quam
-          nihil
+          Contadora Pública y Desarrolladora Web Jr. enfocada en integrar soluciones tecnológicas para optimizar procesos contables y administrativos. Especialista en análisis de datos, automatización y desarrollo web orientado a mejorar la eficiencia operativa y la experiencia del usuario.
         </p>
         <div className="sub__contact-left d-grid">
           <div className="sub__contac-item">
             <div className="content">
               <span className="address d-block"> address </span>
-              <span className="textp"> Victoria Street London, </span>
+              <span className="textp"> Zapopan Guadalajara Jalisco </span>
             </div>
           </div>
           <div className="sub__contac-item">
             <div className="content">
               <span className="address d-block"> email </span>
-              <Link className="textp"> emperatriz@.com </Link>
-            </div>
-          </div>
-          <div className="sub__contac-item">
-            <div className="content">
-              <span className="address d-block"> call now </span>
-              <Link className="textp"> +98 4758 2154 021 </Link>
+              <Link className="textp"> emperatriz@.668@gmail.com </Link>
             </div>
           </div>
         </div>
