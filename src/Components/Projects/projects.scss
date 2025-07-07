@@ -31,7 +31,7 @@
 .common__sub {
   font-size: 24px;
   font-family: "Caveat", cursive;
-  color: rgb(201, 243, 29);
+  color: #38A3D6;
   position: relative;
   display: flex;
   align-items: center;
@@ -48,13 +48,13 @@
     left: 0;
     width: 80px;
     height: 1px;
-    background: var(--base);
+    background: var(--buttoncolor);
   }
   &::after {
     right: 0;
     width: 80px;
     height: 1px;
-    background: var(--base);
+    background: var(--buttoncolor);
   }
   @include breakpoint(max-xs) {
     width: 280px;
@@ -63,13 +63,13 @@
       left: 0;
       width: 50px;
       height: 1px;
-      background: var(--base);
+      background: var(--buttoncolor);
     }
     &::after {
       right: 0;
       width: 50px;
       height: 1px;
-      background: var(--base);
+      background: var(--buttoncolor);
     }
   }
 }

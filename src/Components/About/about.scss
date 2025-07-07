@@ -189,12 +189,10 @@
 //about 
 
 //awoard
+
 .awoard__section{
-    background: url("/src/assets/img/about/about-bg.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    padding: 120px 0px;
+    background-color:white;
+    padding: 80px 0px;
     overflow: hidden;
     @include breakpoint(max-xxl){
         padding: 100px 0;
@@ -211,16 +209,17 @@
                     background: transparent;
                     font-size: 20px;
                     font-weight: 500;
-                    color: var(--white);
                     padding: 30px 0;
-                    border-bottom: 1px solid #2c3030;
+                    border-bottom: 1px solid #38A3D6;
                     .table__view{
                         font-size: 18px;
                         margin-top: 28px !important;
-                    }
+                        }
+
                     .table__title{
-                        font-size: 42px;
+                        font-size: 40px;
                     }
+                                    }
                     @include breakpoint(max-lg){
                         font-size: 18px;
                     }
@@ -254,7 +253,8 @@
             }
         }
     }
-}
+
+
 //awoard
 
 //exprience

@@ -31,7 +31,7 @@
     }
     .content {
       .common__icon {
-        background: var(--base);
+        background: var(--buttoncolor);
         cursor: pointer;
         .icon {
           color: var(--title);
@@ -74,7 +74,7 @@
 
 .common__icon {
   border-radius: 6px;
-  background-color: rgb(29, 29, 29);
+  background-color: rgb(128, 125, 125);
   min-width: 60px;
   height: 60px;
   display: flex;

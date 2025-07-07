@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowUpRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
@@ -21,7 +20,8 @@ const ProjectCard = ({
       </div>
       <div className="content d-flex align-items-center justify-content-between gap-2">
         <Link to={navigate} className="left__cont">
-          <span className="base mb-2 mb-xxl-3 d-block text-uppercase">
+          <span className="mb-2 mb-xxl-3 d-block text-uppercase"
+            style={{ color: "var(--buttoncolor)" }}>
             {heading}
           </span>
           <h3>{subHeading}</h3>

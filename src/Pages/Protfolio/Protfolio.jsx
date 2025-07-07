@@ -101,7 +101,7 @@ const Protfolio = () => {
         </div>
         {lightboxOpen && (
           <Lightbox
-            images={imagesList}
+            images={projectList[currentId].imagesList}
             setLightboxOpen={setLightboxOpen}
             currentId={currentId}
           />

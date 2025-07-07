@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Title from "../Shared/Title/Title";
 import Lightbox from "../Shared/LightBox/LightBox";
 import ProjectCard from "../Shared/ProjectCard/ProjectCard";
-import { imagesList, projectList } from "../../Utlits/projectList";
+import { projectList } from "../../Utlits/projectList";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
@@ -24,7 +24,7 @@ const Projects = () => {
         />
 
         <div className={`project__wrapone`}>
-          {projectList.map(({ heading, id, image, subHeading }, index) => (
+          {projectList.map(({ heading, id, image, subHeading, navigate }, index) => (
             <ProjectCard
               key={id}
               image={image}
@@ -32,7 +32,7 @@ const Projects = () => {
               subHeading={subHeading}
               openLightbox={openLightbox}
               index={index}
-              navigate="/protfolio"
+              navigate={navigate}
             />
           ))}
         </div>
@@ -52,7 +52,7 @@ const Projects = () => {
       </div>
       {lightboxOpen && (
         <Lightbox
-          images={imagesList}
+          images={projectList[currentId].imagesList}
           setLightboxOpen={setLightboxOpen}
           currentId={currentId}
         />
