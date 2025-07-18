@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ScrollRestoration } from "react-router-dom";
 
 import { images, images2 } from "../Utlits/marqueeItems";
 import About from "../Components/About/About";
 import Projects from "../Components/Projects/Projects";
-import Metting from "../Components/Metting/Metting";
 import Services from "../Components/Services/Services";
-import WorkeProcess from "../Components/WorkeProcess/WorkeProcess";
 import Testimonial from "../Components/Testimonial/Testimonial";
 import Blogs from "../Components/Blogs/Blogs";
 import MarqueeWapper from "../Components/Shared/Marquee/MarqueeWapper";
@@ -31,9 +29,7 @@ const Home = () => {
       <MarqueeWapper direction="right" images={images2} />
       <Awards />
       <Projects />
-      <Metting />
       <Services isHeading={true} />
-      <WorkeProcess />
       <Testimonial />
       <Blogs />
       <ScrollRestoration/>

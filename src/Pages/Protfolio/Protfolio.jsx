@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { imagesList, projectList } from "../../Utlits/projectList";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
-import WorkeProcess from "../../Components/WorkeProcess/WorkeProcess";
 import ProjectCard from "../../Components/Shared/ProjectCard/ProjectCard";
 import Lightbox from "../../Components/Shared/LightBox/LightBox";
 import { ScrollRestoration } from "react-router-dom";
@@ -107,7 +106,6 @@ const Protfolio = () => {
           />
         )}
       </section>
-      <WorkeProcess />
       <ScrollRestoration />
     </>
   );

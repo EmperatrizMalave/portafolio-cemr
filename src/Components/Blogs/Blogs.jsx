@@ -1,4 +1,3 @@
-import React from "react";
 import Blog from "./Blog";
 import { blogsList } from "../../Utlits/blogList";
 import { Link } from "react-router-dom";
