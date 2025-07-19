@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { Eye } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";

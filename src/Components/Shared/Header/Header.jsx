@@ -24,32 +24,15 @@ const menuList = [
     section: "#projects",
     name: "Work",
   },
+
   {
     id: 4,
-    path: "/",
-    section: "#services",
-    name: "Services",
-    dropDown: [
-      {
-        id: 1,
-        path: "/all-services",
-        name: "Services",
-      },
-      {
-        id: 2,
-        path: "/service-details",
-        name: "Service Details",
-      },
-    ],
-  },
-  {
-    id: 5,
     path: "/",
     section: "#testimonial",
     name: "Testimonial",
   },
   {
-    id: 6,
+    id: 5,
     path: "/",
     section: "#blog",
     name: "Blog",
@@ -67,7 +50,7 @@ const menuList = [
     ],
   },
   {
-    id: 7,
+    id: 6,
     path: "/contact",
     name: "Contact",
   },
