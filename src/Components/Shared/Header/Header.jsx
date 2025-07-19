@@ -32,24 +32,6 @@ const menuList = [
     name: "Testimonial",
   },
   {
-    id: 5,
-    path: "/",
-    section: "#blog",
-    name: "Blog",
-    dropDown: [
-      {
-        id: 1,
-        path: "/all-blog",
-        name: "Blog",
-      },
-      {
-        id: 2,
-        path: "/blog-details",
-        name: "Blog Details",
-      },
-    ],
-  },
-  {
     id: 6,
     path: "/contact",
     name: "Contact",

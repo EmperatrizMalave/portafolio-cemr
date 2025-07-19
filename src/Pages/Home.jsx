@@ -5,7 +5,6 @@ import { images, images2 } from "../Utlits/marqueeItems";
 import About from "../Components/About/About";
 import Projects from "../Components/Projects/Projects";
 import Testimonial from "../Components/Testimonial/Testimonial";
-import Blogs from "../Components/Blogs/Blogs";
 import MarqueeWapper from "../Components/Shared/Marquee/MarqueeWapper";
 import Awards from "../Components/About/Awards";
 import Preloader from "../Components/Shared/Preloader/Preloader";
@@ -29,7 +28,6 @@ const Home = () => {
       <Awards />
       <Projects />
       <Testimonial />
-      <Blogs />
       <ScrollRestoration/>
     </>
   );

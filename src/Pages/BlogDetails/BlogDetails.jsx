@@ -3,8 +3,6 @@ import { Link, ScrollRestoration } from "react-router-dom";
 
 
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
-import BlogSidebar from "../../Components/Blogs/BlogSidebar";
-
 import bblog1 from "../../assets/img/blog/bblog1.png";
 import blogDetailsb2 from "../../assets/img/blog/blog-detailsb2.png";
 import straightQuotes from "../../assets/img/blog/straight-quotes.png";
@@ -152,7 +150,6 @@ const BlogDetails = () => {
               </div>
             </div>
             <div className="col-lg-4">
-              <BlogSidebar />
             </div>
           </div>
         </div>
