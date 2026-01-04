@@ -1,52 +1,47 @@
 //footer
 .footer__top {
   .fl {
-    font-size: 10.5vw;
-    text-transform: uppercase;
-    font-weight: 500;
-    line-height: 1;
-    width: 100%;
-    img {
-      width: 100%;
-    }
+    font-size: 60px;
+    line-height: 0.9;
+    color: var(--body);
     margin-bottom: 60px;
-    border: 1px solid var(--cusborder);
-    border-radius: 8px;
     text-align: center;
     padding: 10px 10px;
+    align-items: center;
   }
   .get__content {
     p {
       margin-bottom: 60px;
-      font-size: 24px;
-      color: var(--white);
+      font-size: 20px;
+      color: var(--body);
       max-width: 512px;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid var(--buttonhover);
+      padding: 26px 28px;
+      background-color: var(--hover);
     }
-    a {
-      color: var(--white);
-      font-size: 36px;
-      text-decoration: underline;
-    }
-  }
+}
   .get__rightcontetn {
     .social__footer {
       padding: 26px 28px;
+      background-color: var(--buttoncolor);
       border-radius: 10px;
-      border: 1px solid var(--cusborder);
+      border: 1px solid var(--buttonhover);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: var(--white);
+      color: var(--body);
       font-size: 24px;
       transition: all 0.4s;
       i {
-        color: var(--white);
+        color: var(--body);
         font-size: 22px;
         transition: all 0.4s;
       }
       &:hover {
-        background: var(--base);
-        border-color: var(--base);
+        background: var(--hover);
+        border-color: var(--hover);
         color: var(--title);
         i {
           color: var(--title);
@@ -107,6 +102,9 @@
   padding: 34px 0;
   p {
     font-size: 18px;
+  } &:hover {
+    color: black;
+
   }
   .terms {
     display: flex;
@@ -114,12 +112,12 @@
     li {
       a {
         font-size: 18px;
-        color: var(--white);
-        transition: all 0.4s;
+        color: black;
+;
       }
       &:hover {
         a {
-          color: var(--base);
+          color: var(--buttoncolor);
         }
       }
     }
@@ -127,7 +125,7 @@
   .toparrow {
     width: 40px;
     height: 50px;
-    background: var(--base);
+    background-color: var(--buttoncolor);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -150,5 +148,13 @@
       margin: 0 auto;
     }
   }
+}
+
+.fisrtp {
+  color: black;
+}
+
+.inici {
+  color: var(--buttoncolor);
 }
 //footer

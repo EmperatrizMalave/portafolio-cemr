@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowUpShort, ArrowRight } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
@@ -15,12 +14,7 @@ const socalList = [
   },
   {
     id: 3,
-    platfrom: "Dribble",
-    icon: <ArrowRight />,
-  },
-  {
-    id: 4,
-    platfrom: "Webflow",
+    platfrom: "Linkedin",
     icon: <ArrowRight />,
   },
 ];
@@ -29,8 +23,8 @@ const Footer = () => {
     <footer className="footer__section">
       <div className="container">
         <div className="footer__top pt-120 pb-120">
-          <div className="fl" data-aos="fade-up" data-aos-duration="1000">
-            Get In Touch
+          <div className="fl">
+            Ponte en contacto
           </div>
           <div className="row g-4">
             <div className="col-lg-6">
@@ -38,7 +32,6 @@ const Footer = () => {
                 <p>
                 Hola, soy CEMR, Contadora Pública y Desarrolladora Web. Desarrollo soluciones digitales alineadas a procesos administrativos y financieros.
                 </p>
-                <a href="#0">emperat@gmail.com</a>
               </div>
             </div>
             <div className="col-lg-6">
@@ -63,9 +56,9 @@ const Footer = () => {
       <div className="footer__bottom cmn__bg">
         <div className="container">
           <div className="copyright">
-            <p className="white">
+            <p className="fisrtp">
               Copyright © 2025 {" "}
-              <Link to={"/"} className="base">
+              <Link to={"/"} className="inici">
                 CEMR. 
               </Link>{" "}
               Sitio web creado con fines personales
