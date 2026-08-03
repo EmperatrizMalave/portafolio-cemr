@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -38,13 +38,6 @@ const socalIcon = [
 ];
 const Banner = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [position, setPosition] = useState(false);
-
-  useEffect(() => {
-    if(!position){
-      setPosition(true)
-    }
-  }, []);
 
   const openLightbox = () => {
     setLightboxOpen(true);
@@ -73,12 +66,7 @@ const Banner = () => {
             </div>
           </div>
           <div className="col-lg-4">
-            <div
-              className={`banner__thumb  ${
-                position  ? "right_up_animat" : "right_up"
-              }`}
-
-            >
+            <div className="banner__thumb right_up_animat">
               <img src={bannerMan} alt="man-img" />
             </div>
           </div>

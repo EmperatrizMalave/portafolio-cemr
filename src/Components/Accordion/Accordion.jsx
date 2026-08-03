@@ -1,4 +1,3 @@
-import React from "react";
 import {ArrowDown} from "react-bootstrap-icons"
 const Accordion = ({ id, heading, para }) => {
   return (

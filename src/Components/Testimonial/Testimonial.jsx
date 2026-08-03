@@ -84,7 +84,6 @@ const Testimonial = () => {
                   loop={true}
                   modules={[Pagination, Autoplay]}
                 >
-                  {/* <div className="swiper-wrapper"> */}
                   {reviewList.map(({ id, name, position, review, stars }) => {
                     return (
                       <SwiperSlide key={id}>
@@ -101,7 +100,6 @@ const Testimonial = () => {
                       </SwiperSlide>
                     );
                   })}
-                  {/* </div> */}
                 </Swiper>
 
                 <div className="swiper-pagination3"></div>

@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import sectionStar from "../../assets/img/about/section-star.webp";
 import Experience from "./Experience";
 import Education from "./Education";
 import Skills from "./Skills";
 import AboutMe from "./AboutMe";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const tabList = [
   {
@@ -34,10 +31,6 @@ const tabList = [
 
 const About = () => {
   const [isTabActive, setIsTabAative] = useState("about");
-  
-  useEffect(() => {
-    AOS.init();
-  }, []);
 
   const handleTabClick = (e) => {
     setIsTabAative(e);
@@ -81,7 +74,6 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* <Awards /> */}
     </>
   );
 };

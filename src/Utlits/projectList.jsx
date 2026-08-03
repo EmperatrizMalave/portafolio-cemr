@@ -33,34 +33,6 @@ export const projectList = [
       navigate: "/protfolio",
       imagesList: [qd1, qd2, qd3, qd4, qd5, qd6]
     },
-    /*{
-      id: 3,
-      image: pro5,
-      heading: "UI/UX Design",
-      subHeading: "Mobile Application Development",
-      category:["website", "branding_app", "all"],
-    },*/
-    // {
-    //   id: 4,
-    //   image: pro2,
-    //   heading: "UI/UX Design",
-    //   subHeading: "Mobile Application Development",
-    //   category:["los_app", "landing_page", "all"]
-    // },
-    // {
-    //   id: 5,
-    //   image: pro4,
-    //   heading: "UI/UX Design",
-    //   subHeading: "Mobile Application Development",
-    //   category:["branding_app", "website", "all"]
-    // },
-    // {
-    //   id: 6,
-    //   image: pro6,
-    //   heading: "UI/UX Design",
-    //   subHeading: "Mobile Application Development",
-    //   category:["landing_page", "website", "all"]
-    // },
   ];
 
 

@@ -1,4 +1,3 @@
-import React from "react";
 import basic from "../../assets/img/project/basic.png";
 import warranty from "../../assets/img/project/warranty.png";
 import premium from "../../assets/img/project/premium-quality.png";

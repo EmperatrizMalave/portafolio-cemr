@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Facebook,
   Twitter,
@@ -9,9 +8,6 @@ import {
 
 import { Link } from "react-router-dom";
 import personalInfoThumb from "../../assets/img/about/personal-infothumb.webp";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const contactInfo = [
   {
@@ -42,9 +38,6 @@ const contactInfo = [
   },
 ];
 const AboutMe = ({ isTabActive }) => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
   return (
     <div className={`tabitem ${isTabActive === "about" ? "active" : ""} `}>
       <div className="about__v1wrap">

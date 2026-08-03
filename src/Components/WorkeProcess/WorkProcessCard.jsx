@@ -1,5 +1,3 @@
-import React from "react";
-
 const WorkProcessCard = ({title, info, list}) => {
   return (
     <div

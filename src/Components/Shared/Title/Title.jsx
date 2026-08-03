@@ -1,5 +1,3 @@
-import React from "react";
-
 const Title = ({ mainTitle, sortTitle }) => {
   return (
     <div className="project__head text-center">

@@ -1,8 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-
 const awardList = [
   {
     id: 1,
@@ -30,11 +25,6 @@ const awardList = [
   },
 ];
 const Awards = () => {
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <div className="awoard__section">
       <div className="container" >

@@ -1,4 +1,3 @@
-import React from "react";
 import { PlayFill, ArrowRight } from "react-bootstrap-icons";
 import PageHeader from "../Components/Shared/PageHeader/PageHeader";
 import Accordion from "../Components/Accordion/Accordion";

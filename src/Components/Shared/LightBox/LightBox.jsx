@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { XLg, ChevronRight, ChevronLeft } from "react-bootstrap-icons";
 const Lightbox = ({ images, setLightboxOpen, currentId }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(currentId);

@@ -1,4 +1,3 @@
-import React from "react";
 import { XLg } from "react-bootstrap-icons";
 
 const VideoPlay = ({ setLightboxOpen, url }) => {
@@ -14,8 +13,6 @@ const VideoPlay = ({ setLightboxOpen, url }) => {
           </i>
         </button>
         <iframe
-          // width="420"
-          // height="345"
           src={url}
         ></iframe>
       </div>

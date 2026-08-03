@@ -1,4 +1,3 @@
-import React from "react";
 import { XLg, ChevronRight } from "react-bootstrap-icons";
 import logo from "../../../assets/img/logo/logo.webp";
 import { socialIcons } from "../../../Utlits/socilIcons";

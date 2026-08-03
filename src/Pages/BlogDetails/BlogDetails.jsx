@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, ScrollRestoration } from "react-router-dom";
 
 
