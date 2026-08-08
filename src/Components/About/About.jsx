@@ -49,7 +49,7 @@ const About = () => {
               data-aos-duration="1000"
             />
             <p className="descrp" data-aos="fade-up" data-aos-duration="1500">
-            Soy CEMR, Contadora Pública y Desarrolladora Web. Aplico el análisis de datos para crear herramientas administrativas y contables que simplifican procesos y mejoran la eficiencia de las empresas.
+            Soy CEMR, QA Engineer y Desarrolladora Frontend con trasfondo en Contaduría Pública. Me especializo en el aseguramiento de calidad de sistemas administrativos y pedagógicos, auditoría de software y elaboración de manuales de usuario, combinando lógica analítica y pruebas funcionales para garantizar aplicaciones estables y optimizar procesos.
             </p>
           </div>
           <div className="singletab">

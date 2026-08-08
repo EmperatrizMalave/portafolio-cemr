@@ -1,7 +1,3 @@
-import ts1 from "../assets/img/banner/ts1.png";
-import ts2 from "../assets/img/banner/ts2.png";
-import ts3 from "../assets/img/banner/ts3.png";
-import ts4 from "../assets/img/banner/ts4.png";
 import ts5 from "../assets/img/banner/ts5.png";
 import ts6 from "../assets/img/banner/ts6.png";
 import ts7 from "../assets/img/banner/ts7.png";
@@ -11,31 +7,31 @@ import ts9 from "../assets/img/banner/ts9.png";
 export const images = [
   {
     id: 1,
-    image: ts1,
+    text: "QA & Aseguramiento de Calidad",
   },
   {
     id: 2,
-    image: ts2,
+    text: "Documentación Técnica & Manuales",
   },
   {
     id: 3,
-    image: ts3,
+    text: "Pruebas Funcionales & UI/UX",
   },
   {
     id: 4,
-    image: ts4,
+    text: "QA & Aseguramiento de Calidad",
   },
   {
     id: 5,
-    image: ts3,
+    text: "Documentación Técnica & Manuales",
   },
   {
     id: 6,
-    image: ts1,
+    text: "Pruebas Funcionales & UI/UX",
   },
   {
     id: 7,
-    image: ts4,
+    text: "QA & Aseguramiento de Calidad",
   },
 ];
 
@@ -148,11 +144,11 @@ export const images2 = [
     id: 8,
     image: ts8,
   },
-    {
+  {
     id: 9,
     image: ts9,
   },
-   {
+  {
     id: 1,
     image: ts5,
   },
@@ -180,7 +176,7 @@ export const images2 = [
     id: 8,
     image: ts8,
   },
-    {
+  {
     id: 9,
     image: ts9,
   },

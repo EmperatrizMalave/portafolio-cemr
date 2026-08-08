@@ -10,6 +10,7 @@ import mui from "../../assets/img/about/materialui.png";
 import figma from "../../assets/img/about/figma.png";
 import excel from "../../assets/img/about/excel.png";
 import gs from "../../assets/img/about/gs.png";
+import postman from "../../assets/img/about/postman.svg";
 
 
 
@@ -74,6 +75,12 @@ const skillsList = [
     skill: "Google sheets",
     percentage: "97%",
     image: gs,
+  },
+  {
+    id: 11,
+    skill: "Postman",
+    percentage: "85%",
+    image: postman,
   },
 ];
 const Skills = ({ isTabActive }) => {

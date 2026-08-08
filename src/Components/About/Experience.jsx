@@ -14,9 +14,23 @@ const Experience = ({isTabActive}) => {
             <div className="about__onecontent">
               <h2>Mi Experiencia</h2>
               <p>
-                Profesional apasionada por la intersección entre finanzas y tecnología, con experiencia en contaduría. Me especializo en el desarrollo de soluciones digitales que optimizan la eficiencia y la toma de decisiones, transformando conceptos complejos en herramientas funcionales y estratégicas
+                Trayectoria profesional que combina el aseguramiento de calidad de software (QA), la creación de documentación técnica y el desarrollo Frontend con una sólida base financiera y contable. Especializada en la auditoría de procesos, la prevención de errores en sistemas administrativos y pedagógicos, y la optimización de flujos de trabajo orientados a la mejor experiencia del usuario.
               </p>
               <div className="exprience_box mt-30">
+                <div className="exri__item">
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>Julio 2026 - Presente</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">QA Engineer</h4>
+                    <p className="fz-18 pra d-block">Aseguramiento de Calidad & Documentación</p>
+                  </div>
+                </div>
+                <div className="exri__item">
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>Agosto 2025 - Julio 2026</span>
+                  <div className="expri__cont">
+                    <h4 className="mb-15 text-white">Tesorería & Finanzas</h4>
+                    <p className="fz-18 pra d-block">Área de Tesorería</p>
+                  </div>
+                </div>
                 <div className="exri__item">
                   <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2024</span>
                   <div className="expri__cont">

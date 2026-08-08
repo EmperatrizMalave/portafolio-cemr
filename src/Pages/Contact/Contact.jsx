@@ -1,46 +1,141 @@
-import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
-import Form from "../../Components/Shared/Form/Form";
+import { useEffect, useRef, useState } from "react";
+import { Envelope, Linkedin } from "react-bootstrap-icons";
 import { ScrollRestoration } from "react-router-dom";
+import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
+import avatar from "../../assets/img/banner/banner-man.png";
+
+const EMAIL = "emperatriz.668@gmail.com";
+const LINKEDIN_URL = "";
+
+const quickOptions = [
+  {
+    id: 1,
+    label: "Ver Perfil QA & Habilidades",
+    response:
+      "Cori se especializa en Aseguramiento de Calidad (QA), auditoría de interfaces, documentación técnica de sistemas y desarrollo Frontend.",
+  },
+  {
+    id: 2,
+    label: "Ver Proyectos Destacados",
+    response:
+      "¡Puedes revisar los proyectos en la sección Work de arriba! Incluyen desarrollos Frontend y utilidades de automatización.",
+  },
+  {
+    id: 3,
+    label: "Enviar un Mensaje / Correo",
+    response:
+      "¡Excelente! Puedes enviarme un correo directamente a mi casilla personal o conectar en LinkedIn.",
+    showLinks: true,
+  },
+  {
+    id: 4,
+    label: "¡Solo pasar a saludar!",
+    response: "¡Gracias por visitar el portafolio! Que tengas un excelente día. 😊",
+  },
+];
+
+const initialMessages = [
+  {
+    id: 1,
+    sender: "bot",
+    text: "¡Hola! Soy Cori Bot 🤖. Estoy aquí para ayudarte a conocer más sobre la experiencia y proyectos de Cori.",
+  },
+  {
+    id: 2,
+    sender: "bot",
+    text: "¿Qué te gustaría explorar hoy?",
+  },
+];
 
 const Contact = () => {
+  const [messages, setMessages] = useState(initialMessages);
+  const chatBodyRef = useRef(null);
+
+  useEffect(() => {
+    const body = chatBodyRef.current;
+    if (body) {
+      body.scrollTo({ top: body.scrollHeight, behavior: "smooth" });
+    }
+  }, [messages]);
+
+  const handleOption = (option) => {
+    setMessages((prev) => [
+      ...prev,
+      { id: prev.length + 1, sender: "user", text: option.label },
+      {
+        id: prev.length + 2,
+        sender: "bot",
+        text: option.response,
+        showLinks: option.showLinks,
+      },
+    ]);
+  };
+
   return (
     <>
-      <PageHeader
-        heading={"Let's Start Something"}
-        page={"Let's Start Something"}
-      />
-      <section className="contact__section">
+      <PageHeader heading={"Contacto"} page={"Contacto"} className="contact__pageheader" />
+      <section className="chatbot__section">
         <div className="container">
-          <div className="row g-4">
-            <div
-              className="col-lg-8"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <div className="contact__box">
-                <Form isColTwo={false} />
+          <div className="chatbot__card">
+            <div className="chatbot__header">
+              <div className="chatbot__avatar">
+                <img src={avatar} alt="Cori Bot avatar" />
+              </div>
+              <div className="chatbot__info">
+                <h4 className="chatbot__name">Cori Bot</h4>
+                <span className="chatbot__status">
+                  <span className="chatbot__dot"></span>
+                  En línea
+                </span>
               </div>
             </div>
-            <div
-              className="col-lg-4"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-            >
-              <div className="contact__rightside cmn__bg">
-                <h4 className="mb-30">Feel free to contact me anytime</h4>
-                <div className="contact__item mb-20">
-                  <span className="he1">Email</span>
-                  <a href="#0">@gmail.com</a>
+
+            <div className="chatbot__body" ref={chatBodyRef}>
+              {messages.map((message) => (
+                <div
+                  key={message.id}
+                  className={`chatbot__message chatbot__message--${message.sender}`}
+                >
+                  {message.sender === "bot" && (
+                    <div className="chatbot__mini-avatar">
+                      <img src={avatar} alt="Cori Bot avatar" />
+                    </div>
+                  )}
+                  <div className="chatbot__bubble">
+                    <p>{message.text}</p>
+                    {message.showLinks && (
+                      <div className="chatbot__links">
+                        <a className="chatbot__link" href={`mailto:${EMAIL}`}>
+                          <Envelope /> Enviar correo
+                        </a>
+                        {LINKEDIN_URL && (
+                          <a
+                            className="chatbot__link"
+                            href={LINKEDIN_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Linkedin /> LinkedIn
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="contact__item mb-20">
-                  <span className="he1">Phone</span>
-                  <a href="#0">+(2) 871 382 023</a>
-                </div>
-                <div className="contact__item">
-                  <span className="he1">Address</span>
-                  <span className="address">Victoria Street London</span>
-                </div>
-              </div>
+              ))}
+            </div>
+
+            <div className="chatbot__options">
+              {quickOptions.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  className="chatbot__option"
+                  onClick={() => handleOption(option)}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
         </div>

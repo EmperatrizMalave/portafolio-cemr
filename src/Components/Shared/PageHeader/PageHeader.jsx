@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const PageHeader = ({heading, page}) => {
+const PageHeader = ({heading, page, className}) => {
   return (
-    <div className="container pt-120 pb-120">
+    <div className={`container pt-120 pb-120 ${className || ""}`}>
       <div className="row g-4 justify-content-center">
         <div className="col-lg-8">
           <div className="breadcrumnd__wrap text-center">

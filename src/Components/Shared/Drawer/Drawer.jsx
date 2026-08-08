@@ -20,7 +20,7 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
           <p className="text-logo-drawer">Coromoto Malave</p>
         </Link>
         <p>
-          Contadora Pública y Desarrolladora Web Jr. enfocada en integrar soluciones tecnológicas para optimizar procesos contables y administrativos. Especialista en análisis de datos, automatización y desarrollo web orientado a mejorar la eficiencia operativa y la experiencia del usuario.
+          QA Engineer y Frontend Developer con base en Contaduría Pública. Especialista en aseguramiento de calidad para sistemas administrativos y pedagógicos, auditoría UI/UX y creación de manuales de usuario.
         </p>
         <div className="sub__contact-left d-grid">
           <div className="sub__contac-item">
@@ -48,7 +48,8 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
           </ul>
         </div>
         <Link
-          to={""}
+          to="/contact"
+          onClick={() => setIsSidebarActive(false)}
           className="d-flex justify-content-center fw-500 cmn--btn align-items-center gap-2"
         >
           <span>

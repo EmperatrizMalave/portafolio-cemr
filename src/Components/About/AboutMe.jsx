@@ -66,8 +66,7 @@ const AboutMe = ({ isTabActive }) => {
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-              Contadora Pública y Desarrolladora Web Jr. especializada en integrar soluciones tecnológicas innovadoras para optimizar procesos contables y administrativos.
-              Mi expertise se centra en aprovechar el análisis de datos para mejorar la eficiencia operativa y la toma de decisiones, así como potenciar la experiencia del usuario a través del desarrollo web y la automatización de flujos de trabajo.
+              QA Engineer y Frontend Developer con base en Contaduría Pública. Especialista en aseguramiento de calidad para sistemas administrativos y pedagógicos, auditoría UI/UX y creación de manuales de usuario. Aplico análisis riguroso y pruebas funcionales para optimizar procesos y garantizar software estable.
                 </p>
               <div className="about__contactwrap">
                 <div className="row g-4">

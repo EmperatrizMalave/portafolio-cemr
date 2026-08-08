@@ -1,53 +1,76 @@
-import { ArrowUpShort, ArrowRight } from "react-bootstrap-icons";
+import { ArrowUpShort, Envelope, Facebook, Instagram, Linkedin } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import avatar from "../../../assets/img/banner/banner-man.png";
 
-const socalList = [
+const EMAIL = "emperatriz.668@gmail.com";
+const LINKEDIN_URL = "";
+
+const contactButtons = [
   {
     id: 1,
-    platfrom: "Facebook",
-    icon: <ArrowRight />,
+    label: "Enviar Correo",
+    icon: <Envelope />,
+    href: `mailto:${EMAIL}`,
   },
   {
     id: 2,
-    platfrom: "Instagram",
-    icon: <ArrowRight />,
+    label: "LinkedIn",
+    icon: <Linkedin />,
+    href: LINKEDIN_URL || "#0",
+    target: "_blank",
   },
   {
     id: 3,
-    platfrom: "Linkedin",
-    icon: <ArrowRight />,
+    label: "Instagram",
+    icon: <Instagram />,
+    href: "#0",
+  },
+  {
+    id: 4,
+    label: "Facebook",
+    icon: <Facebook />,
+    href: "#0",
   },
 ];
+
 const Footer = () => {
   return (
     <footer className="footer__section">
       <div className="container">
         <div className="footer__top pt-120 pb-120">
-          <div className="fl">
-            Ponte en contacto
-          </div>
-          <div className="row g-4">
+          <div className="fl">Ponte en contacto</div>
+          <div className="row g-4 justify-content-center align-items-center">
             <div className="col-lg-6">
-              <div className="get__content">
-                <p>
-                Hola, soy CEMR, Contadora Pública y Desarrolladora Web. Desarrollo soluciones digitales alineadas a procesos administrativos y financieros.
-                </p>
+              <div className="footer__profile">
+                <div className="footer__profile-img">
+                  <img src={avatar} alt="Cori Malavé" />
+                </div>
+                <div className="footer__profile-body">
+                  <h3>Profile</h3>
+                  <p>
+                    QA Engineer y Frontend Developer con base en Contaduría
+                    Pública. Especialista en aseguramiento de calidad para
+                    sistemas administrativos y pedagógicos, auditoría UI/UX y
+                    creación de manuales de usuario.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="get__rightcontetn">
-                <div className="row g-4">
-                  {socalList.map(({ id, icon, platfrom }) => {
-                    return (
-                      <div key={id} className="col-lg-6 col-md-6 col-sm-6">
-                        <a href="#0" className="social__footer">
-                          {platfrom}
-                          <i>{icon}</i>
-                        </a>
-                      </div>
-                    );
-                  })}
-                </div>
+              <div className="footer__list">
+                {contactButtons.map(({ id, label, icon, href, target }) => (
+                  <a
+                    key={id}
+                    href={href}
+                    className="footer__button"
+                    target={target}
+                    rel={target ? "noopener noreferrer" : undefined}
+                  >
+                    <span className="footer__arrow">&rarr;</span>
+                    <span className="footer__icon">{icon}</span>
+                    <span className="footer__label">{label}</span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -57,9 +80,9 @@ const Footer = () => {
         <div className="container">
           <div className="copyright">
             <p className="fisrtp">
-              Copyright © 2025 {" "}
+              Copyright © 2025{" "}
               <Link to={"/"} className="inici">
-                CEMR. 
+                CEMR.
               </Link>{" "}
               Sitio web creado con fines personales
             </p>

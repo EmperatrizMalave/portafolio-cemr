@@ -50,9 +50,9 @@ const Banner = () => {
           <div className="col-lg-8">
             <div className="banner__content">
               <h1>
-                <span className="hone">Tecnología con visión contable</span>
-                <span className="d-block profile-heading" data-text="CP + Dev Web">
-                CP + Dev Web
+                <span className="hone">QA Engineer</span>
+                <span className="d-block profile-heading" data-text="Doc & QA Testing">
+                Doc & QA Testing
                 </span>
               </h1>
               <div className="video__area">

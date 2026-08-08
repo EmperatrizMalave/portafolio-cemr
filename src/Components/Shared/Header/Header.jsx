@@ -29,7 +29,7 @@ const menuList = [
     id: 4,
     path: "/",
     section: "#testimonial",
-    name: "Testimonial",
+    name: "Enfoque",
   },
   {
     id: 6,
