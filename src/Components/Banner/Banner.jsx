@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import {
   Facebook,
@@ -30,6 +31,7 @@ const socalIcon = [
   },
 ];
 const Banner = () => {
+  const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const openLightbox = () => {
@@ -43,9 +45,9 @@ const Banner = () => {
           <div className="col-lg-8">
             <div className="banner__content">
               <h1>
-                <span className="hone">QA Engineer</span>
-                <span className="d-block profile-heading" data-text="Doc & QA Testing">
-                Doc & QA Testing
+                <span className="hone">{t("banner.qaEngineer")}</span>
+                <span className="d-block profile-heading" data-text={t("banner.profile")}>
+                {t("banner.profile")}
                 </span>
               </h1>
               <div className="video__area">
@@ -54,7 +56,7 @@ const Banner = () => {
                     <PlayFill color="#000" />
                   </i>
                 </div>
-                <span className="proces">Work Process</span>
+                <span className="proces">{t("banner.workProcess")}</span>
               </div>
             </div>
           </div>
@@ -68,7 +70,7 @@ const Banner = () => {
       <div className="banner__leftinfo">
         <div className="right__infoscroll">
           <Link className="scroll">
-            scroll down
+            {t("banner.scrollDown")}
           </Link>
           <Link className="scroll__bar">
             <img src={scrollDown} alt="img" />
@@ -78,7 +80,7 @@ const Banner = () => {
       <div className="banner__rightinfo">
         <div className="right__infoscroll">
           <Link to={""} className="scroll">
-            Follow Me
+            {t("banner.followMe")}
           </Link>
           <Link to={""} className="scroll__bar">
             <img src={scrollDown} alt="img" />

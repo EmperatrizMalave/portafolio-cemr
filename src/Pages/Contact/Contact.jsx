@@ -1,54 +1,51 @@
 import { useEffect, useRef, useState } from "react";
 import { Linkedin } from "react-bootstrap-icons";
 import { ScrollRestoration } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
 import avatar from "../../assets/img/banner/banner-man.png";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
 
-const quickOptions = [
-  {
-    id: 1,
-    label: "Ver Perfil QA & Habilidades",
-    response:
-      "Cori se especializa en Aseguramiento de Calidad (QA), auditoría de interfaces, documentación técnica de sistemas y desarrollo Frontend.",
-  },
-  {
-    id: 2,
-    label: "Ver Proyectos Destacados",
-    response:
-      "¡Puedes revisar los proyectos en la sección Work de arriba! Incluyen desarrollos Frontend y utilidades de automatización.",
-  },
-  {
-    id: 3,
-    label: "Enviar un Mensaje",
-    response:
-      "¡Excelente! Puedes conectar conmigo en LinkedIn o en mis redes sociales.",
-    showLinks: true,
-  },
-  {
-    id: 4,
-    label: "¡Solo pasar a saludar!",
-    response: "¡Gracias por visitar el portafolio! Que tengas un excelente día. 😊",
-  },
-];
-
-const initialMessages = [
-  {
-    id: 1,
-    sender: "bot",
-    text: "¡Hola! Soy Cori Bot 🤖. Estoy aquí para ayudarte a conocer más sobre la experiencia y proyectos de Cori.",
-  },
-  {
-    id: 2,
-    sender: "bot",
-    text: "¿Qué te gustaría explorar hoy?",
-  },
-];
-
 const Contact = () => {
-  const [messages, setMessages] = useState(initialMessages);
+  const { t } = useTranslation();
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      sender: "bot",
+      text: t("contact.botIntro"),
+    },
+    {
+      id: 2,
+      sender: "bot",
+      text: t("contact.botQuestion"),
+    },
+  ]);
   const chatBodyRef = useRef(null);
+
+  const quickOptions = [
+    {
+      id: 1,
+      label: t("contact.options.profile.label"),
+      response: t("contact.options.profile.response"),
+    },
+    {
+      id: 2,
+      label: t("contact.options.projects.label"),
+      response: t("contact.options.projects.response"),
+    },
+    {
+      id: 3,
+      label: t("contact.options.message.label"),
+      response: t("contact.options.message.response"),
+      showLinks: true,
+    },
+    {
+      id: 4,
+      label: t("contact.options.hi.label"),
+      response: t("contact.options.hi.response"),
+    },
+  ];
 
   useEffect(() => {
     const body = chatBodyRef.current;
@@ -72,7 +69,7 @@ const Contact = () => {
 
   return (
     <>
-      <PageHeader heading={"Contacto"} page={"Contacto"} className="contact__pageheader" />
+      <PageHeader heading={t("contact.heading")} page={t("contact.page")} className="contact__pageheader" />
       <section className="chatbot__section">
         <div className="container">
           <div className="chatbot__card">
@@ -81,10 +78,10 @@ const Contact = () => {
                 <img src={avatar} alt="Cori Bot avatar" />
               </div>
               <div className="chatbot__info">
-                <h4 className="chatbot__name">Cori Bot</h4>
+                <h4 className="chatbot__name">{t("contact.name")}</h4>
                 <span className="chatbot__status">
                   <span className="chatbot__dot"></span>
-                  En línea
+                  {t("contact.online")}
                 </span>
               </div>
             </div>

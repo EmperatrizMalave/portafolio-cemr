@@ -7,31 +7,31 @@ import ts9 from "../assets/img/banner/ts9.png";
 export const images = [
   {
     id: 1,
-    text: "QA & Aseguramiento de Calidad",
+    text: "marquee.qa",
   },
   {
     id: 2,
-    text: "Documentación Técnica & Manuales",
+    text: "marquee.docs",
   },
   {
     id: 3,
-    text: "Pruebas Funcionales & UI/UX",
+    text: "marquee.testing",
   },
   {
     id: 4,
-    text: "QA & Aseguramiento de Calidad",
+    text: "marquee.qa",
   },
   {
     id: 5,
-    text: "Documentación Técnica & Manuales",
+    text: "marquee.docs",
   },
   {
     id: 6,
-    text: "Pruebas Funcionales & UI/UX",
+    text: "marquee.testing",
   },
   {
     id: 7,
-    text: "QA & Aseguramiento de Calidad",
+    text: "marquee.qa",
   },
 ];
 

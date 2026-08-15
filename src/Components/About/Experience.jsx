@@ -1,6 +1,8 @@
 import personalInfothumb from "../../assets/img/about/personal-infothumb.webp"
+import { useTranslation } from "react-i18next";
 
 const Experience = ({isTabActive}) => {
+  const { t } = useTranslation();
   return (
     <div className={`tabitem ${isTabActive === "experience" ? "active":""} `}>
       <div className="about__v1wrap">
@@ -12,53 +14,51 @@ const Experience = ({isTabActive}) => {
           </div>
           <div className="col-lg-7">
             <div className="about__onecontent">
-              <h2>Mi Experiencia</h2>
-              <p>
-                Trayectoria profesional que combina el aseguramiento de calidad de software (QA), la creación de documentación técnica y el desarrollo Frontend con una sólida base financiera y contable. Especializada en la auditoría de procesos, la prevención de errores en sistemas administrativos y pedagógicos, y la optimización de flujos de trabajo orientados a la mejor experiencia del usuario.
-              </p>
+              <h2>{t("about.experience.title")}</h2>
+              <p>{t("about.experience.text")}</p>
               <div className="exprience_box mt-30">
                 <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>Julio 2026 - Presente</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.qa.date")}</span>
                   <div className="expri__cont">
-                    <h4 className="mb-15 text-white">QA Engineer</h4>
-                    <p className="fz-18 pra d-block">Aseguramiento de Calidad & Documentación</p>
+                    <h4 className="mb-15 text-white">{t("about.experience.items.qa.role")}</h4>
+                    <p className="fz-18 pra d-block">{t("about.experience.items.qa.desc")}</p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>Agosto 2025 - Julio 2026</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.treasury.date")}</span>
                   <div className="expri__cont">
-                    <h4 className="mb-15 text-white">Tesorería & Finanzas</h4>
-                    <p className="fz-18 pra d-block">Área de Tesorería</p>
+                    <h4 className="mb-15 text-white">{t("about.experience.items.treasury.role")}</h4>
+                    <p className="fz-18 pra d-block">{t("about.experience.items.treasury.desc")}</p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2024</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.software2024.date")}</span>
                   <div className="expri__cont">
-                    <h4 className="mb-15 text-white">Software Engineer</h4>
-                    <p className="fz-18 pra d-block">Asistente de Control de Gastos </p>
+                    <h4 className="mb-15 text-white">{t("about.experience.items.software2024.role")}</h4>
+                    <p className="fz-18 pra d-block">{t("about.experience.items.software2024.desc")}</p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2023</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.designer2023.date")}</span>
                   <div className="expri__cont">
-                    <h4 className="mb-15 text-white">Product Designer</h4>
-                    <p className="fz-18 pra d-block">Desarrolladora Frontend Jr</p>
+                    <h4 className="mb-15 text-white">{t("about.experience.items.designer2023.role")}</h4>
+                    <p className="fz-18 pra d-block">{t("about.experience.items.designer2023.desc")}</p>
                   </div>
                 </div>
                 <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2022</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.ui2022.date")}</span>
                   <div className="expri__cont">
-                    <h4 className="mb-15 text-white">Senior UI Designer</h4>
-                    <p className="fz-18 pra d-block">Desarrollo de sitio web publicitario — Proyecto freelance</p>
+                    <h4 className="mb-15 text-white">{t("about.experience.items.ui2022.role")}</h4>
+                    <p className="fz-18 pra d-block">{t("about.experience.items.ui2022.desc")}</p>
                   </div>
                 </div>
               </div>
               <div className="exprience__box mt-30">
                 <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>En 2020-2021</span>
+                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.crc.date")}</span>
                   <div className="expri__cont">
-                    <h4 className="mb-15 text-white">Software Engineer</h4>
-                    <p className="fz-18 pra d-block">Operador CRC</p>
+                    <h4 className="mb-15 text-white">{t("about.experience.items.crc.role")}</h4>
+                    <p className="fz-18 pra d-block">{t("about.experience.items.crc.desc")}</p>
                   </div>
                 </div>
               </div>

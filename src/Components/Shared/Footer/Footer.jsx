@@ -1,5 +1,6 @@
 import { ArrowUpShort, Facebook, Instagram, Linkedin } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import avatar from "../../../assets/img/banner/banner-man.png";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
@@ -31,11 +32,12 @@ const contactButtons = [
 ];
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="footer__section">
       <div className="container">
         <div className="footer__top pt-120 pb-120">
-          <div className="fl">Ponte en contacto</div>
+          <div className="fl">{t("footer.contact")}</div>
           <div className="row g-4 justify-content-center align-items-center">
             <div className="col-lg-6">
               <div className="footer__profile">
@@ -43,13 +45,8 @@ const Footer = () => {
                   <img src={avatar} alt="Cori Malavé" />
                 </div>
                 <div className="footer__profile-body">
-                  <h3>Profile</h3>
-                  <p>
-                    QA Engineer y Frontend Developer con base en Contaduría
-                    Pública. Especialista en aseguramiento de calidad para
-                    sistemas administrativos y pedagógicos, auditoría UI/UX y
-                    creación de manuales de usuario.
-                  </p>
+                  <h3>{t("footer.profile")}</h3>
+                  <p>{t("footer.profileText")}</p>
                 </div>
               </div>
             </div>
@@ -81,14 +78,14 @@ const Footer = () => {
               <Link to={"/"} className="inici">
                 CEMR.
               </Link>{" "}
-              Sitio web creado con fines personales
+              {t("footer.personal")}
             </p>
             <ul className="terms">
               <li>
-                <a href="#0"> Terms & Condition </a>
+                <a href="#0"> {t("footer.terms")} </a>
               </li>
               <li>
-                <a href="#0"> Privacy Policy </a>
+                <a href="#0"> {t("footer.privacy")} </a>
               </li>
             </ul>
             <a href="#about" className="toparrow">

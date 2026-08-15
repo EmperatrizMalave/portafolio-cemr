@@ -1,68 +1,50 @@
 import basic from "../../assets/img/project/basic.png";
 import warranty from "../../assets/img/project/warranty.png";
 import premium from "../../assets/img/project/premium-quality.png";
+import { useTranslation } from "react-i18next";
 import Price from "./Price";
 import Title from "../Shared/Title/Title";
 const planData = [
   {
     id: 1,
-    planName: "Basic Plan",
+    planName: "pricing.basic",
     price: "$35",
-    time: "per month",
-    fetcher: [
-      " Web Development",
-      " Mobile Development",
-      "Advetising",
-      "Graphic design",
-      "Project management",
-    ],
+    time: "pricing.perMonth",
     image: basic,
   },
   {
     id: 2,
-    planName: "Ultra Plan",
+    planName: "pricing.ultra",
     price: "$65",
-    time: "per month",
-    fetcher: [
-      " Web Development",
-      " Mobile Development",
-      "Advetising",
-      "Graphic design",
-      "Project management",
-    ],
+    time: "pricing.perMonth",
     image: warranty,
   },
   {
     id: 3,
-    planName: "Gold Plan",
+    planName: "pricing.gold",
     price: "$95",
-    time: "per month",
-    fetcher: [
-      " Web Development",
-      " Mobile Development",
-      "Advetising",
-      "Graphic design",
-      "Project management",
-    ],
+    time: "pricing.perMonth",
     image: premium,
   },
 ];
 const Pricing = () => {
+  const { t } = useTranslation();
+  const fetcher = t("pricing.features", { returnObjects: true });
   return (
     <section className="pricing__section pt-120 pb-120">
       <div className="container">
         <Title
-          mainTitle={"The best pricing plans to get your best"}
-          sortTitle={"Choose Your Plan"}
+          mainTitle={t("pricing.title")}
+          sortTitle={t("pricing.sub")}
         />
         <div className="row g-4 justify-content-center">
-          {planData.map(({ id, image, planName, fetcher, price, time }) => (
+          {planData.map(({ id, image, planName, price, time }) => (
             <Price
               key={id}
               image={image}
-              planName={planName}
+              planName={t(planName)}
               price={price}
-              time={time}
+              time={t(time)}
               fetcher={fetcher}
               id={id}
             />

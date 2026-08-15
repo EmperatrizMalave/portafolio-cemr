@@ -1,6 +1,7 @@
 import { Facebook, Linkedin, Instagram } from "react-bootstrap-icons";
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import personalInfoThumb from "../../assets/img/about/personal-infothumb.webp";
 
 const socialContacts = [
@@ -24,21 +25,22 @@ const socialContacts = [
 const contactInfo = [
   {
     id: 1,
-    system: "Modalidad Preferida",
-    contact: "Empleo Remoto",
+    system: "about.aboutMe.preferred",
+    contact: "about.aboutMe.remote",
   },
   {
     id: 2,
-    system: "Direccion",
-    contact: "Guadalajara Jalisco, Mexico",
+    system: "about.aboutMe.address",
+    contact: "about.aboutMe.location",
   },
   {
     id: 3,
-    system: "Seguidores",
+    system: "about.aboutMe.followers",
     socalContact: socialContacts,
   },
 ];
 const AboutMe = ({ isTabActive }) => {
+  const { t } = useTranslation();
   return (
     <div className={`tabitem ${isTabActive === "about" ? "active" : ""} `}>
       <div className="about__v1wrap">
@@ -60,14 +62,14 @@ const AboutMe = ({ isTabActive }) => {
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                Informacion personal
+                {t("about.aboutMe.title")}
               </h2>
               <p
                 className="p-descrip"
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-              QA Engineer y Frontend Developer con base en Contaduría Pública. Especialista en aseguramiento de calidad para sistemas administrativos y pedagógicos, auditoría UI/UX y creación de manuales de usuario. Aplico análisis riguroso y pruebas funcionales para optimizar procesos y garantizar software estable.
+              {t("about.aboutMe.text")}
                 </p>
               <div className="about__contactwrap">
                 <div className="row g-4">
@@ -81,9 +83,9 @@ const AboutMe = ({ isTabActive }) => {
                         <div className="abox">
                           <div className="about__contbox__item">
                             <span className="ptext fz-18 mb-20 d-block">
-                              {system}
+                              {t(system)}
                             </span>
-                            <Link to={""}>{contact}</Link>
+                            {contact && <Link to={""}>{t(contact)}</Link>}
                             {socalContact && (
                               <ul className="d-flex align-items-center gap-2 gap-xl-4">
                                 {socalContact.map(({ icon, href: sHref, id: sId }) => (

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { projectList } from "../../Utlits/projectList";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
@@ -9,31 +10,32 @@ import { ScrollRestoration } from "react-router-dom";
 const categoryList = [
   {
     id: 1,
-    categoryName: "All",
+    categoryName: "portfolio.categories.all",
     value: "all",
   },
   {
     id: 2,
-    categoryName: "Branding-app",
+    categoryName: "portfolio.categories.branding",
     value: "branding_app",
   },
   {
     id: 3,
-    categoryName: "Los-App",
+    categoryName: "portfolio.categories.los",
     value: "los_app",
   },
   {
     id: 4,
-    categoryName: "Landing Page",
+    categoryName: "portfolio.categories.landing",
     value: "landing_page",
   },
   {
     id: 5,
-    categoryName: "Website",
+    categoryName: "portfolio.categories.website",
     value: "website",
   },
 ];
 const Protfolio = () => {
+  const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentId, setCurrentId] = useState(0);
   const [currentCategory, setCurrentCategory] = useState("all");
@@ -56,7 +58,7 @@ const Protfolio = () => {
 
   return (
     <>
-      <PageHeader heading={"My Work & Portfolio"} page="Work" />
+      <PageHeader heading={t("portfolio.heading")} page={t("portfolio.page")} />
       <section className="project__section pb-120">
         <div className="container">
           <div className="singletab protfolio__filter">
@@ -76,19 +78,19 @@ const Protfolio = () => {
                     className="tablink"
                     onClick={() => setCurrentCategory(value)}
                   >
-                    {categoryName}
+                    {t(categoryName)}
                   </button>
                 </li>
               ))}
             </ul>
             <div className="tabcontents project__wrapone">
               {filterProject.map(
-                ({ heading, id, image, subHeading }, index) => (
+                ({ heading, headingKey, id, image, subHeading, subHeadingKey }, index) => (
                   <ProjectCard
                     key={id}
                     image={image}
-                    heading={heading}
-                    subHeading={subHeading}
+                    heading={t(headingKey)}
+                    subHeading={t(subHeadingKey)}
                     openLightbox={openLightbox}
                     index={index}
                     navigate="/protfolio-details"

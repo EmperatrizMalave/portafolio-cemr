@@ -86,6 +86,33 @@
   padding: 10px 0;
   .menu__components {
     gap: 16px;
+    .idioma-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 30px;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      span {
+        padding: 2px 6px;
+        border-radius: 20px;
+        color: rgba(0, 0, 0, 0.45);
+        &.active {
+          background-color: var(--buttoncolor);
+          color: #ffffff;
+        }
+      }
+      &:hover {
+        border-color: var(--buttoncolor);
+      }
+    }
         .cmn--btn {
       background-color: var(--buttoncolor);    
       padding: 19px 26px;

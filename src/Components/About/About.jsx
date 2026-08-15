@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import sectionStar from "../../assets/img/about/section-star.webp";
 import Experience from "./Experience";
@@ -9,27 +10,28 @@ import AboutMe from "./AboutMe";
 const tabList = [
   {
     id: 1,
-    name: "About",
+    name: "about.tabs.about",
     value: "about",
   },
   {
     id: 2,
-    name: "Experience",
+    name: "about.tabs.experience",
     value: "experience",
   },
   {
     id: 3,
-    name: "Education",
+    name: "about.tabs.education",
     value: "education",
   },
   {
     id: 4,
-    name: "Skills",
+    name: "about.tabs.skills",
     value: "skills",
   },
 ];
 
 const About = () => {
+  const { t } = useTranslation();
   const [isTabActive, setIsTabAative] = useState("about");
 
   const handleTabClick = (e) => {
@@ -49,7 +51,7 @@ const About = () => {
               data-aos-duration="1000"
             />
             <p className="descrp" data-aos="fade-up" data-aos-duration="1500">
-            Soy CEMR, QA Engineer y Desarrolladora Frontend con trasfondo en Contaduría Pública. Me especializo en el aseguramiento de calidad de sistemas administrativos y pedagógicos, auditoría de software y elaboración de manuales de usuario, combinando lógica analítica y pruebas funcionales para garantizar aplicaciones estables y optimizar procesos.
+            {t("about.description")}
             </p>
           </div>
           <div className="singletab">
@@ -60,7 +62,7 @@ const About = () => {
                   className={`nav-links ${isTabActive === value ? "active" : ""} `}
                 >
                   <button onClick={() => handleTabClick(value)} className="tablink">
-                    {name}
+                    {t(name)}
                   </button>
                 </li>
               ))}

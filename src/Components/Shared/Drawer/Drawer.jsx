@@ -2,8 +2,10 @@ import { XLg, ChevronRight } from "react-bootstrap-icons";
 import logo from "../../../assets/img/logo/logo.webp";
 import { socialIcons } from "../../../Utlits/socilIcons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
+  const { t } = useTranslation();
   return (
     <div className={`subside__barmenu ${isSidebarActive ? "active" : ""}`}>
       <div
@@ -17,16 +19,14 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
       <div className="sub__contact__wrapper d-grid">
         <Link to={""} className="side-logo">
           <img src={logo} className="logo-drawer" alt="img" />
-          <p className="text-logo-drawer">Coromoto Malave</p>
+          <p className="text-logo-drawer">{t("drawer.name")}</p>
         </Link>
-        <p>
-          QA Engineer y Frontend Developer con base en Contaduría Pública. Especialista en aseguramiento de calidad para sistemas administrativos y pedagógicos, auditoría UI/UX y creación de manuales de usuario.
-        </p>
+        <p>{t("drawer.bio")}</p>
         <div className="sub__contact-left d-grid">
           <div className="sub__contac-item">
             <div className="content">
-              <span className="address d-block"> address </span>
-              <span className="textp"> Zapopan Guadalajara Jalisco </span>
+              <span className="address d-block"> {t("drawer.address")} </span>
+              <span className="textp"> {t("drawer.location")} </span>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
               <ChevronRight />
             </i>
           </span>
-          <span className="get__text"> Let's Talk </span>
+          <span className="get__text"> {t("drawer.letsTalk")} </span>
         </Link>
       </div>
     </div>
