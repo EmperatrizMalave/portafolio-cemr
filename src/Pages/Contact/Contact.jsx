@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Envelope, Linkedin } from "react-bootstrap-icons";
+import { Linkedin } from "react-bootstrap-icons";
 import { ScrollRestoration } from "react-router-dom";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
 import avatar from "../../assets/img/banner/banner-man.png";
 
-const EMAIL = "emperatriz.668@gmail.com";
-const LINKEDIN_URL = "";
+const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
 
 const quickOptions = [
   {
@@ -22,9 +21,9 @@ const quickOptions = [
   },
   {
     id: 3,
-    label: "Enviar un Mensaje / Correo",
+    label: "Enviar un Mensaje",
     response:
-      "¡Excelente! Puedes enviarme un correo directamente a mi casilla personal o conectar en LinkedIn.",
+      "¡Excelente! Puedes conectar conmigo en LinkedIn o en mis redes sociales.",
     showLinks: true,
   },
   {
@@ -105,19 +104,14 @@ const Contact = () => {
                     <p>{message.text}</p>
                     {message.showLinks && (
                       <div className="chatbot__links">
-                        <a className="chatbot__link" href={`mailto:${EMAIL}`}>
-                          <Envelope /> Enviar correo
+                        <a
+                          className="chatbot__link"
+                          href={LINKEDIN_URL}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Linkedin /> LinkedIn
                         </a>
-                        {LINKEDIN_URL && (
-                          <a
-                            className="chatbot__link"
-                            href={LINKEDIN_URL}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <Linkedin /> LinkedIn
-                          </a>
-                        )}
                       </div>
                     )}
                   </div>

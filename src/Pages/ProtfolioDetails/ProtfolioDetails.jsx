@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import { imagesList, projectList } from "../../Utlits/projectList";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
@@ -62,11 +61,11 @@ const ProtfolioDetails = () => {
                 </div>
               </div>
               <ul className="social d-flex gap-3">
-                {socialIcons.map(({ icon, id }) => (
+                {socialIcons.map(({ icon, id, href }) => (
                   <li key={id}>
-                    <Link to={""}>
+                    <a href={href} target="_blank" rel="noopener noreferrer">
                       <i>{icon}</i>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

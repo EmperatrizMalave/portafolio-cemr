@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 import {
   Facebook,
-  Twitter,
   Linkedin,
-  Globe,
   Instagram,
   PlayFill,
 } from "react-bootstrap-icons";
@@ -18,22 +16,17 @@ const socalIcon = [
   {
     id: 1,
     icon: <Facebook />,
+    href: "https://www.facebook.com/profile.php?id=61593324203754",
   },
   {
     id: 2,
-    icon: <Twitter />,
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/coromoto-malave-rengel/",
   },
   {
     id: 3,
-    icon: <Linkedin />,
-  },
-  {
-    id: 4,
-    icon: <Globe />,
-  },
-  {
-    id: 5,
     icon: <Instagram />,
+    href: "https://www.instagram.com/cemrtechspace/",
   },
 ];
 const Banner = () => {
@@ -93,12 +86,12 @@ const Banner = () => {
         </div>
         <div className="banner__xlsocial">
           <ul className="banner__soci d-grid justify-content-center">
-            {socalIcon.map(({ icon, id }) => {
+            {socalIcon.map(({ icon, id, href }) => {
               return (
                 <li key={id}>
-                  <Link to={""} >
+                  <a href={href} target="_blank" rel="noopener noreferrer">
                     <i>{icon}</i>
-                  </Link>
+                  </a>
                 </li>
               );
             })}

@@ -1,40 +1,41 @@
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Globe,
-  Instagram,
-} from "react-bootstrap-icons";
+import { Facebook, Linkedin, Instagram } from "react-bootstrap-icons";
 
 import { Link } from "react-router-dom";
 import personalInfoThumb from "../../assets/img/about/personal-infothumb.webp";
 
-const contactInfo = [
+const socialContacts = [
   {
     id: 1,
-    system: "Correo",
-    contact: "emperatriz.668@gmail.com",
+    icon: <Facebook />,
+    href: "https://www.facebook.com/profile.php?id=61593324203754",
   },
   {
     id: 2,
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/coromoto-malave-rengel/",
+  },
+  {
+    id: 3,
+    icon: <Instagram />,
+    href: "https://www.instagram.com/cemrtechspace/",
+  },
+];
+
+const contactInfo = [
+  {
+    id: 1,
     system: "Modalidad Preferida",
     contact: "Empleo Remoto",
   },
   {
-    id: 3,
+    id: 2,
     system: "Direccion",
     contact: "Guadalajara Jalisco, Mexico",
   },
   {
-    id: 4,
+    id: 3,
     system: "Seguidores",
-    socalContact: [
-      <Facebook />,
-      <Twitter />,
-      <Linkedin />,
-      <Globe />,
-      <Instagram />,
-    ],
+    socalContact: socialContacts,
   },
 ];
 const AboutMe = ({ isTabActive }) => {
@@ -85,9 +86,11 @@ const AboutMe = ({ isTabActive }) => {
                             <Link to={""}>{contact}</Link>
                             {socalContact && (
                               <ul className="d-flex align-items-center gap-2 gap-xl-4">
-                                {socalContact.map((info, index) => (
-                                  <li key={index}>
-                                    <Link to={""}>{info} </Link>
+                                {socalContact.map(({ icon, href: sHref, id: sId }) => (
+                                  <li key={sId}>
+                                    <a href={sHref} target="_blank" rel="noopener noreferrer">
+                                      {icon}
+                                    </a>
                                   </li>
                                 ))}
                               </ul>

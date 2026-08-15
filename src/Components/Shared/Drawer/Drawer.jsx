@@ -29,20 +29,14 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
               <span className="textp"> Zapopan Guadalajara Jalisco </span>
             </div>
           </div>
-          <div className="sub__contac-item">
-            <div className="content">
-              <span className="address d-block"> email </span>
-              <Link className="textp"> emperatriz@.668@gmail.com </Link>
-            </div>
-          </div>
         </div>
         <div className="sub__contact-right mb-80 position-relative">
           <ul className="social d-flex gap-3">
-            {socialIcons.map(({ icon, id }) => (
+            {socialIcons.map(({ icon, id, href }) => (
               <li key={id}>
-                <Link>
+                <a href={href} target="_blank" rel="noopener noreferrer">
                   <i>{icon}</i>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

@@ -1,35 +1,32 @@
-import { ArrowUpShort, Envelope, Facebook, Instagram, Linkedin } from "react-bootstrap-icons";
+import { ArrowUpShort, Facebook, Instagram, Linkedin } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import avatar from "../../../assets/img/banner/banner-man.png";
 
-const EMAIL = "emperatriz.668@gmail.com";
-const LINKEDIN_URL = "";
+const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
+const INSTAGRAM_URL = "https://www.instagram.com/cemrtechspace/";
+const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61593324203754";
 
 const contactButtons = [
   {
     id: 1,
-    label: "Enviar Correo",
-    icon: <Envelope />,
-    href: `mailto:${EMAIL}`,
+    label: "LinkedIn",
+    icon: <Linkedin />,
+    href: LINKEDIN_URL,
+    target: "_blank",
   },
   {
     id: 2,
-    label: "LinkedIn",
-    icon: <Linkedin />,
-    href: LINKEDIN_URL || "#0",
+    label: "Instagram",
+    icon: <Instagram />,
+    href: INSTAGRAM_URL,
     target: "_blank",
   },
   {
     id: 3,
-    label: "Instagram",
-    icon: <Instagram />,
-    href: "#0",
-  },
-  {
-    id: 4,
     label: "Facebook",
     icon: <Facebook />,
-    href: "#0",
+    href: FACEBOOK_URL,
+    target: "_blank",
   },
 ];
 
