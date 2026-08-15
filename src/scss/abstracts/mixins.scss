@@ -126,7 +126,12 @@
 	background: linear-gradient(90deg, #1A4DBE 0%, #AE5EBE 100%);
 }
 @mixin bodyfont{
-    font-family: 'Kanit', sans-serif;
+    font-family: $font-body;
+    font-weight: $font-body-weight;
+}
+@mixin titlefont{
+    font-family: $font-title;
+    font-weight: $font-title-weight;
 }
 
 
