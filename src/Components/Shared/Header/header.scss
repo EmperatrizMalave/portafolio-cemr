@@ -28,7 +28,6 @@
 //>>>>> Header section <<<<<//
 .header-section {
   width: 100%;
-  border-bottom: 1px solid var(--cusborder);
   z-index: 9;
   position: relative;
   .container {
@@ -43,9 +42,7 @@
     top: 0;
     width: 1px;
     height: 100%;
-    content: "";
-    background: var(--cusborder);
-  }
+    content: "";  }
   &::after {
     position: absolute;
     right: calc(20% - 60px);
@@ -53,7 +50,7 @@
     width: 1px;
     height: 100%;
     content: "";
-    background: var(--cusborder);
+  
     @include breakpoint(max-xxxl) {
       right: calc(20% - 30px);
     }

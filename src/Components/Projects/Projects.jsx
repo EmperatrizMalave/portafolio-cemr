@@ -23,6 +23,7 @@ const Projects = () => {
         <Title
           mainTitle={t("projects.title")}
           sortTitle={t("projects.sub")}
+          hideTitle
         />
 
         <div className={`project__wrapone`}>

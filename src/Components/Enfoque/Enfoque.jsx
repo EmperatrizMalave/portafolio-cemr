@@ -193,9 +193,6 @@ const Enfoque = () => {
           <span className="common__sub" data-aos="fade-up" data-aos-duration="1000">
             {t("camino.sectionTitle")}
           </span>
-          <h2 className="fw-500" data-aos="fade-down" data-aos-duration="1000">
-            {t("camino.sectionTitle")}
-          </h2>
         </div>
         <div className="enfoque-contenedor" data-aos="zoom-in">
           <p className="instruccion">
