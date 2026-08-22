@@ -28,7 +28,6 @@
 //>>>>> Header section <<<<<//
 .header-section {
   width: 100%;
-  border-bottom: 1px solid var(--cusborder);
   z-index: 9;
   position: relative;
   .container {
@@ -43,9 +42,7 @@
     top: 0;
     width: 1px;
     height: 100%;
-    content: "";
-    background: var(--cusborder);
-  }
+    content: "";  }
   &::after {
     position: absolute;
     right: calc(20% - 60px);
@@ -53,7 +50,7 @@
     width: 1px;
     height: 100%;
     content: "";
-    background: var(--cusborder);
+  
     @include breakpoint(max-xxxl) {
       right: calc(20% - 30px);
     }
@@ -86,6 +83,33 @@
   padding: 10px 0;
   .menu__components {
     gap: 16px;
+    .idioma-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 30px;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a1a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      span {
+        padding: 2px 6px;
+        border-radius: 20px;
+        color: rgba(0, 0, 0, 0.45);
+        &.active {
+          background-color: var(--buttoncolor);
+          color: #ffffff;
+        }
+      }
+      &:hover {
+        border-color: var(--buttoncolor);
+      }
+    }
         .cmn--btn {
       background-color: var(--buttoncolor);    
       padding: 19px 26px;

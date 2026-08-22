@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import {
   Facebook,
-  Twitter,
   Linkedin,
-  Globe,
   Instagram,
   PlayFill,
 } from "react-bootstrap-icons";
@@ -18,25 +17,21 @@ const socalIcon = [
   {
     id: 1,
     icon: <Facebook />,
+    href: "https://www.facebook.com/profile.php?id=61593324203754",
   },
   {
     id: 2,
-    icon: <Twitter />,
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/coromoto-malave-rengel/",
   },
   {
     id: 3,
-    icon: <Linkedin />,
-  },
-  {
-    id: 4,
-    icon: <Globe />,
-  },
-  {
-    id: 5,
     icon: <Instagram />,
+    href: "https://www.instagram.com/cemrtechspace/",
   },
 ];
 const Banner = () => {
+  const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const openLightbox = () => {
@@ -50,9 +45,9 @@ const Banner = () => {
           <div className="col-lg-8">
             <div className="banner__content">
               <h1>
-                <span className="hone">Tecnología con visión contable</span>
-                <span className="d-block profile-heading" data-text="CP + Dev Web">
-                CP + Dev Web
+                <span className="hone">{t("banner.qaEngineer")}</span>
+                <span className="d-block profile-heading" data-text={t("banner.profile")}>
+                {t("banner.profile")}
                 </span>
               </h1>
               <div className="video__area">
@@ -61,7 +56,7 @@ const Banner = () => {
                     <PlayFill color="#000" />
                   </i>
                 </div>
-                <span className="proces">Work Process</span>
+                <span className="proces">{t("banner.workProcess")}</span>
               </div>
             </div>
           </div>
@@ -75,7 +70,7 @@ const Banner = () => {
       <div className="banner__leftinfo">
         <div className="right__infoscroll">
           <Link className="scroll">
-            scroll down
+            {t("banner.scrollDown")}
           </Link>
           <Link className="scroll__bar">
             <img src={scrollDown} alt="img" />
@@ -85,7 +80,7 @@ const Banner = () => {
       <div className="banner__rightinfo">
         <div className="right__infoscroll">
           <Link to={""} className="scroll">
-            Follow Me
+            {t("banner.followMe")}
           </Link>
           <Link to={""} className="scroll__bar">
             <img src={scrollDown} alt="img" />
@@ -93,12 +88,12 @@ const Banner = () => {
         </div>
         <div className="banner__xlsocial">
           <ul className="banner__soci d-grid justify-content-center">
-            {socalIcon.map(({ icon, id }) => {
+            {socalIcon.map(({ icon, id, href }) => {
               return (
                 <li key={id}>
-                  <Link to={""} >
+                  <a href={href} target="_blank" rel="noopener noreferrer">
                     <i>{icon}</i>
-                  </Link>
+                  </a>
                 </li>
               );
             })}

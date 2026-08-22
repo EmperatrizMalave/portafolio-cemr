@@ -1,0 +1,34 @@
+// ================================================================
+//  PANEL DE CONTROL DE TIPOGRAFÍAS
+//  ----------------------------------------------------------------
+//  Cambia aquí los nombres de las fuentes y los pesos para probar
+//  otros estilos sin tocar el resto del proyecto.
+//
+//  Opciones de títulos (display ultra-bold):
+//    'Outfit'            → peso 800/900 (recomendada)
+//    'Plus Jakarta Sans' → peso 800 (ExtraBold)
+//    'Clash Display'     → peso 600/700 (Fontshare, no Google Fonts)
+//    'Space Grotesk'     → peso 700
+//    'Archivo'           → peso 800/900
+//
+//  Opciones de cuerpo de texto (limpia y legible):
+//    'Inter'  → peso 400/500 (recomendada)
+//    'DM Sans'→ peso 400/500
+//    'Manrope'→ peso 400/500
+// ================================================================
+
+// ---------- TÍTULOS ----------
+$font-title: "Outfit", sans-serif;
+$font-title-weight: 800;
+
+// ---------- CUERPO DE TEXTO ----------
+$font-body: "Inter", sans-serif;
+$font-body-weight: 400;
+
+// ---------- Variables CSS (para uso en estilos inline si se necesita) ----------
+:root {
+  --font-title: #{$font-title};
+  --font-title-weight: #{$font-title-weight};
+  --font-body: #{$font-body};
+  --font-body-weight: #{$font-body-weight};
+}

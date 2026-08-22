@@ -1,46 +1,132 @@
-import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
-import Form from "../../Components/Shared/Form/Form";
+import { useEffect, useRef, useState } from "react";
+import { Linkedin } from "react-bootstrap-icons";
 import { ScrollRestoration } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
+import avatar from "../../assets/img/banner/banner-man.png";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
 
 const Contact = () => {
+  const { t } = useTranslation();
+  const [messages, setMessages] = useState([
+    {
+      id: 1,
+      sender: "bot",
+      text: t("contact.botIntro"),
+    },
+    {
+      id: 2,
+      sender: "bot",
+      text: t("contact.botQuestion"),
+    },
+  ]);
+  const chatBodyRef = useRef(null);
+
+  const quickOptions = [
+    {
+      id: 1,
+      label: t("contact.options.profile.label"),
+      response: t("contact.options.profile.response"),
+    },
+    {
+      id: 2,
+      label: t("contact.options.projects.label"),
+      response: t("contact.options.projects.response"),
+    },
+    {
+      id: 3,
+      label: t("contact.options.message.label"),
+      response: t("contact.options.message.response"),
+      showLinks: true,
+    },
+    {
+      id: 4,
+      label: t("contact.options.hi.label"),
+      response: t("contact.options.hi.response"),
+    },
+  ];
+
+  useEffect(() => {
+    const body = chatBodyRef.current;
+    if (body) {
+      body.scrollTo({ top: body.scrollHeight, behavior: "smooth" });
+    }
+  }, [messages]);
+
+  const handleOption = (option) => {
+    setMessages((prev) => [
+      ...prev,
+      { id: prev.length + 1, sender: "user", text: option.label },
+      {
+        id: prev.length + 2,
+        sender: "bot",
+        text: option.response,
+        showLinks: option.showLinks,
+      },
+    ]);
+  };
+
   return (
     <>
-      <PageHeader
-        heading={"Let's Start Something"}
-        page={"Let's Start Something"}
-      />
-      <section className="contact__section">
+      <PageHeader heading={t("contact.heading")} page={t("contact.page")} className="contact__pageheader" />
+      <section className="chatbot__section">
         <div className="container">
-          <div className="row g-4">
-            <div
-              className="col-lg-8"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <div className="contact__box">
-                <Form isColTwo={false} />
+          <div className="chatbot__card">
+            <div className="chatbot__header">
+              <div className="chatbot__avatar">
+                <img src={avatar} alt="Cori Bot avatar" />
+              </div>
+              <div className="chatbot__info">
+                <h4 className="chatbot__name">{t("contact.name")}</h4>
+                <span className="chatbot__status">
+                  <span className="chatbot__dot"></span>
+                  {t("contact.online")}
+                </span>
               </div>
             </div>
-            <div
-              className="col-lg-4"
-              data-aos="fade-up"
-              data-aos-duration="1500"
-            >
-              <div className="contact__rightside cmn__bg">
-                <h4 className="mb-30">Feel free to contact me anytime</h4>
-                <div className="contact__item mb-20">
-                  <span className="he1">Email</span>
-                  <a href="#0">@gmail.com</a>
+
+            <div className="chatbot__body" ref={chatBodyRef}>
+              {messages.map((message) => (
+                <div
+                  key={message.id}
+                  className={`chatbot__message chatbot__message--${message.sender}`}
+                >
+                  {message.sender === "bot" && (
+                    <div className="chatbot__mini-avatar">
+                      <img src={avatar} alt="Cori Bot avatar" />
+                    </div>
+                  )}
+                  <div className="chatbot__bubble">
+                    <p>{message.text}</p>
+                    {message.showLinks && (
+                      <div className="chatbot__links">
+                        <a
+                          className="chatbot__link"
+                          href={LINKEDIN_URL}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Linkedin /> LinkedIn
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="contact__item mb-20">
-                  <span className="he1">Phone</span>
-                  <a href="#0">+(2) 871 382 023</a>
-                </div>
-                <div className="contact__item">
-                  <span className="he1">Address</span>
-                  <span className="address">Victoria Street London</span>
-                </div>
-              </div>
+              ))}
+            </div>
+
+            <div className="chatbot__options">
+              {quickOptions.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  className="chatbot__option"
+                  onClick={() => handleOption(option)}
+                >
+                  {option.label}
+                </button>
+              ))}
             </div>
           </div>
         </div>

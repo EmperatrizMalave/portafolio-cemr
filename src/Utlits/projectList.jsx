@@ -19,7 +19,9 @@ export const projectList = [
       id: 1,
       image: pro1,
       heading: "Logotipos en css",
+      headingKey: "projects.list.logos.heading",
       subHeading: "Brand Identity & Motion Design",
+      subHeadingKey: "projects.list.logos.subHeading",
       category:["branding_app", "website", "all"],
       navigate: "/protfolio",
       imagesList: [pro1, pro2, pro3, pro4, pro5, pro6]
@@ -28,7 +30,9 @@ export const projectList = [
       id: 2,
       image: qd1,
       heading: "Landing page Queen Dance",
+      headingKey: "projects.list.queen.heading",
       subHeading: "Design & Branding Mokeup",
+      subHeadingKey: "projects.list.queen.subHeading",
       category:["los_app", "landing_page", "all"],
       navigate: "/protfolio",
       imagesList: [qd1, qd2, qd3, qd4, qd5, qd6]

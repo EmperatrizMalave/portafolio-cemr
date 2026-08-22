@@ -4,7 +4,7 @@ import { ScrollRestoration } from "react-router-dom";
 import { images, images2 } from "../Utlits/marqueeItems";
 import About from "../Components/About/About";
 import Projects from "../Components/Projects/Projects";
-import Testimonial from "../Components/Testimonial/Testimonial";
+import Enfoque from "../Components/Enfoque/Enfoque";
 import MarqueeWapper from "../Components/Shared/Marquee/MarqueeWapper";
 import Awards from "../Components/About/Awards";
 import Preloader from "../Components/Shared/Preloader/Preloader";
@@ -27,7 +27,7 @@ const Home = () => {
       <MarqueeWapper direction="right" images={images2} />
       <Awards />
       <Projects />
-      <Testimonial />
+      <Enfoque />
       <ScrollRestoration/>
     </>
   );

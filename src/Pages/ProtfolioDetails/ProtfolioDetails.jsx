@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { imagesList, projectList } from "../../Utlits/projectList";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
@@ -11,8 +11,10 @@ import Lightbox from "../../Components/Shared/LightBox/LightBox";
 import { socialIcons } from "../../Utlits/socilIcons";
 
 const ProtfolioDetails = () => {
+  const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentId, setCurrentId] = useState(0);
+  const challengeList = t("portfolio.details.challengeList", { returnObjects: true });
 
   const openLightbox = (index) => {
     setCurrentId(index);
@@ -26,8 +28,8 @@ const ProtfolioDetails = () => {
     <>
 
       <PageHeader
-        heading={"Brand Identity & Motion Design"}
-        page="Brand Identity & Motion Design"
+        heading={t("portfolio.details.heading")}
+        page={t("portfolio.details.page")}
       />
       <section className="protfolio__details pb-120">
         <div className="container">
@@ -38,35 +40,35 @@ const ProtfolioDetails = () => {
           >
             <img src={detailbg} alt="img" />
             <div className="prot__detail__contact">
-              <h3>Project Info</h3>
+              <h3>{t("portfolio.details.projectInfo")}</h3>
               <div className="prot__itembox">
                 <div className="prot__left">
                   <div className="items mb__cus30">
-                    <h5>Clients</h5>
+                    <h5>{t("portfolio.details.clients")}</h5>
                     <p>Nicolas Marko</p>
                   </div>
                   <div className="items">
-                    <h5>Date</h5>
-                    <p>Sept 19, 2023</p>
+                    <h5>{t("portfolio.details.date")}</h5>
+                    <p>{t("portfolio.details.dateValue")}</p>
                   </div>
                 </div>
                 <div className="prot__left">
                   <div className="items mb__cus30">
-                    <h5>Category</h5>
-                    <p>Branding Design</p>
+                    <h5>{t("portfolio.details.category")}</h5>
+                    <p>{t("portfolio.details.categoryValue")}</p>
                   </div>
                   <div className="items">
-                    <h5>Location</h5>
-                    <p>24 Fifth st.,Los Angeles, USA</p>
+                    <h5>{t("portfolio.details.location")}</h5>
+                    <p>{t("portfolio.details.locationValue")}</p>
                   </div>
                 </div>
               </div>
               <ul className="social d-flex gap-3">
-                {socialIcons.map(({ icon, id }) => (
+                {socialIcons.map(({ icon, id, href }) => (
                   <li key={id}>
-                    <Link to={""}>
+                    <a href={href} target="_blank" rel="noopener noreferrer">
                       <i>{icon}</i>
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -79,25 +81,10 @@ const ProtfolioDetails = () => {
               data-aos-duration="1400"
             >
               <p className="fz-16 pra ttext__one">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable. If you are going to use a passage of Lorem
-                Ipsum, you need to be sure there isn't anything embarrassing
-                hidden in the middle of text. All the Lorem Ipsum generators on
-                the Internet tend to repeat predefined chunks as necessary,
-                making this the first true generator on the Internet. It uses a
-                dictionary of over combined with a handful of model sentence
-                structures, to generate Lorem Ipsum which looks reasonable.
+                {t("portfolio.details.para1")}
               </p>
               <p className="fz-16 pra">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                voluptatem sequi nesciunt. Neque quisquam est, qui dolorem ipsum
-                quia dolor sit amet, consectetur, adipisci velit, sed quia non
-                numquam eius modi tempora incidunt ut labore et dolore magnam
-                aliquam voluptatem. Ut enim ad minima veniam, quis nostrum
-                exercitationem ullam corporis suscipit laboriosam,
+                {t("portfolio.details.para2")}
               </p>
             </div>
             <div
@@ -105,31 +92,14 @@ const ProtfolioDetails = () => {
               data-aos="fade-up"
               data-aos-duration="1600"
             >
-              <h3 className="text__boxhead">Challenge</h3>
+              <h3 className="text__boxhead">{t("portfolio.details.challenge")}</h3>
               <p className="fz-16 pra ttext__one">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable. If you are going to use a passage of Lorem
-                Ipsum, you need to be sure there isn't anything embarrassing
-                hidden in the middle of text. All the Lorem Ipsum generators on
-                the Internet tend to repeat predefined chunks as necessary,
-                making this the first true generator on the Internet.
+                {t("portfolio.details.challengeText")}
               </p>
               <ul className="challenge__list">
-                <li>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur.
-                </li>
-                <li>
-                  Nor again is there anyone who loves or pursues or desires to
-                  obtain pain of itself, because it is pain, but because
-                  occasionally
-                </li>
-                <li>
-                  On the other hand, we denounce with righteous indignation and
-                  dislike
-                </li>
+                {challengeList.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
               </ul>
             </div>
             <div
@@ -137,21 +107,9 @@ const ProtfolioDetails = () => {
               data-aos="fade-up"
               data-aos-duration="1800"
             >
-              <h3 className="text__boxhead">Solution & Result</h3>
+              <h3 className="text__boxhead">{t("portfolio.details.solution")}</h3>
               <p className="fz-16 pra">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable. If you are going to use a passage of Lorem
-                Ipsum, you need to be sure there isn't anything embarrassing
-                hidden in the middle of text. All the Lorem Ipsum generators on
-                the Internet tend to repeat predefined chunks as necessary,
-                making this the first true generator on the Internet. It uses a
-                dictionary of over Latin words, combined with a handful of model
-                sentence structures, to generate Lorem Ipsum which looks
-                reasonable. The generated Lorem Ipsum is therefore always free
-                from repetition, injected humour, or non-characteristic words
-                etc.
+                {t("portfolio.details.solutionText")}
               </p>
             </div>
             <div
@@ -178,22 +136,22 @@ const ProtfolioDetails = () => {
               data-aos="fade-down"
               data-aos-duration="1000"
             >
-              Protfolio
+              {t("portfolio.sub")}
             </span>
             <h2 className="fw-500" data-aos="fade-up" data-aos-duration="1000">
-              Related Work
+              {t("portfolio.related")}
             </h2>
           </div>
 
           <div className=" project__wrapone">
             {projectList
               .slice(0, 2)
-              .map(({ heading, id, image, subHeading }, index) => (
+              .map(({ heading, headingKey, id, image, subHeading, subHeadingKey }, index) => (
                 <ProjectCard
                   key={id}
                   image={image}
-                  heading={heading}
-                  subHeading={subHeading}
+                  heading={t(headingKey)}
+                  subHeading={t(subHeadingKey)}
                   openLightbox={openLightbox}
                   index={index}
                 />

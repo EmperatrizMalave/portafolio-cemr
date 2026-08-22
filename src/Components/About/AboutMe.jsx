@@ -1,43 +1,46 @@
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Globe,
-  Instagram,
-} from "react-bootstrap-icons";
+import { Facebook, Linkedin, Instagram } from "react-bootstrap-icons";
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import personalInfoThumb from "../../assets/img/about/personal-infothumb.webp";
+
+const socialContacts = [
+  {
+    id: 1,
+    icon: <Facebook />,
+    href: "https://www.facebook.com/profile.php?id=61593324203754",
+  },
+  {
+    id: 2,
+    icon: <Linkedin />,
+    href: "https://www.linkedin.com/in/coromoto-malave-rengel/",
+  },
+  {
+    id: 3,
+    icon: <Instagram />,
+    href: "https://www.instagram.com/cemrtechspace/",
+  },
+];
 
 const contactInfo = [
   {
     id: 1,
-    system: "Correo",
-    contact: "emperatriz.668@gmail.com",
+    system: "about.aboutMe.preferred",
+    contact: "about.aboutMe.remote",
   },
   {
     id: 2,
-    system: "Modalidad Preferida",
-    contact: "Empleo Remoto",
+    system: "about.aboutMe.address",
+    contact: "about.aboutMe.location",
   },
   {
     id: 3,
-    system: "Direccion",
-    contact: "Guadalajara Jalisco, Mexico",
-  },
-  {
-    id: 4,
-    system: "Seguidores",
-    socalContact: [
-      <Facebook />,
-      <Twitter />,
-      <Linkedin />,
-      <Globe />,
-      <Instagram />,
-    ],
+    system: "about.aboutMe.followers",
+    socalContact: socialContacts,
   },
 ];
 const AboutMe = ({ isTabActive }) => {
+  const { t } = useTranslation();
   return (
     <div className={`tabitem ${isTabActive === "about" ? "active" : ""} `}>
       <div className="about__v1wrap">
@@ -59,15 +62,14 @@ const AboutMe = ({ isTabActive }) => {
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                Informacion personal
+                {t("about.aboutMe.title")}
               </h2>
               <p
                 className="p-descrip"
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-              Contadora Pública y Desarrolladora Web Jr. especializada en integrar soluciones tecnológicas innovadoras para optimizar procesos contables y administrativos.
-              Mi expertise se centra en aprovechar el análisis de datos para mejorar la eficiencia operativa y la toma de decisiones, así como potenciar la experiencia del usuario a través del desarrollo web y la automatización de flujos de trabajo.
+              {t("about.aboutMe.text")}
                 </p>
               <div className="about__contactwrap">
                 <div className="row g-4">
@@ -81,14 +83,16 @@ const AboutMe = ({ isTabActive }) => {
                         <div className="abox">
                           <div className="about__contbox__item">
                             <span className="ptext fz-18 mb-20 d-block">
-                              {system}
+                              {t(system)}
                             </span>
-                            <Link to={""}>{contact}</Link>
+                            {contact && <Link to={""}>{t(contact)}</Link>}
                             {socalContact && (
                               <ul className="d-flex align-items-center gap-2 gap-xl-4">
-                                {socalContact.map((info, index) => (
-                                  <li key={index}>
-                                    <Link to={""}>{info} </Link>
+                                {socalContact.map(({ icon, href: sHref, id: sId }) => (
+                                  <li key={sId}>
+                                    <a href={sHref} target="_blank" rel="noopener noreferrer">
+                                      {icon}
+                                    </a>
                                   </li>
                                 ))}
                               </ul>

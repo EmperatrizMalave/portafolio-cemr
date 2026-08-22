@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const partnerList = [
   {
@@ -35,6 +36,7 @@ const partnerList = [
   },
 ];
 const Partner = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="sponsor__area pt-120">
@@ -43,7 +45,7 @@ const Partner = () => {
           data-aos="fade-down"
           data-aos-duration="1000"
         >
-          More than 100+ companies trusted us worldwide
+          {t("partner.title")}
         </h4>
         <div className="swiper sponsor__wrap">
           <Swiper

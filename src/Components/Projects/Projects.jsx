@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Title from "../Shared/Title/Title";
 import Lightbox from "../Shared/LightBox/LightBox";
@@ -7,6 +8,7 @@ import { projectList } from "../../Utlits/projectList";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [currentId, setCurrentId] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -19,17 +21,18 @@ const Projects = () => {
     <section className="project__section pt-120 pb-120" id="projects">
       <div className="container">
         <Title
-          mainTitle={"Look at my portfolio and give me your feedback"}
-          sortTitle={"Proyectos completados"}
+          mainTitle={t("projects.title")}
+          sortTitle={t("projects.sub")}
+          hideTitle
         />
 
         <div className={`project__wrapone`}>
-          {projectList.map(({ heading, id, image, subHeading, navigate }, index) => (
+          {projectList.map(({ heading, headingKey, id, image, subHeading, subHeadingKey, navigate }, index) => (
             <ProjectCard
               key={id}
               image={image}
-              heading={heading}
-              subHeading={subHeading}
+              heading={t(headingKey) !== headingKey ? t(headingKey) : heading}
+              subHeading={t(subHeadingKey) !== subHeadingKey ? t(subHeadingKey) : subHeading}
               openLightbox={openLightbox}
               index={index}
               navigate={navigate}
@@ -45,7 +48,7 @@ const Projects = () => {
           >
             <span className="box">
               <i className="bi bi-arrow-up-right"></i>
-              <span className="textmore"> Click More Work </span>
+              <span className="textmore"> {t("projects.moreWork")} </span>
             </span>
           </Link>
         </div>

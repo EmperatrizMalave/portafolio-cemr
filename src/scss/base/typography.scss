@@ -14,53 +14,53 @@ h5,
 h6 {
   color: var(--white);
   text-transform: capitalize;
-  @include bodyfont;
+  @include titlefont;
 }
 
 h1 {
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 120%;
-  @include bodyfont;
+  @include titlefont;
 }
 
 h2 {
   font-size: 40px;
   line-height: 120%;
-  font-weight: 600;
+  font-weight: 800;
   @include breakpoint(max-sm) {
     font-size: 29px;
   }
-  @include bodyfont;
+  @include titlefont;
 }
 
 h3 {
   font-size: 32px;
   line-height: 120%;
-  font-weight: 600;
+  font-weight: 800;
   @include breakpoint(max-sm) {
     font-size: 26px;
   }
-  @include bodyfont;
+  @include titlefont;
 }
 
 h4 {
   font-size: 24px;
   line-height: 130%;
-  font-weight: 600;
-  @include bodyfont;
+  font-weight: 700;
+  @include titlefont;
 }
 
 h5 {
   font-size: 20px;
   line-height: 130%;
-  font-weight: 600;
-  @include bodyfont;
+  font-weight: 700;
+  @include titlefont;
 }
 
 h6 {
   font-size: 16px;
-  @include bodyfont;
+  @include titlefont;
 }
 ul {
   padding: 0;
@@ -95,6 +95,7 @@ p {
   line-height: 1.5;
   margin-bottom: 0;
   color: var(--pra);
+  @include bodyfont;
 }
 
 //Scroll To Top
@@ -241,26 +242,30 @@ p {
 .d1 {
   font-size: 80px;
   line-height: 150%;
-  font-weight: 600;
+  font-weight: 800;
   display: block;
+  @include titlefont;
 }
 .d2 {
   font-size: 72px;
   line-height: 150%;
-  font-weight: 600;
+  font-weight: 800;
   display: block;
+  @include titlefont;
 }
 .d3 {
   font-size: 64px;
   line-height: 150%;
-  font-weight: 600;
+  font-weight: 800;
   display: block;
+  @include titlefont;
 }
 .d4 {
   font-size: 56px;
   line-height: 150%;
-  font-weight: 600;
+  font-weight: 800;
   display: block;
+  @include titlefont;
 }
 //font sizing
 
@@ -769,7 +774,7 @@ p {
 //pagination default
 
 //pagination default
-.testimonial__wraptwo .owl-dots {
+.enfoque__wraptwo .owl-dots {
   .owl-dot {
     span {
       background: var(--border);
@@ -857,10 +862,11 @@ p {
     color: var(--white);
     font-size: 55px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 65px;
     letter-spacing: -1.1px;
     text-transform: capitalize;
+    @include titlefont;
   }
   @include breakpoint(max-xxl) {
     .text-title {

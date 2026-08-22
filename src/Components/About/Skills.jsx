@@ -1,4 +1,5 @@
 import "react";
+import { useTranslation } from "react-i18next";
 import personalInfothumb from "../../assets/img/about/personal-infothumb.webp";
 import html from "../../assets/img/about/html.png";
 import css from "../../assets/img/about/css.png";
@@ -10,6 +11,7 @@ import mui from "../../assets/img/about/materialui.png";
 import figma from "../../assets/img/about/figma.png";
 import excel from "../../assets/img/about/excel.png";
 import gs from "../../assets/img/about/gs.png";
+import postman from "../../assets/img/about/postman.svg";
 
 
 
@@ -75,8 +77,15 @@ const skillsList = [
     percentage: "97%",
     image: gs,
   },
+  {
+    id: 11,
+    skill: "Postman",
+    percentage: "85%",
+    image: postman,
+  },
 ];
 const Skills = ({ isTabActive }) => {
+  const { t } = useTranslation();
   return (
     <div className={`tabitem ${isTabActive === "skills" ? "active" : ""} `}>
       <div className="about__v1wrap">
@@ -88,12 +97,8 @@ const Skills = ({ isTabActive }) => {
           </div>
           <div className="col-lg-7">
             <div className="about__onecontent">
-              <h2>My Skills</h2>
-              <p>
-                Contadora Pública y Desarrolladora Web Jr. 
-                enfocada en integrar soluciones tecnológicas para optimizar procesos contables y administrativos.
-                Especialista en análisis de datos, automatización y desarrollo web orientado a mejorar la eficiencia operativa y la experiencia del usuario.
-              </p>
+              <h2>{t("about.skills.title")}</h2>
+              <p>{t("about.skills.text")}</p>
               <div className="about__contactwrap">
                 <div className="row g-4">
                   {skillsList.map(({id, skill, image, percentage}) => {

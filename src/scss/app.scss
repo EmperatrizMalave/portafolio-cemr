@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 @import "./abstracts/mixins.scss";
+@import "./abstracts/fonts.scss";
 @import "./abstracts/variables.scss";
 @import "./abstracts/buttons.scss";
 @import "./base/typography.scss";
@@ -33,7 +34,7 @@
 @import "../Components/WorkeProcess/workeProcess.scss";
 @import "../Components/WorkeProcess/workProcessCard.scss";
 
-@import "../Components/Testimonial/testimonial.scss";
+@import "../Components/Enfoque/enfoque.scss";
 @import "../Components/Partner/partner.scss";
 
 

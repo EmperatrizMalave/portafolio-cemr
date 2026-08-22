@@ -1,0 +1,474 @@
+.enfoque__section {
+  overflow: hidden;
+  .project__head {
+    @include breakpoint(max-xs) {
+      .common__sub {
+        margin-bottom: 14px;
+      }
+      h2 {
+        font-size: 23px;
+      }
+    }
+  }
+  .swiper-pagination3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+.enfoque__v1wrap {
+  background: url("/src/assets/img/about/about-bg.png") no-repeat center center;
+  background-size: cover;
+  padding: 130px 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  @include breakpoint(max-xl) {
+    .man1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .man2 {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+    .man3 {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+  @include breakpoint(max-lg) {
+    .man1 {
+      opacity: 0.1;
+    }
+    .man2 {
+      opacity: 0.1;
+    }
+    .man3 {
+      opacity: 0.1;
+    }
+    padding: 100px 30px;
+  }
+  @include breakpoint(max-sm) {
+    padding: 80px 16px;
+    .man1 {
+      width: 60px;
+      img {
+        width: 100%;
+      }
+    }
+    .man2 {
+      width: 60px;
+      img {
+        width: 100%;
+      }
+    }
+    .man3 {
+      width: 60px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @include breakpoint(max-xs) {
+    padding: 30px 10px;
+  }
+  .quote {
+    position: absolute;
+    top: 99px;
+    left: 291px;
+    @include breakpoint(max-xl) {
+      left: 240px;
+    }
+    @include breakpoint(max-lg) {
+      display: none;
+    }
+  }
+  .test__shape {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    animation: cir5 2s linear infinite;
+    @include breakpoint(max-lg) {
+      bottom: 15px;
+      right: 15px;
+    }
+    @include breakpoint(max-xs) {
+      display: none;
+    }
+  }
+}
+.enfoque__slidewrap {
+  margin: 0 10px 0 30px;
+  @include breakpoint(max-sm) {
+    margin: 0 0 0 0;
+  }
+}
+.test__slide {
+  position: relative;
+  p {
+    font-size: 20px;
+    color: var(--white);
+    margin-bottom: 40px;
+    font-style: italic;
+    @include breakpoint(max-sm) {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+}
+.man1 {
+  position: absolute;
+  top: 50px;
+  height: 93px;
+}
+.man2 {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+}
+.man3 {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+}
+.swiper-pagination3 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: flex-end;
+  margin: 20px -20px;
+  .swiper-pagination-bullet {
+    background: var(--white);
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    position: relative;
+    &::before {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      width: 20px;
+      height: 20px;
+      content: "";
+      border: 1px solid var(--white);
+      border-radius: 50%;
+    }
+    &.swiper-pagination-bullet-active {
+      background: var(--base);
+      padding: 2px;
+      width: 8px;
+      height: 8px;
+      position: relative;
+      opacity: 1;
+      &::before {
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        border: 1px solid var(--base);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.enfoque-contenedor {
+  padding: 40px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.instruccion {
+  color: #555;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+/* El contenedor de la línea de tiempo (ahora vertical) */
+.camino-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 40px; /* Deja espacio para la mitad del personaje a la izquierda */
+}
+
+.camino-tech {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px; /* Separación (zona de caída) entre vistas */
+  width: fit-content;
+  border-left: 4px solid #2b6cb0; /* El riel vertical por donde camina Cori */
+  margin-left: 44px; /* Espacio para el personaje sobre el riel */
+  padding-left: 52px; /* Separación entre el riel y los banderines */
+  @include breakpoint(max-sm) {
+    gap: 60px;
+    margin-left: 30px;
+    padding-left: 46px;
+  }
+}
+
+/* --- CADA VISTA (zona temática del camino) --- */
+.vista {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  scroll-margin-top: 110px; /* Para que el menú ancle sin tapar el título */
+}
+
+.vista__titulo {
+  font-family: "Caveat", cursive;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #2b6cb0;
+  margin: 0;
+}
+
+.vista__subtitulo {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 12px;
+}
+
+.vista__paradas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 44px;
+  @include breakpoint(max-sm) {
+    gap: 34px;
+  }
+}
+
+/* --- LA MAGIA DEL SPRITE --- */
+.cori-personaje {
+  width: 96px;  /* 1.5x el cuadro original (64px) para que se vea más grande */
+  height: 96px;
+  position: absolute;
+  top: 0;    /* La posición vertical la calcula JavaScript */
+  left: -46px; /* Centrada sobre el riel vertical */
+  z-index: 50; /* Siempre por delante de la línea y las tarjetas */
+
+  background-repeat: no-repeat;
+  background-size: 1248px 5184px; /* Sprite escalado 1.5x (832x3456) */
+
+  /* Coordenada exacta de tu imagen (Fila 12: perfil mirando a la derecha, hacia las tarjetas) */
+  background-position: 0px -1056px;
+
+  /* El movimiento de avance físico (translación suave de 1 segundo) */
+  transition: top 1s linear;
+}
+
+/* Cuando la variable 'estaCaminando' es true, activamos esta clase */
+.cori-personaje.caminando {
+  /* La animación de mover las piernas dura 0.8s y repite los 6 cuadros */
+  animation: caminar-sprite 0.8s steps(6) infinite;
+}
+
+/* Cuando cambia de vista, Cori cae rápido a la siguiente línea */
+.cori-personaje.cayendo {
+  transition: top 0.6s cubic-bezier(0.5, 0, 1, 0.4); /* Caída que acelera */
+  animation: caminar-sprite 0.6s steps(6) infinite;
+}
+
+/* Cuando 'estaSaltando' es true, salta con la barra espaciadora */
+.cori-personaje.saltando {
+  animation: saltar 0.6s ease;
+}
+
+/* Si camina y salta a la vez, corremos las dos animaciones juntas */
+.cori-personaje.caminando.saltando {
+  animation: saltar 0.6s ease, caminar-sprite 0.8s steps(6) infinite;
+}
+
+/* Animación cuadro por cuadro */
+@keyframes caminar-sprite {
+  from { background-position: 0px -1056px; }
+  /* 6 cuadros x 96px = 480px. Recorre toda esa fila de imágenes */
+  to { background-position: -480px -1056px; }
+}
+
+/* Salto vertical: 'transform' sube el personaje sin tocar el 'top' */
+@keyframes saltar {
+  0%,
+  100% { transform: translateY(0); }
+  40%,
+  60% { transform: translateY(-48px); }
+}
+
+.enfoque__section:focus-visible {
+  outline: 2px dashed #2b6cb0;
+  outline-offset: 6px;
+}
+
+/* --- ESTILO BASE DEL BANDERÍN --- */
+.tarjeta-banderin {
+  position: relative;
+  width: 200px;
+  min-height: 70px;
+  padding: 24px 20px 22px 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  font-family: inherit;
+  @include breakpoint(max-sm) {
+    width: 170px;
+    padding: 20px 14px 18px 14px;
+  }
+}
+
+/* Efecto hover al pasar el ratón */
+.tarjeta-banderin:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.05);
+}
+
+/* El ganchito superior que cuelga del riel */
+.tarjeta-banderin .gancho-superior {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 8px;
+  background-color: #1a365d;
+  border-radius: 2px;
+}
+
+/* La forma de flecha/corte V invertida en la parte inferior del banderín */
+.tarjeta-banderin::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  @include breakpoint(max-sm) {
+    border-left: 85px solid transparent;
+    border-right: 85px solid transparent;
+  }
+}
+
+/* Estilo para cuando la tarjeta está activa */
+.tarjeta-banderin.activo {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+  outline: 3px solid #f4a261; /* Toque naranja de acento */
+}
+
+/* --- COLORES INDIVIDUALES PARA CADA ETAPA --- */
+
+/* 0. Análisis (Azul marino) */
+.tarjeta-banderin.nivel-0 { background-color: #1b4965; }
+.tarjeta-banderin.nivel-0::after { border-top: 15px solid #1b4965; }
+
+/* 1. Diseño UI (Rosa/Coral elegante) */
+.tarjeta-banderin.nivel-1 { background-color: #d96b89; }
+.tarjeta-banderin.nivel-1::after { border-top: 15px solid #d96b89; }
+
+/* 2. Frontend (Verde esmeralda) */
+.tarjeta-banderin.nivel-2 { background-color: #00a896; }
+.tarjeta-banderin.nivel-2::after { border-top: 15px solid #00a896; }
+
+/* 3. QA & Testing (Naranja destacado) */
+.tarjeta-banderin.nivel-3 { 
+  background-color: #e76f51; 
+}
+.tarjeta-banderin.nivel-3::after { 
+  border-top: 15px solid #e76f51; 
+}
+
+/* 4. Documentación (Gris azulado corporativo) */
+.tarjeta-banderin.nivel-4 { background-color: #4a5568; }
+.tarjeta-banderin.nivel-4::after { border-top: 15px solid #4a5568; }
+
+/* --- TEXTOS Y DETALLES INTERNOS --- */
+.tarjeta-banderin h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos específicos para la cajita de texto de QA */
+.qa-detalles {
+  margin-top: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.qa-detalles p {
+  font-size: 0.75rem;
+  margin: 3px 0;
+  color: #fff;
+  font-family: monospace;
+}
+
+/* --- TARJETAS DE INFORMACIÓN (vistas Origen y Hobbies) --- */
+.tarjeta-info {
+  position: relative;
+  width: 340px;
+  text-align: center;
+  padding: 30px 26px;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  @include breakpoint(max-sm) {
+    width: 260px;
+    padding: 24px 18px;
+  }
+  &:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.05);
+  }
+  &.activo {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+    outline: 3px solid #f4a261;
+  }
+  .tarjeta-info__icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0;
+  }
+}
+
+.tarjeta-info.origen-0 {
+  background: linear-gradient(145deg, #1b4965, #1a365d);
+}
+
+.tarjeta-info.origen-1 {
+  background: linear-gradient(145deg, #2b6cb0, #1e4f82);
+}
+
+.tarjeta-info.hobbies-0 {
+  background: linear-gradient(145deg, #00a896, #0b6e69);
+}

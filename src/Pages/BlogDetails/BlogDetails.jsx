@@ -1,4 +1,5 @@
 import { Link, ScrollRestoration } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
@@ -9,12 +10,14 @@ import Form from "../../Components/Shared/Form/Form";
 import { socialIcons } from "../../Utlits/socilIcons";
 
 const BlogDetails = () => {
+  const { t } = useTranslation();
+  const blogList = t("blog.list", { returnObjects: true });
 
   return (
     <>
       <PageHeader
-        heading={"Brand design that helps the company grow"}
-        page={"Brand design that helps the company grow"}
+        heading={t("blog.heading")}
+        page={t("blog.page")}
       />
       <section className="blog__bsection pb-120">
         <div className="container">
@@ -36,65 +39,33 @@ const BlogDetails = () => {
                       data-aos-duration="1400"
                     >
                       <span className="text__de">
-                        By: admin / Lifestyle / Posted on September 19, 2023 /
-                        Comments: 0
+                        {t("blog.meta")}
                       </span>
                       <p className="fz-16 pra ttext__one">
-                        There are many variations of passages of Lorem Ipsum
-                        available, but the majority have suffered alteration in
-                        some form, by injected humour, or randomised words which
-                        don't look even slightly believable. If you are going to
-                        use a Lorem Ipsum, you need to be sure there isn't
-                        anything embarrassing hidden in the middle of text. All
-                        the Lorem Ipsum the Internet tend to repeat predefined
-                        chunks as necessary,
+                        {t("blog.para1")}
                       </p>
                       <p className="fz-16 pra">
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                        aut odit aut fugit, sed quia consequuntur magni neque
-                        porro quisquam est, qui dolorem ipsum quia dolor sit
-                        amet, adipisci velit, sed quia non numquam eius modi
-                        tempora incidunts ut labore et dolore magnam aliquam
-                        quaerat voluptatem. Ut enim ad minima veniam, quis
-                        nostrum exercitationem the corporis suscipit laboriosam,
-                        nisi ut aliquid
+                        {t("blog.para2")}
                       </p>
                     </div>
                     <div className="quite__box mb-30">
                       <img src={straightQuotes} alt="img" />
                       <p>
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                        aut odit aut fugit, sed quia consequuntur magni dolores
-                        eos qui ratione voluptatem sequi nesciunt. Neque porro
-                        quisquam est, adipisci velit, sed quia non numquam
+                        {t("blog.quote")}
                       </p>
-                      <Link to="">David Kingston</Link>
+                      <Link to="">{t("blog.quoteAuthor")}</Link>
                     </div>
                     <p className="fz-16 pra ttext__one mb__cus60">
-                      Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                      aut odit aut fugit, sed quia consequuntur magni dolores
-                      eos qui ratione voluptatem sequi nesciunt. Neque porro
-                      quisquam est, qui dolorem ipsum quia dolor sit amet,
-                      consectetur, adipisci velit, sed quia non numquam eius
-                      modi tempora incidunt ut labore et dolore magnam aliquam
-                      minima veniam, quis nostrum exercitationem ullam corporis
-                      suscipit laboriosam,
+                      {t("blog.para3")}
                     </p>
                     <h3 className="white mb-30">
-                      is the only theme you will ever need
+                      {t("blog.onlyTheme")}
                     </h3>
                     <div className="thumb mb-30">
                       <img src={blogDetailsb2} alt="img" />
                     </div>
                     <p className="fz-16 pra ttext__one mb-30">
-                      On the other hand, we denounce with righteous indignation
-                      and dislike men who are so beguiled and demoralized by the
-                      charms of pleasure of the moment, so blinded by desire,
-                      that they cannot foresee the pain and trouble that are
-                      bound to ensue; and equal blame belongs to those who fail
-                      in their duty through weakness of will, which is the same
-                      as from these cases are perfectly simple and easy to
-                      distinguish. In a free hour,
+                      {t("blog.para4")}
                     </p>
                     <div
                       className="text__box mb-30"
@@ -102,43 +73,31 @@ const BlogDetails = () => {
                       data-aos-duration="1600"
                     >
                       <ul className="challenge__list">
-                        <li>
-                          Duis aute irure dolor in reprehenderit in voluptate
-                          velit esse cillum dolore eu fugiat nulla pariatur.
-                        </li>
-                        <li>
-                          Nor again is there anyone who loves or pursues or
-                          desires to obtain pain of itself, because it is pain,
-                        </li>
-                        <li>
-                          On the other hand, we denounce with righteous
-                          indignation and dislike
-                        </li>
+                        {blogList.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
                       </ul>
                     </div>
                     <p className="fz-16 pra ttext__one mb-30">
-                      Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                      aut odit aut fugit, sed quia consequuntur magni dolores
-                      eos qui ratione voluptatem sequi nesciunt. Neque porro
-                      quisquam est, qui dolorem
+                      {t("blog.para5")}
                     </p>
                   </div>
                   <div className="post__in cmn__bg mb__cus60">
                     <div className="post__left">
-                      <span className="fz-20 fw-500 white">Posted in :</span>
-                      <Link to="">Business</Link>
-                      <Link to="">Digital</Link>
+                      <span className="fz-20 fw-500 white">{t("blog.postedIn")}</span>
+                      <Link to="">{t("blog.business")}</Link>
+                      <Link to="">{t("blog.digital")}</Link>
                     </div>
                     <div className="post__right">
-                      <span className="fz-20 fw-500 white">Share :</span>
+                      <span className="fz-20 fw-500 white">{t("blog.share")}</span>
                       <ul className="social-cus d-flex align-items-center">
-                        {socialIcons.map(({id, icon}) => (
+                        {socialIcons.map(({id, icon, href}) => (
                           <li key={id}>
-                            <Link to="">
+                            <a href={href} target="_blank" rel="noopener noreferrer">
                               <i>
                                 {icon}
                               </i>
-                            </Link>
+                            </a>
                           </li>
                         ))}
                       </ul>

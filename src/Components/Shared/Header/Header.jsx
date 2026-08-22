@@ -2,43 +2,46 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { List, ArrowRight } from "react-bootstrap-icons";
+import { useTranslation } from "react-i18next";
 
 import Drawer from "../Drawer/Drawer";
+import LanguageToggle from "../LanguageToggle/LanguageToggle";
 import logo from "../../../assets/img/logo/logo-portafolio-CEMR.webp";
 
 const menuList = [
   {
     id: 1,
     path: "/",
-    name: "Home",
+    name: "nav.home",
   },
   {
     id: 2,
     path: "/",
     section: "#about",
-    name: "About",
+    name: "nav.about",
   },
   {
     id: 3,
     path: "/",
     section: "#projects",
-    name: "Work",
+    name: "nav.work",
   },
 
   {
     id: 4,
     path: "/",
-    section: "#testimonial",
-    name: "Testimonial",
+    section: "#enfoque",
+    name: "nav.camino",
   },
   {
     id: 6,
     path: "/contact",
-    name: "Contact",
+    name: "nav.contact",
   },
 ];
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
   const [dropDownId, setDropDownId] = useState(null);
@@ -81,7 +84,7 @@ const Header = () => {
               return (
                 <li key={id} onClick={() => handleSubMenu(id)}>
                   <HashLink smooth to={`${path}${section ? section : ""}`}>
-                    {name}
+                    {t(name)}
                   </HashLink>
                   {dropDown?.length && (
                     <ul className={`sub-menu ${dropDownId === id ? "sub-menu_active":""}`}>
@@ -101,11 +104,12 @@ const Header = () => {
             })}
           </ul>
           <div className="menu__components d-flex align-items-center">
+            <LanguageToggle />
             <Link
               to="/contact"
               className="d-flex fw-500 cmn--btn align-items-center gap-2"
             >
-              <span className="get__text">Let's Talk</span>
+              <span className="get__text">{t("nav.letsTalk")}</span>
               <span>
                 <ArrowRight className="fz-20" />
               </span>

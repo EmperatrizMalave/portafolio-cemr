@@ -89,7 +89,7 @@
 .about__v1wrap{
     background: white;
     border-radius: 12px;
-    padding: 60px;
+    padding: 40px;
     overflow: hidden;
     // ✅ Sombra con más profundidad y suavidad
     box-shadow:
@@ -98,10 +98,10 @@
     0 20px 40px rgba(0, 0, 0, 0.05);
       // sombra secundaria más cercana
     @include breakpoint(max-sm){
-        padding: 40px 20px;
+        padding: 30px 16px;
     }
     @include breakpoint(max-xs){
-        padding: 30px 10px;
+        padding: 24px 10px;
     }
 }
 
@@ -113,17 +113,19 @@
     color: #999999;
 }
 .about__onethumb{
-    height: 500px;
-    object-fit: cover;
+    width: 100%;
     img{
         width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
 
 .personal-image {
-    height: 600px;
-    width: 596px;     // O lo que necesites
-    object-fit: cover; // O 'contain' si prefieres que no se recorte
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 .about__onecontent{
     h2{
@@ -261,7 +263,7 @@
 .exri__item{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
     border-top: 1px solid var(--cusborder);
     padding-top: 4px;
     padding-bottom: 4px;
@@ -269,12 +271,25 @@
     &:hover{
         border-color: var(--hover);
     }
+    > span{
+        flex-shrink: 0;
+        min-width: 200px;
+    }
+    .expri__cont{
+        flex: 1;
+        text-align: left;
+    }
     @include breakpoint(max-xs){
-       .expri__cont{
+        gap: 12px;
+        > span{
+            min-width: 0;
+            flex-shrink: 1;
+        }
+        .expri__cont{
             h4{
                 font-size: 18px;
             }
-       } 
+        }
     }
 }
 //exprience
