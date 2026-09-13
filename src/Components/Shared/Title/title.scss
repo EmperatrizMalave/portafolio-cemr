@@ -7,10 +7,10 @@
 //     .common__sub {
 //       width: 280px;
 //       margin-bottom: 16px;
-//       font-size: 18px;
+//       font-size: $fs-md;
 //     }
 //     h2 {
-//       font-size: 22px;
+//       font-size: $fs-xl;
 //       line-height: 30px;
 //     }
 //   }
@@ -21,22 +21,22 @@
   max-width: 920px;
   margin: 0 auto 60px;
   h2 {
-    font-size: 60px;
+    font-size: $fs-5xl;
   }
   @include breakpoint(max-lg) {
     h2 {
-      font-size: 48px;
+      font-size: $fs-4xl;
     }
   }
   @include breakpoint(max-md) {
     margin: 0 auto 50px;
     h2 {
-      font-size: 36px;
+      font-size: $fs-3xl;
     }
   }
   @include breakpoint(max-xs) {
     h2 {
-      font-size: 29px;
+      font-size: $fs-xxl;
     }
     margin: 0 auto 45px;
   }

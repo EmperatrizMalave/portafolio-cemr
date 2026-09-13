@@ -29,8 +29,8 @@
 }
 
 .common__sub {
-  font-size: 24px;
-  font-family: "Caveat", cursive;
+  font-size: $fs-xl;
+  @include titlefont;
   color: #38A3D6;
   position: relative;
   display: flex;

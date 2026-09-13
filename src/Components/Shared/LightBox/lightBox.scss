@@ -23,7 +23,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 17px;
+      font-size: $fs-md;
       font-weight: 700;
       color: var(--white);
     }
@@ -31,12 +31,12 @@
       margin: 20px 0;
     }
     .image_count {
-      font-size: 14px;
+      font-size: $fs-sm;
       color: var(--pra);
       position: absolute;
       right: 15px;
       bottom: -7px;
-      font-size: 14px;
+      font-size: $fs-sm;
     }
   }
   &__content-video {
@@ -80,7 +80,7 @@
     margin: 10px;
     cursor: pointer;
     i {
-      font-size: 22px;
+      font-size: $fs-xl;
     }
   }
 }

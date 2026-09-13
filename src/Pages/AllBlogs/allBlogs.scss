@@ -23,7 +23,7 @@
         background: var(--base);
         color: var(--title);
         transition: all 0.4s;
-        font-size: 18px;
+        font-size: $fs-md;
         i {
           transition: all 0.4s;
         }
@@ -37,7 +37,7 @@
         @include breakpoint(max-xl) {
           width: 40px;
           height: 40px;
-          font-size: 16px;
+          font-size: $fs-base;
         }
       }
     }

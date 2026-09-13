@@ -6,7 +6,7 @@
         margin-bottom: 14px;
       }
       h2 {
-        font-size: 23px;
+        font-size: $fs-xl;
       }
     }
   }
@@ -110,12 +110,12 @@
 .test__slide {
   position: relative;
   p {
-    font-size: 20px;
+    font-size: $fs-lg;
     color: var(--white);
     margin-bottom: 40px;
     font-style: italic;
     @include breakpoint(max-sm) {
-      font-size: 16px;
+      font-size: $fs-base;
       margin-bottom: 20px;
     }
   }
@@ -181,16 +181,16 @@
 .enfoque-contenedor {
   padding: 40px;
   text-align: center;
-  font-family: sans-serif;
+  @include bodyfont;
 }
 
 .instruccion {
   color: #555;
   margin-bottom: 40px;
-  font-size: 1.1rem;
+  font-size: $fs-md;
 }
 
-/* El contenedor de la línea de tiempo (ahora vertical) */
+/* El contenedor de la lÃ­nea de tiempo (ahora vertical) */
 .camino-wrapper {
   max-width: 700px;
   margin: 0 auto;
@@ -202,11 +202,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 80px; /* Separación (zona de caída) entre vistas */
+  gap: 80px; /* SeparaciÃ³n (zona de caÃ­da) entre vistas */
   width: fit-content;
   border-left: 4px solid #2b6cb0; /* El riel vertical por donde camina Cori */
   margin-left: 44px; /* Espacio para el personaje sobre el riel */
-  padding-left: 52px; /* Separación entre el riel y los banderines */
+  padding-left: 52px; /* SeparaciÃ³n entre el riel y los banderines */
   @include breakpoint(max-sm) {
     gap: 60px;
     margin-left: 30px;
@@ -214,25 +214,25 @@
   }
 }
 
-/* --- CADA VISTA (zona temática del camino) --- */
+/* --- CADA VISTA (zona temÃ¡tica del camino) --- */
 .vista {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  scroll-margin-top: 110px; /* Para que el menú ancle sin tapar el título */
+  scroll-margin-top: 110px; /* Para que el menÃº ancle sin tapar el tÃ­tulo */
 }
 
 .vista__titulo {
-  font-family: "Caveat", cursive;
-  font-size: 2.2rem;
+  @include titlefont;
+  font-size: $fs-xxl;
   font-weight: 600;
   color: #2b6cb0;
   margin: 0;
 }
 
 .vista__subtitulo {
-  font-size: 1rem;
+  font-size: $fs-base;
   color: #666;
   margin: 0 0 12px;
 }
@@ -249,12 +249,12 @@
 
 /* --- LA MAGIA DEL SPRITE --- */
 .cori-personaje {
-  width: 96px;  /* 1.5x el cuadro original (64px) para que se vea más grande */
+  width: 96px;  /* 1.5x el cuadro original (64px) para que se vea mÃ¡s grande */
   height: 96px;
   position: absolute;
-  top: 0;    /* La posición vertical la calcula JavaScript */
+  top: 0;    /* La posiciÃ³n vertical la calcula JavaScript */
   left: -46px; /* Centrada sobre el riel vertical */
-  z-index: 50; /* Siempre por delante de la línea y las tarjetas */
+  z-index: 50; /* Siempre por delante de la lÃ­nea y las tarjetas */
 
   background-repeat: no-repeat;
   background-size: 1248px 5184px; /* Sprite escalado 1.5x (832x3456) */
@@ -262,19 +262,19 @@
   /* Coordenada exacta de tu imagen (Fila 12: perfil mirando a la derecha, hacia las tarjetas) */
   background-position: 0px -1056px;
 
-  /* El movimiento de avance físico (translación suave de 1 segundo) */
+  /* El movimiento de avance fÃ­sico (translaciÃ³n suave de 1 segundo) */
   transition: top 1s linear;
 }
 
 /* Cuando la variable 'estaCaminando' es true, activamos esta clase */
 .cori-personaje.caminando {
-  /* La animación de mover las piernas dura 0.8s y repite los 6 cuadros */
+  /* La animaciÃ³n de mover las piernas dura 0.8s y repite los 6 cuadros */
   animation: caminar-sprite 0.8s steps(6) infinite;
 }
 
-/* Cuando cambia de vista, Cori cae rápido a la siguiente línea */
+/* Cuando cambia de vista, Cori cae rÃ¡pido a la siguiente lÃ­nea */
 .cori-personaje.cayendo {
-  transition: top 0.6s cubic-bezier(0.5, 0, 1, 0.4); /* Caída que acelera */
+  transition: top 0.6s cubic-bezier(0.5, 0, 1, 0.4); /* CaÃ­da que acelera */
   animation: caminar-sprite 0.6s steps(6) infinite;
 }
 
@@ -288,10 +288,10 @@
   animation: saltar 0.6s ease, caminar-sprite 0.8s steps(6) infinite;
 }
 
-/* Animación cuadro por cuadro */
+/* AnimaciÃ³n cuadro por cuadro */
 @keyframes caminar-sprite {
   from { background-position: 0px -1056px; }
-  /* 6 cuadros x 96px = 480px. Recorre toda esa fila de imágenes */
+  /* 6 cuadros x 96px = 480px. Recorre toda esa fila de imÃ¡genes */
   to { background-position: -480px -1056px; }
 }
 
@@ -308,7 +308,7 @@
   outline-offset: 6px;
 }
 
-/* --- ESTILO BASE DEL BANDERÍN --- */
+/* --- ESTILO BASE DEL BANDERÃN --- */
 .tarjeta-banderin {
   position: relative;
   width: 200px;
@@ -328,7 +328,7 @@
   }
 }
 
-/* Efecto hover al pasar el ratón */
+/* Efecto hover al pasar el ratÃ³n */
 .tarjeta-banderin:hover {
   transform: translateY(-5px);
   filter: brightness(1.05);
@@ -346,7 +346,7 @@
   border-radius: 2px;
 }
 
-/* La forma de flecha/corte V invertida en la parte inferior del banderín */
+/* La forma de flecha/corte V invertida en la parte inferior del banderÃ­n */
 .tarjeta-banderin::after {
   content: '';
   position: absolute;
@@ -362,7 +362,7 @@
   }
 }
 
-/* Estilo para cuando la tarjeta está activa */
+/* Estilo para cuando la tarjeta estÃ¡ activa */
 .tarjeta-banderin.activo {
   transform: translateY(-8px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
@@ -371,11 +371,11 @@
 
 /* --- COLORES INDIVIDUALES PARA CADA ETAPA --- */
 
-/* 0. Análisis (Azul marino) */
+/* 0. AnÃ¡lisis (Azul marino) */
 .tarjeta-banderin.nivel-0 { background-color: #1b4965; }
 .tarjeta-banderin.nivel-0::after { border-top: 15px solid #1b4965; }
 
-/* 1. Diseño UI (Rosa/Coral elegante) */
+/* 1. DiseÃ±o UI (Rosa/Coral elegante) */
 .tarjeta-banderin.nivel-1 { background-color: #d96b89; }
 .tarjeta-banderin.nivel-1::after { border-top: 15px solid #d96b89; }
 
@@ -391,19 +391,19 @@
   border-top: 15px solid #e76f51; 
 }
 
-/* 4. Documentación (Gris azulado corporativo) */
+/* 4. DocumentaciÃ³n (Gris azulado corporativo) */
 .tarjeta-banderin.nivel-4 { background-color: #4a5568; }
 .tarjeta-banderin.nivel-4::after { border-top: 15px solid #4a5568; }
 
 /* --- TEXTOS Y DETALLES INTERNOS --- */
 .tarjeta-banderin h3 {
-  font-size: 1.05rem;
+  font-size: $fs-md;
   font-weight: 700;
   margin-bottom: 8px;
   letter-spacing: 0.5px;
 }
 
-/* Estilos específicos para la cajita de texto de QA */
+/* Estilos especÃ­ficos para la cajita de texto de QA */
 .qa-detalles {
   margin-top: 12px;
   background: rgba(0, 0, 0, 0.15);
@@ -413,13 +413,13 @@
 }
 
 .qa-detalles p {
-  font-size: 0.75rem;
+  font-size: $fs-xs;
   margin: 3px 0;
   color: #fff;
-  font-family: monospace;
+  @include bodyfont;
 }
 
-/* --- TARJETAS DE INFORMACIÓN (vistas Origen y Hobbies) --- */
+/* --- TARJETAS DE INFORMACIÃ“N (vistas Origen y Hobbies) --- */
 .tarjeta-info {
   position: relative;
   width: 340px;
@@ -446,16 +446,16 @@
     outline: 3px solid #f4a261;
   }
   .tarjeta-info__icon {
-    font-size: 34px;
+    font-size: $fs-xxl;
     margin-bottom: 12px;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: $fs-lg;
     font-weight: 700;
     margin: 0 0 8px;
   }
   p {
-    font-size: 0.95rem;
+    font-size: $fs-sm;
     color: rgba(255, 255, 255, 0.92);
     margin: 0;
   }

@@ -64,7 +64,7 @@
 
 .chatbot__name {
   color: var(--white);
-  font-size: 18px;
+  font-size: $fs-md;
   font-weight: 600;
   margin: 0;
 }
@@ -73,7 +73,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: $fs-sm;
   color: var(--success);
 }
 
@@ -151,7 +151,7 @@
 .chatbot__bubble {
   padding: 14px 18px;
   border-radius: 16px;
-  font-size: 15px;
+  font-size: $fs-base;
   line-height: 1.6;
   p {
     margin: 0;
@@ -186,12 +186,12 @@
   border-radius: 8px;
   border: 1px solid var(--buttoncolor);
   color: var(--buttoncolor);
-  font-size: 13px;
+  font-size: $fs-sm;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
   svg {
-    font-size: 14px;
+    font-size: $fs-sm;
   }
   &:hover {
     background-color: var(--buttoncolor);
@@ -214,7 +214,7 @@
   border: 1px solid var(--buttoncolor);
   background-color: transparent;
   color: var(--buttoncolor);
-  font-size: 14px;
+  font-size: $fs-sm;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;

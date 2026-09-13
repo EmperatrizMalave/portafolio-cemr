@@ -9,7 +9,7 @@
 .banner__content{
     padding: 100px 30px 100px;
     .bn__currently{
-        font-size: 20px;
+        font-size: $fs-lg;
         margin-bottom: 50px;
         border-bottom: 1px solid black;
         color: black;
@@ -21,7 +21,7 @@
         }
     }
     h1{
-        font-size: 116px;
+        font-size: $fs-7xl;
         margin-bottom: 50px;
     }
     .video__area{
@@ -29,7 +29,7 @@
         align-items: center;
         display: flex;
         .proces{
-            font-size: 20px;
+            font-size: $fs-lg;
             color: black;
             width: 67px;
         }
@@ -41,18 +41,18 @@
     }
     @include breakpoint(max-xxl){
         .bn__currently{
-            font-size: 24px;
+            font-size: $fs-xl;
             margin-bottom: 50px;
             padding-bottom: 16px;
         }
         h1{
-            font-size: 86px;
+            font-size: $fs-7xl;
             margin-bottom: 50px;
         }
         .video__area{
             gap: 24px;
             .proces{
-                font-size: 20px;
+                font-size: $fs-lg;
                 width: 67px;
             }
         }
@@ -63,18 +63,18 @@
     @include breakpoint(max-lg){
         padding: 90px 0 100px;
         .bn__currently{
-            font-size: 24px;
+            font-size: $fs-xl;
             margin-bottom: 40px;
             padding-bottom: 10px;
         }
         h1{
-            font-size: 68px;
+            font-size: $fs-6xl;
             margin-bottom: 50px;
         }
         .video__area{
             gap: 24px;
             .proces{
-                font-size: 20px;
+                font-size: $fs-lg;
                 width: 67px;
             }
         }
@@ -82,18 +82,18 @@
     @include breakpoint(max-md){
         padding: 80px 0 85px;
         .bn__currently{
-            font-size: 20px;
+            font-size: $fs-lg;
             margin-bottom: 35px;
             padding-bottom: 10px;
         }
         h1{
-            font-size: 48px;
+            font-size: $fs-4xl;
             margin-bottom: 40px;
         }
         .video__area{
             gap: 24px;
             .proces{
-                font-size: 20px;
+                font-size: $fs-lg;
                 width: 67px;
             }
         }
@@ -101,18 +101,18 @@
     @include breakpoint(max-sm){
         padding: 60px 0 65px;
         .bn__currently{
-            font-size: 16px;
+            font-size: $fs-base;
             margin-bottom: 35px;
             padding-bottom: 10px;
         }
         h1{
-            font-size: 38px;
+            font-size: $fs-3xl;
             margin-bottom: 30px;
         }
         .video__area{
             gap: 24px;
             .proces{
-                font-size: 20px;
+                font-size: $fs-lg;
                 width: 67px;
             }
         }
@@ -123,7 +123,7 @@
             margin-bottom: 28px;
         }
         h1{
-            font-size: 34px;
+            font-size: $fs-xxl;
             margin-bottom: 30px;
         }
         .video__area{
@@ -134,7 +134,7 @@
                 cursor: pointer;
             }
             .proces{
-                font-size: 16px;
+                font-size: $fs-base;
             }
         }
     }
@@ -177,7 +177,7 @@
     gap: 30px;
     margin-top: 200px;
     a{
-        font-size: 20px;
+        font-size: $fs-lg;
         color:black;
         img{
             transform: rotate(-90deg);
@@ -188,7 +188,7 @@
     @include breakpoint(max-xxxl){
         gap: 16px;
         a{
-            font-size: 16px;
+            font-size: $fs-base;
             img{
                 width: 16px;
             }
@@ -206,14 +206,14 @@
         transform: rotate(-90deg);
     }
     .scroll{
-        font-size: 18px;
+        font-size: $fs-md;
         color:black;
         text-transform: uppercase;
     }
     @include breakpoint(max-xxxl){
         gap: 50px;
         .scroll{
-            font-size: 15px;
+            font-size: $fs-base;
         }
         .scroll__bar{
             img{
@@ -268,7 +268,7 @@
                         width: 38px;
                         height: 38px;
                         i{
-                            font-size: 14px;
+                            font-size: $fs-sm;
                         }
                     }
                 }
@@ -286,11 +286,14 @@
 //animation text CP + Dev Web
 .profile-heading {
     position: relative;
+    z-index: 2;
     -webkit-text-stroke: 0.5px var(--subtitle);
     color: transparent;
-    font-size: 4.5rem;
+    font-size: 0.62em;
     line-height: 1;
     display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
 }
 .profile-heading::before {
     content: attr(data-text);

@@ -6,7 +6,7 @@
     padding: 20px;
   }
   h3 {
-    font-size: 30px;
+    font-size: $fs-xxl;
     color: var(--white);
     margin-bottom: 30px;
   }
@@ -18,11 +18,11 @@
     align-items: center;
     justify-content: space-between;
     color: var(--white);
-    font-size: 24px;
+    font-size: $fs-xl;
     transition: all 0.4s;
     i {
       color: var(--white);
-      font-size: 22px;
+      font-size: $fs-xl;
       transition: all 0.4s;
     }
     &:hover {
@@ -35,7 +35,7 @@
     }
     @include breakpoint(max-xxl) {
       padding: 10px 12px;
-      font-size: 14px;
+      font-size: $fs-sm;
     }
   }
   .thumb {
@@ -75,11 +75,11 @@
   }
   .text__box {
     .textt36 {
-      font-size: 36px;
+      font-size: $fs-3xl;
       margin-bottom: 30px;
       color: var(--white);
       @include breakpoint(max-xl) {
-        font-size: 24px;
+        font-size: $fs-xl;
         margin-bottom: 20px;
       }
     }

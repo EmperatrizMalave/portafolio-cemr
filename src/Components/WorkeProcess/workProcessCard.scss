@@ -12,7 +12,7 @@
         align-items: center;
         gap: 10px;
         color: #999999;
-        font-size: 18px;
+        font-size: $fs-md;
         padding-left: 20px;
         &::before {
           position: absolute;
@@ -50,7 +50,7 @@
       ul {
         li {
           gap: 10px;
-          font-size: 14px;
+          font-size: $fs-sm;
           padding-left: 20px;
           &:not(:last-child) {
             margin-bottom: 8px;

@@ -14,17 +14,17 @@
 }
 .marquee-text {
   color: var(--white);
-  font-size: 36px;
+  font-size: $fs-3xl;
   font-weight: 600;
   line-height: 1.1;
   white-space: nowrap;
 }
 .text-slider {
   padding-top: 14px;
-  font-size: 36px;
+  font-size: $fs-3xl;
   height: 95px;
   @include breakpoint(max-xxl) {
-    font-size: 36px;
+    font-size: $fs-3xl;
   }
   @include breakpoint(max-md) {
     height: 70px;
@@ -36,7 +36,7 @@
         width: 28px;
       }
       .marquee-text {
-        font-size: 26px;
+        font-size: $fs-xl;
       }
     }
   }

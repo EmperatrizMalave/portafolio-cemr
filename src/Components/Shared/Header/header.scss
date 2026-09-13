@@ -8,7 +8,7 @@
   justify-content: center;
   background: var(--hover);
   .icon {
-    font-size: 32px;
+    font-size: $fs-xxl;
     color: var(--title);
   }
   &:hover {
@@ -18,7 +18,7 @@
     width: 39px;
     height: 39px;
     i {
-      font-size: 22px;
+      font-size: $fs-xl;
     }
   }
 }
@@ -92,7 +92,7 @@
       border-radius: 30px;
       background: transparent;
       font-family: inherit;
-      font-size: 13px;
+      font-size: $fs-sm;
       font-weight: 700;
       color: #1a1a1a;
       cursor: pointer;
@@ -114,7 +114,7 @@
       background-color: var(--buttoncolor);    
       padding: 19px 26px;
       @include breakpoint(max-xl) {
-        font-size: 14px;
+        font-size: $fs-sm;
         font-weight: 500;
         padding: 9px 16px;
       }
@@ -155,7 +155,7 @@
       position: relative;
       a {
         color: black;
-        font-size: 18px;
+        font-size: $fs-md;
         font-style: normal;
         @include bodyfont;
         font-weight: 500;
@@ -167,7 +167,7 @@
         }
         i {
           margin-left: 2px;
-          font-size: 16px !important;
+          font-size: $fs-base !important;
           color: var(--title);
         }
       }
@@ -249,7 +249,7 @@
             color: var(--white);
             text-transform: capitalize;
             font-weight: 400;
-            font-size: 16px;
+            font-size: $fs-base;
             width: 100%;
             display: block;
             padding: 5px 8px;
@@ -257,10 +257,10 @@
             border-radius: 8px;
             transition: all 0.4s;
             i {
-              font-size: 14px !important;
+              font-size: $fs-sm !important;
             }
             @include breakpoint(max-lg) {
-              font-size: 14px;
+              font-size: $fs-sm;
               font-weight: 500;
             }
           }
@@ -305,7 +305,7 @@
       gap: 0 14px;
       li {
         a {
-          font-size: 16px;
+          font-size: $fs-base;
           padding: 16px 16px;
         }
       }
@@ -314,7 +314,7 @@
       gap: 0 14px;
       li {
         a {
-          font-size: 14px;
+          font-size: $fs-sm;
           padding: 16px 10px;
         }
       }
@@ -323,7 +323,7 @@
       gap: 0 14px;
       li {
         a {
-          font-size: 14px;
+          font-size: $fs-sm;
           padding: 16px 4px;
         }
       }
@@ -332,7 +332,7 @@
       gap: 0 14px;
       li {
         a {
-          font-size: 14px;
+          font-size: $fs-sm;
           padding: 16px 2px;
         }
       }

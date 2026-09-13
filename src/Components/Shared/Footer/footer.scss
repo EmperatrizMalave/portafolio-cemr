@@ -1,17 +1,17 @@
 //footer
 .footer__top {
   .fl {
-    font-size: 60px;
+    font-size: $fs-5xl;
     line-height: 0.9;
     color: var(--body);
     margin-bottom: 60px;
     text-align: center;
     padding: 10px 10px;
     @include breakpoint(max-lg) {
-      font-size: 44px;
+      font-size: $fs-4xl;
     }
     @include breakpoint(max-sm) {
-      font-size: 36px;
+      font-size: $fs-3xl;
       margin-bottom: 40px;
     }
   }
@@ -53,13 +53,13 @@
     .footer__profile-body {
       h3 {
         color: #000000;
-        font-size: 24px;
+        font-size: $fs-xl;
         font-weight: 600;
         margin-bottom: 12px;
       }
       p {
         color: #000000;
-        font-size: 16px;
+        font-size: $fs-base;
         line-height: 1.7;
         margin: 0;
       }
@@ -106,16 +106,16 @@
         }
       }
       .footer__arrow {
-        font-size: 22px;
+        font-size: $fs-xl;
         line-height: 1;
       }
       .footer__icon {
         display: inline-flex;
         align-items: center;
-        font-size: 24px;
+        font-size: $fs-xl;
       }
       .footer__label {
-        font-size: 20px;
+        font-size: $fs-lg;
         font-weight: 500;
       }
     }
@@ -137,14 +137,14 @@
   justify-content: space-between;
   padding: 34px 0;
   p {
-    font-size: 18px;
+    font-size: $fs-md;
   }
   .terms {
     display: flex;
     gap: 38px;
     li {
       a {
-        font-size: 18px;
+        font-size: $fs-md;
         color: black;
       }
       &:hover {
@@ -163,7 +163,7 @@
     align-items: center;
     justify-content: center;
     i {
-      font-size: 28px;
+      font-size: $fs-xxl;
     }
   }
   @include breakpoint(max-lg) {

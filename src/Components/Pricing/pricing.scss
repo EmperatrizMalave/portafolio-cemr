@@ -11,9 +11,9 @@
   }
   .big__title {
     display: flex;
-    font-size: 60px;
+    font-size: $fs-5xl;
     span {
-      font-size: 20px;
+      font-size: $fs-lg;
       align-self: flex-end;
       line-height: 2.2;
       font-weight: 500;
@@ -42,9 +42,9 @@
     }
     .big__title {
       display: flex;
-      font-size: 50px;
+      font-size: $fs-4xl;
       span {
-        font-size: 16px;
+        font-size: $fs-base;
       }
       padding-bottom: 20px;
       margin-bottom: 20px;

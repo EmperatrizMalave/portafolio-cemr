@@ -20,7 +20,7 @@
       cursor: pointer;
     }
     i {
-      font-size: 22px;
+      font-size: $fs-xl;
       color: var(--subtitle);
     }
   }
@@ -34,18 +34,18 @@
       margin-bottom: 20px;
     }
     .logo-drawer{
-      width: 70px;             /* Ajusta el tamaño del logo */
+      width: 70px;             /* Ajusta el tamaÃ±o del logo */
       height: auto;
     }
     p.text-logo-drawer {
-      font-size: 18px;
+      font-size: $fs-md;
       color: var(--bgsection);
       margin: 0;
       font-weight: bold;
     }
 
     p {
-      font-size: 14px;
+      font-size: $fs-sm;
       color: var(--bgsection);
       margin: 0;
       margin-bottom: 40px;
@@ -99,7 +99,7 @@
     .address {
       color: var(--buttoncolor);
       @include bodyfont;
-      font-size: 14px;
+      font-size: $fs-sm;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
@@ -109,7 +109,7 @@
     .textp {
       color: var(--bgsection);
       @include bodyfont;
-      font-size: 16px;
+      font-size: $fs-base;
       font-style: normal;
       font-weight: 500;
       line-height: 120%;
@@ -120,6 +120,6 @@
 
 .text-logo-drawer {
 margin-top: 10px;
-font-size: 16px;
+font-size: $fs-base;
 text-align: center;
 }
