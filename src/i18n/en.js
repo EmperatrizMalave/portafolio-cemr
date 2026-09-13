@@ -32,7 +32,7 @@ export default {
   },
   about: {
     description:
-      "I am CEMR, QA Engineer and Frontend Developer with a background in Public Accounting. I specialize in quality assurance for administrative and educational systems, software auditing and user manual creation, combining analytical logic and functional testing to ensure stable applications and optimize processes.",
+      "I'm CEMR, Frontend Developer & QA Engineer. I ensure quality, optimize processes, and build stable, efficient web applications.",
     tabs: {
       about: "About",
       experience: "Experience",

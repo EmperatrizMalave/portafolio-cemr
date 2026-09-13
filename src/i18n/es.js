@@ -32,7 +32,7 @@ export default {
   },
   about: {
     description:
-      "Soy CEMR, QA Engineer y Desarrolladora Frontend con trasfondo en Contaduría Pública. Me especializo en el aseguramiento de calidad de sistemas administrativos y pedagógicos, auditoría de software y elaboración de manuales de usuario, combinando lógica analítica y pruebas funcionales para garantizar aplicaciones estables y optimizar procesos.",
+      "Soy CEMR, Desarrolladora Frontend & QA Engineer. Garantizo calidad, optimizo procesos y construyo aplicaciones web estables y eficientes.",
     tabs: {
       about: "Sobre mí",
       experience: "Experiencia",
