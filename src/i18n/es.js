@@ -116,7 +116,7 @@ export default {
   camino: {
     sectionTitle: "Mi Camino",
     instruction:
-      "Haz clic en una etapa, o usa la rueda del mouse y las flechas ↑ ↓ para caminar. Al cambiar de vista, ¡Cori cae a la siguiente línea! Pulsa la barra espaciadora para saltar.",
+      "Haz clic en una etapa, o recorre la página con la rueda y las flechas ↑ ↓. Cori camina contigo. Pulsa la barra espaciadora para saltar.",
     v1: {
       titulo: "Enfoque",
       subtitulo: "Mi enfoque de trabajo",
@@ -148,6 +148,7 @@ export default {
     page: "Contacto",
     name: "Cori Bot",
     online: "En línea",
+    talk: "Hablar con Cori",
     botIntro:
       "¡Hola! Soy Cori Bot 🤖. Estoy aquí para ayudarte a conocer más sobre la experiencia y proyectos de Cori.",
     botQuestion: "¿Qué te gustaría explorar hoy?",

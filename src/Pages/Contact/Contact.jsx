@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Linkedin } from "react-bootstrap-icons";
-import { ScrollRestoration } from "react-router-dom";
+import { ScrollRestoration, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
-import avatar from "../../assets/img/banner/banner-man.png";
+import avatar from "../../assets/cori-pixel.png";
 import { emailLink } from "../../Utils/socialIcons";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
@@ -28,6 +28,7 @@ const quickOptions = [
 
 const Contact = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const [messages, setMessages] = useState([
     { id: 1, sender: "bot", key: "contact.botIntro" },
     { id: 2, sender: "bot", key: "contact.botQuestion" },
@@ -41,7 +42,18 @@ const Contact = () => {
     if (body) {
       body.scrollTo({ top: body.scrollHeight, behavior: "smooth" });
     }
-  }, [messages]);
+    const lastBot = [...messages].reverse().find((message) => message.sender === "bot");
+    if (!lastBot) return;
+    const line = lastBot.text || t(lastBot.key);
+    window.__coriLine = line;
+    window.dispatchEvent(new CustomEvent("cori-say", { detail: line }));
+  }, [messages, t]);
+
+  useEffect(() => {
+    if (!location.state?.talk) return;
+    document.querySelector(".chatbot__card")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    composerRef.current?.focus();
+  }, [location.state]);
 
   const handleOption = (option) => {
     setMessages((prev) => [

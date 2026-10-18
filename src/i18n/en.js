@@ -116,7 +116,7 @@ export default {
   camino: {
     sectionTitle: "My Path",
     instruction:
-      "Click on a stop, or use the mouse wheel and the ↑ ↓ arrows to walk. When changing views, Cori falls to the next line! Press the spacebar to jump.",
+      "Click on a stop, or move through the page with the wheel and the ↑ ↓ arrows. Cori walks with you. Press the spacebar to jump.",
     v1: {
       titulo: "Focus",
       subtitulo: "My work approach",
@@ -148,6 +148,7 @@ export default {
     page: "Contact",
     name: "Cori Bot",
     online: "Online",
+    talk: "Talk to Cori",
     botIntro:
       "Hi! I'm Cori Bot 🤖. I'm here to help you learn more about Cori's experience and projects.",
     botQuestion: "What would you like to explore today?",

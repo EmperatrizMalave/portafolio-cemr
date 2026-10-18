@@ -248,59 +248,102 @@
 }
 
 /* --- LA MAGIA DEL SPRITE --- */
-.cori-personaje {
-  width: 96px;  /* 1.5x el cuadro original (64px) para que se vea mÃ¡s grande */
-  height: 96px;
+.caminante {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  width: 84px;
+  height: 148px;
+  pointer-events: none;
+  will-change: transform;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    image-rendering: pixelated;
+    display: block;
+    transform-origin: bottom center;
+  }
+}
+
+.caminante__hit {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.caminante__bubble {
   position: absolute;
-  top: 0;    /* La posiciÃ³n vertical la calcula JavaScript */
-  left: -46px; /* Centrada sobre el riel vertical */
-  z-index: 50; /* Siempre por delante de la lÃ­nea y las tarjetas */
-
-  background-repeat: no-repeat;
-  background-size: 1248px 5184px; /* Sprite escalado 1.5x (832x3456) */
-
-  /* Coordenada exacta de tu imagen (Fila 12: perfil mirando a la derecha, hacia las tarjetas) */
-  background-position: 0px -1056px;
-
-  /* El movimiento de avance fÃ­sico (translaciÃ³n suave de 1 segundo) */
-  transition: top 1s linear;
+  left: 0;
+  bottom: calc(100% + 4px);
+  width: 112px;
+  margin: 0;
+  padding: 4px 6px;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px solid #2b6cb0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 #2b6cb0;
+  font-size: 10px;
+  line-height: 1.25;
+  pointer-events: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Cuando la variable 'estaCaminando' es true, activamos esta clase */
-.cori-personaje.caminando {
-  /* La animaciÃ³n de mover las piernas dura 0.8s y repite los 6 cuadros */
-  animation: caminar-sprite 0.8s steps(6) infinite;
+.caminante--left img {
+  transform: scaleX(-1);
 }
 
-/* Cuando cambia de vista, Cori cae rÃ¡pido a la siguiente lÃ­nea */
-.cori-personaje.cayendo {
-  transition: top 0.6s cubic-bezier(0.5, 0, 1, 0.4); /* CaÃ­da que acelera */
-  animation: caminar-sprite 0.6s steps(6) infinite;
+.caminante--walk img {
+  animation: caminar-bob 0.32s steps(2, end) infinite;
 }
 
-/* Cuando 'estaSaltando' es true, salta con la barra espaciadora */
-.cori-personaje.saltando {
-  animation: saltar 0.6s ease;
+.caminante--left.caminante--walk img {
+  animation: caminar-bob-left 0.32s steps(2, end) infinite;
 }
 
-/* Si camina y salta a la vez, corremos las dos animaciones juntas */
-.cori-personaje.caminando.saltando {
-  animation: saltar 0.6s ease, caminar-sprite 0.8s steps(6) infinite;
+.caminante--jump img {
+  animation: caminante-saltar 0.7s ease;
 }
 
-/* AnimaciÃ³n cuadro por cuadro */
-@keyframes caminar-sprite {
-  from { background-position: 0px -1056px; }
-  /* 6 cuadros x 96px = 480px. Recorre toda esa fila de imÃ¡genes */
-  to { background-position: -480px -1056px; }
+.caminante--left.caminante--jump img {
+  animation: caminante-saltar-left 0.7s ease;
 }
 
-/* Salto vertical: 'transform' sube el personaje sin tocar el 'top' */
-@keyframes saltar {
+@keyframes caminar-bob {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes caminar-bob-left {
+  0%,
+  100% { transform: scaleX(-1) translateY(0); }
+  50% { transform: scaleX(-1) translateY(-8px); }
+}
+
+@keyframes caminante-saltar {
   0%,
   100% { transform: translateY(0); }
   40%,
-  60% { transform: translateY(-48px); }
+  60% { transform: translateY(-96px); }
+}
+
+@keyframes caminante-saltar-left {
+  0%,
+  100% { transform: scaleX(-1) translateY(0); }
+  40%,
+  60% { transform: scaleX(-1) translateY(-96px); }
 }
 
 .enfoque__section:focus-visible {

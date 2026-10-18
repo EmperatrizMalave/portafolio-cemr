@@ -53,6 +53,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 8%;
+    image-rendering: pixelated;
+    background: #fff;
   }
 }
 
@@ -107,7 +110,7 @@
   overflow-y: auto;
   background-color: var(--bg1);
   scrollbar-width: thin;
-  scrollbar-color: var(--body) transparent;
+  scrollbar-color: #38a3d6 transparent;
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -115,8 +118,11 @@
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--body);
+    background: #38a3d6;
     border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #1a7eab;
   }
 }
 
@@ -145,6 +151,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 8%;
+    image-rendering: pixelated;
+    background: #fff;
   }
 }
 

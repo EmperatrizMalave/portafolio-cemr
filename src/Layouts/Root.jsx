@@ -3,6 +3,7 @@ import Footer from "../Components/Shared/Footer/Footer";
 import DocumentHead from "../Components/Shared/DocumentHead";
 import { Outlet, useLocation } from "react-router-dom";
 import Banner from "../Components/Banner/Banner";
+import Caminante from "../Components/Enfoque/Caminante";
 
 const Root = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const Root = () => {
 
       <Outlet />
       <Footer />
+      <Caminante />
     </>
   );
 };
