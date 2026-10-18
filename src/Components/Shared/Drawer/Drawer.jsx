@@ -1,6 +1,6 @@
 import { XLg, ChevronRight } from "react-bootstrap-icons";
 import logo from "../../../assets/img/logo/logo.webp";
-import { socialIcons } from "../../../Utlits/socilIcons";
+import { socialIcons } from "../../../Utils/socialIcons";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -8,17 +8,19 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
   const { t } = useTranslation();
   return (
     <div className={`subside__barmenu ${isSidebarActive ? "active" : ""}`}>
-      <div
+      <button
+        type="button"
         onClick={() => setIsSidebarActive(false)}
         className="remove__click d-flex justify-content-center align-items-center"
+        aria-label={t("nav.closeMenu")}
       >
         <i>
           <XLg />
         </i>
-      </div>
+      </button>
       <div className="sub__contact__wrapper d-grid">
-        <Link to={""} className="side-logo">
-          <img src={logo} className="logo-drawer" alt="img" />
+        <Link to="/" className="side-logo">
+          <img src={logo} className="logo-drawer" alt={t("common.logoAlt")} />
           <p className="text-logo-drawer">{t("drawer.name")}</p>
         </Link>
         <p>{t("drawer.bio")}</p>
@@ -32,9 +34,9 @@ const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
         </div>
         <div className="sub__contact-right mb-80 position-relative">
           <ul className="social d-flex gap-3">
-            {socialIcons.map(({ icon, id, href }) => (
+            {socialIcons.map(({ icon, id, href, label }) => (
               <li key={id}>
-                <a href={href} target="_blank" rel="noopener noreferrer">
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
                   <i>{icon}</i>
                 </a>
               </li>

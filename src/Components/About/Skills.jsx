@@ -12,77 +12,25 @@ import figma from "../../assets/img/about/figma.png";
 import excel from "../../assets/img/about/excel.png";
 import gs from "../../assets/img/about/gs.png";
 import postman from "../../assets/img/about/postman.svg";
+import cursor from "../../assets/img/about/cursor.svg";
+import opencode from "../../assets/img/about/opencode.svg";
 
 
 
 const skillsList = [
-  {
-    id: 1,
-    skill: "Html",
-    percentage: "90%",
-    image: html,
-  },
-
-  {
-    id: 2,
-    skill: "Css",
-    percentage: "85%",
-    image: css,
-  },
-  {
-    id: 3,
-    skill: "Javascript",
-    percentage: "97%",
-    image: js,
-  },
-    {
-    id: 4,
-    skill: "React",
-    percentage: "97%",
-    image: react,
-  },
-      {
-    id: 5,
-    skill: "git",
-    percentage: "97%",
-    image: git,
-  },
-  {
-    id: 6,
-    skill: "Bootstrap",
-    percentage: "97%",
-    image: boot,
-  },
-  {
-    id: 7,
-    skill: "Material UI",
-    percentage: "97%",
-    image: mui,
-  },
-    {
-    id: 8,
-    skill: "Figma",
-    percentage: "97%",
-    image: figma,
-  },
-      {
-    id: 9,
-    skill: "Excel",
-    percentage: "97%",
-    image: excel,
-  },
-      {
-    id: 10,
-    skill: "Google sheets",
-    percentage: "97%",
-    image: gs,
-  },
-  {
-    id: 11,
-    skill: "Postman",
-    percentage: "85%",
-    image: postman,
-  },
+  { id: 1, skill: "Html", image: html },
+  { id: 2, skill: "Css", image: css },
+  { id: 3, skill: "Javascript", image: js },
+  { id: 4, skill: "React", image: react },
+  { id: 5, skill: "git", image: git },
+  { id: 6, skill: "Bootstrap", image: boot },
+  { id: 7, skill: "Material UI", image: mui },
+  { id: 8, skill: "Figma", image: figma },
+  { id: 9, skill: "Excel", image: excel },
+  { id: 10, skill: "Google sheets", image: gs },
+  { id: 11, skill: "Postman", image: postman },
+  { id: 12, skill: "Cursor", image: cursor },
+  { id: 13, skill: "OpenCode", image: opencode },
 ];
 const Skills = ({ isTabActive }) => {
   const { t } = useTranslation();
@@ -92,7 +40,7 @@ const Skills = ({ isTabActive }) => {
         <div className="row g-4 align-items-lg-start align-items-center">
           <div className="col-lg-5">
             <div className="about__onethumb">
-              <img src={personalInfothumb} alt="img" />
+              <img src={personalInfothumb} alt={t("common.portraitAlt")} />
             </div>
           </div>
           <div className="col-lg-7">
@@ -101,16 +49,15 @@ const Skills = ({ isTabActive }) => {
               <p>{t("about.skills.text")}</p>
               <div className="about__contactwrap">
                 <div className="row g-4">
-                  {skillsList.map(({id, skill, image, percentage}) => {
+                  {skillsList.map(({id, skill, image}) => {
                     return (
                       <div key={id} className="col-xxl-6 col-xl-6 col-lg-12 col-md-6">
                         <div className="abox myskill__item">
                           <div className="thumb">
-                            <img src={image} alt="img" style={{ width: '80px', height: '80px' }}/>
+                            <img src={image} alt={skill} />
                           </div>
                           <div className="mys">
-                            <span className="ptext fz-18 mb-15 d-block">{skill}</span>
-                            <h1 className="fw-600">{percentage}</h1>
+                            <span className="skill-name">{skill}</span>
                           </div>
                         </div>
                       </div>

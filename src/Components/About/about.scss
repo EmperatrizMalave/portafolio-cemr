@@ -299,5 +299,17 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    .thumb img{
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+    .skill-name{
+        display: block;
+        margin: 0;
+        color: var(--mtitle);
+        font-size: $fs-xl;
+        font-weight: 600;
+    }
 }
 //my skill

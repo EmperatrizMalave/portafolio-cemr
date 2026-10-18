@@ -76,7 +76,7 @@ const Header = () => {
         <div className="header-wrapper">
           <div className="main__logo">
             <Link to={"/"} className="logo">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt={t("common.logoAlt")} />
             </Link>
           </div>
           <ul className={`main-menu ${menuActive ? "active" : ""}`}>
@@ -114,20 +114,24 @@ const Header = () => {
                 <ArrowRight className="fz-20" />
               </span>
             </Link>
-            <div
+            <button
+              type="button"
               onClick={handleHeaderToggle}
               className={`header-bar d-lg-none ${menuActive ? "active" : ""}`}
+              aria-label={menuActive ? t("nav.closeMenu") : t("nav.openMenu")}
             >
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <div
+            </button>
+            <button
+              type="button"
               onClick={() => setIsSidebarActive(true)}
               className="remove__click"
+              aria-label={t("nav.openMenu")}
             >
               <List className="icon" />
-            </div>
+            </button>
           </div>
         </div>
       </div>

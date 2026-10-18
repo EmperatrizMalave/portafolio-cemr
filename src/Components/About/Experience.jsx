@@ -9,7 +9,7 @@ const Experience = ({isTabActive}) => {
         <div className="row g-4 align-items-lg-start align-items-center">
           <div className="col-lg-5">
             <div className="about__onethumb">
-              <img src={personalInfothumb} alt="img" />
+              <img src={personalInfothumb} alt={t("common.portraitAlt")} />
             </div>
           </div>
           <div className="col-lg-7">

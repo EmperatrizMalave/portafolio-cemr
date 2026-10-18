@@ -4,48 +4,37 @@ import { ScrollRestoration } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
 import avatar from "../../assets/img/banner/banner-man.png";
+import { emailLink } from "../../Utils/socialIcons";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
+
+const quickOptions = [
+  {
+    id: "profile",
+    labelKey: "contact.options.profile.label",
+    responseKey: "contact.options.profile.response",
+  },
+  {
+    id: "projects",
+    labelKey: "contact.options.projects.label",
+    responseKey: "contact.options.projects.response",
+  },
+  {
+    id: "hi",
+    labelKey: "contact.options.hi.label",
+    responseKey: "contact.options.hi.response",
+  },
+];
 
 const Contact = () => {
   const { t } = useTranslation();
   const [messages, setMessages] = useState([
-    {
-      id: 1,
-      sender: "bot",
-      text: t("contact.botIntro"),
-    },
-    {
-      id: 2,
-      sender: "bot",
-      text: t("contact.botQuestion"),
-    },
+    { id: 1, sender: "bot", key: "contact.botIntro" },
+    { id: 2, sender: "bot", key: "contact.botQuestion" },
   ]);
+  const [draft, setDraft] = useState("");
   const chatBodyRef = useRef(null);
-
-  const quickOptions = [
-    {
-      id: 1,
-      label: t("contact.options.profile.label"),
-      response: t("contact.options.profile.response"),
-    },
-    {
-      id: 2,
-      label: t("contact.options.projects.label"),
-      response: t("contact.options.projects.response"),
-    },
-    {
-      id: 3,
-      label: t("contact.options.message.label"),
-      response: t("contact.options.message.response"),
-      showLinks: true,
-    },
-    {
-      id: 4,
-      label: t("contact.options.hi.label"),
-      response: t("contact.options.hi.response"),
-    },
-  ];
+  const composerRef = useRef(null);
 
   useEffect(() => {
     const body = chatBodyRef.current;
@@ -57,14 +46,37 @@ const Contact = () => {
   const handleOption = (option) => {
     setMessages((prev) => [
       ...prev,
-      { id: prev.length + 1, sender: "user", text: option.label },
+      { id: `${option.id}-user-${prev.length}`, sender: "user", key: option.labelKey },
       {
-        id: prev.length + 2,
+        id: `${option.id}-bot-${prev.length}`,
         sender: "bot",
-        text: option.response,
-        showLinks: option.showLinks,
+        key: option.responseKey,
       },
     ]);
+  };
+
+  const sendMessage = (event) => {
+    event.preventDefault();
+    const text = draft.trim();
+    if (!text) return;
+
+    if (emailLink) {
+      const subject = encodeURIComponent(t("contact.mailSubject"));
+      const body = encodeURIComponent(text);
+      window.location.href = `${emailLink.href}?subject=${subject}&body=${body}`;
+    }
+
+    setMessages((prev) => [
+      ...prev,
+      { id: `draft-user-${prev.length}`, sender: "user", text },
+      {
+        id: `draft-bot-${prev.length}`,
+        sender: "bot",
+        key: emailLink ? "contact.sent" : "contact.noEmail",
+        showLinks: !emailLink,
+      },
+    ]);
+    setDraft("");
   };
 
   return (
@@ -75,7 +87,7 @@ const Contact = () => {
           <div className="chatbot__card">
             <div className="chatbot__header">
               <div className="chatbot__avatar">
-                <img src={avatar} alt="Cori Bot avatar" />
+                <img src={avatar} alt={t("common.portraitAlt")} />
               </div>
               <div className="chatbot__info">
                 <h4 className="chatbot__name">{t("contact.name")}</h4>
@@ -94,11 +106,11 @@ const Contact = () => {
                 >
                   {message.sender === "bot" && (
                     <div className="chatbot__mini-avatar">
-                      <img src={avatar} alt="Cori Bot avatar" />
+                      <img src={avatar} alt="" />
                     </div>
                   )}
                   <div className="chatbot__bubble">
-                    <p>{message.text}</p>
+                    <p>{message.text || t(message.key)}</p>
                     {message.showLinks && (
                       <div className="chatbot__links">
                         <a
@@ -124,10 +136,34 @@ const Contact = () => {
                   className="chatbot__option"
                   onClick={() => handleOption(option)}
                 >
-                  {option.label}
+                  {t(option.labelKey)}
                 </button>
               ))}
+              <button
+                type="button"
+                className="chatbot__option"
+                onClick={() => composerRef.current?.focus()}
+              >
+                {t("contact.options.message.label")}
+              </button>
             </div>
+
+            <form className="chatbot__composer" onSubmit={sendMessage}>
+              <label className="visually-hidden" htmlFor="contact-message">
+                {t("contact.placeholder")}
+              </label>
+              <textarea
+                id="contact-message"
+                ref={composerRef}
+                rows="3"
+                value={draft}
+                placeholder={t("contact.placeholder")}
+                onChange={(event) => setDraft(event.target.value)}
+              />
+              <button type="submit" className="chatbot__send" disabled={!draft.trim()}>
+                {t("contact.send")}
+              </button>
+            </form>
           </div>
         </div>
       </section>

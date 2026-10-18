@@ -1,26 +1,31 @@
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const awardList = [
   {
     id: 1,
+    slug: "lector-xml",
     awardName: "about.awards.items.xml.name",
     contest: "about.awards.items.xml.contest",
     year: "2025",
   },
   {
     id: 2,
+    slug: "queen-dance",
     awardName: "about.awards.items.queen.name",
     contest: "about.awards.items.queen.contest",
     year: "2023",
   },
   {
     id: 3,
+    slug: "drbanner",
     awardName: "about.awards.items.drbanner.name",
     contest: "about.awards.items.drbanner.contest",
     year: "2022",
   },
   {
     id: 4,
+    slug: "logotipos-css",
     awardName: "about.awards.items.logos.name",
     contest: "about.awards.items.logos.contest",
     year: "2022",
@@ -44,19 +49,21 @@ const Awards = () => {
                 </td>
                 <td className="cusnoe"></td>
                 <td className="text-end">
-                  <a
-                    href="#0"
+                  <Link
+                    to="/portfolio"
                     className="d-flex table__view justify-content-end align-items-center base gap-2"
                   >
                     <span style={{ color: " #1a1a1a"}} >{t("about.awards.link")}</span>
                     <i className="bi bi-arrow-right"></i>
-                  </a>
+                  </Link>
                 </td>
               </tr>
-              {awardList.map(({ contest, id, year, awardName }) => {
+              {awardList.map(({ contest, id, year, awardName, slug }) => {
                 return (
                   <tr key={id}>
-                    <td style={{ color: " #1a1a1a"}}>{t(awardName)}</td>
+                    <td style={{ color: " #1a1a1a"}}>
+                      <Link to={`/portfolio/${slug}`}>{t(awardName)}</Link>
+                    </td>
                     <td style={{ color: " #1a1a1a"}}>{t(contest)}</td>
                     <td className="text-end" style={{ color: " #1a1a1a"}}>{year}</td>
                   </tr>

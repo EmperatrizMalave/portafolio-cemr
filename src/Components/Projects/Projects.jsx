@@ -4,16 +4,16 @@ import { useTranslation } from "react-i18next";
 import Title from "../Shared/Title/Title";
 import Lightbox from "../Shared/LightBox/LightBox";
 import ProjectCard from "../Shared/ProjectCard/ProjectCard";
-import { projectList } from "../../Utlits/projectList";
+import { projectList } from "../../Utils/projectList";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
   const { t } = useTranslation();
-  const [currentId, setCurrentId] = useState(0);
+  const [gallery, setGallery] = useState([]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const openLightbox = (index) => {
-    setCurrentId(index);
+  const openLightbox = (images) => {
+    setGallery(images);
     setLightboxOpen(true);
   };
 
@@ -27,21 +27,21 @@ const Projects = () => {
         />
 
         <div className={`project__wrapone`}>
-          {projectList.map(({ heading, headingKey, id, image, subHeading, subHeadingKey, navigate }, index) => (
+          {projectList.filter((project) => project.featured).map((project, index) => (
             <ProjectCard
-              key={id}
-              image={image}
-              heading={t(headingKey) !== headingKey ? t(headingKey) : heading}
-              subHeading={t(subHeadingKey) !== subHeadingKey ? t(subHeadingKey) : subHeading}
-              openLightbox={openLightbox}
+              key={project.id}
+              image={project.image}
+              heading={t(project.headingKey)}
+              subHeading={t(project.subHeadingKey)}
+              onOpen={() => openLightbox(project.imagesList)}
               index={index}
-              navigate={navigate}
+              navigate={`/portfolio/${project.slug}`}
             />
           ))}
         </div>
 
         <div className="custom__hover">
-          <Link to={"/protfolio"}
+          <Link to={"/portfolio"}
             className="hover__circle mauto"
             data-aos="zoom-out-down"
             data-aos-duration="2000"
@@ -55,9 +55,9 @@ const Projects = () => {
       </div>
       {lightboxOpen && (
         <Lightbox
-          images={projectList[currentId].imagesList}
+          images={gallery}
           setLightboxOpen={setLightboxOpen}
-          currentId={currentId}
+          currentId={0}
         />
       )}
     </section>

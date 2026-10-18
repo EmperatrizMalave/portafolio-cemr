@@ -1,4 +1,38 @@
-.protfolio__filter {
+.project-detail {
+  h2 {
+    color: var(--mtitle);
+    font-size: $fs-xl;
+    margin-bottom: 12px;
+  }
+  p {
+    color: var(--subtitle);
+    margin-bottom: 28px;
+  }
+  &__meta {
+    border: 1px solid var(--cusborder);
+    border-radius: 10px;
+    padding: 24px;
+    span {
+      display: block;
+      color: var(--buttoncolor);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  &__gallery {
+    display: grid;
+    gap: 16px;
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+.portfolio__filter {
   .tablinks {
     border: 1px solid var(--cusborder);
     padding: 10px 10px;

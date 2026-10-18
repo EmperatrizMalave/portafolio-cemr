@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { projectList } from "../../Utlits/projectList";
+import { projectList } from "../../Utils/projectList";
 import PageHeader from "../../Components/Shared/PageHeader/PageHeader";
 import ProjectCard from "../../Components/Shared/ProjectCard/ProjectCard";
 import Lightbox from "../../Components/Shared/LightBox/LightBox";
@@ -34,10 +34,10 @@ const categoryList = [
     value: "website",
   },
 ];
-const Protfolio = () => {
+const Portfolio = () => {
   const { t } = useTranslation();
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentId, setCurrentId] = useState(0);
+  const [gallery, setGallery] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("all");
 
   // ---------- Filer project by category
@@ -51,8 +51,8 @@ const Protfolio = () => {
     }
   }
 
-  const openLightbox = (index) => {
-    setCurrentId(index);
+  const openLightbox = (images) => {
+    setGallery(images);
     setLightboxOpen(true);
   };
 
@@ -61,7 +61,7 @@ const Protfolio = () => {
       <PageHeader heading={t("portfolio.heading")} page={t("portfolio.page")} />
       <section className="project__section pb-120">
         <div className="container">
-          <div className="singletab protfolio__filter">
+          <div className="singletab portfolio__filter">
             <ul
               className="tablinks"
               data-aos="fade-down"
@@ -85,15 +85,19 @@ const Protfolio = () => {
             </ul>
             <div className="tabcontents project__wrapone">
               {filterProject.map(
-                ({ heading, headingKey, id, image, subHeading, subHeadingKey }, index) => (
+                (project, index) => (
                   <ProjectCard
-                    key={id}
-                    image={image}
-                    heading={t(headingKey)}
-                    subHeading={t(subHeadingKey)}
-                    openLightbox={openLightbox}
+                    key={project.id}
+                    image={project.image}
+                    heading={t(project.headingKey)}
+                    subHeading={t(project.subHeadingKey)}
+                    onOpen={
+                      project.imagesList?.length
+                        ? () => openLightbox(project.imagesList)
+                        : undefined
+                    }
                     index={index}
-                    navigate="/protfolio-details"
+                    navigate={`/portfolio/${project.slug}`}
                   />
                 )
               )}
@@ -102,9 +106,9 @@ const Protfolio = () => {
         </div>
         {lightboxOpen && (
           <Lightbox
-            images={projectList[currentId].imagesList}
+            images={gallery}
             setLightboxOpen={setLightboxOpen}
-            currentId={currentId}
+            currentId={0}
           />
         )}
       </section>
@@ -113,4 +117,4 @@ const Protfolio = () => {
   );
 };
 
-export default Protfolio;
+export default Portfolio;

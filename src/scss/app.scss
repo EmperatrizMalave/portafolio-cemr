@@ -13,7 +13,6 @@
 @import "../Components/Shared/PageHeader/pageHeader.scss";
 @import "../Components/Shared/Title/title.scss";
 @import "../Components/Shared/Drawer/drawer.scss";
-@import "../Components/Shared/Form/form.scss";
 @import "../Components/Shared/Header/header.scss";
 @import "../Components/Shared/Marquee/marquee.scss";
 // ------------ Shared style
@@ -27,33 +26,19 @@
 @import "../Components/Projects/projects.scss";
 @import "../Components/Shared/ProjectCard/projectCard.scss";
 
-// ---------- Service
-@import "../Pages/serviceDetails.scss";
-// ---------- Service
-
-@import "../Components/WorkeProcess/workeProcess.scss";
-@import "../Components/WorkeProcess/workProcessCard.scss";
+@import "../Components/WorkProcess/workProcess.scss";
+@import "../Components/WorkProcess/workProcessCard.scss";
 
 @import "../Components/Enfoque/enfoque.scss";
-@import "../Components/Partner/partner.scss";
 
 
-// ---------- Blog
-@import "../Pages/BlogDetails/blogDetails.scss";
-@import "../Pages/AllBlogs/allBlogs.scss";
-// ---------- Blog
-
-@import "../Components/Pricing/pricing.scss";
-
-@import "../Components/Accordion/accordion.scss";
-
-// ----------- Protfolio
-@import "../Pages/Protfolio/protfolio.scss";
-@import "../Pages/ProtfolioDetails/protfolioDetails.scss";
-// ----------- Protfolio
+// ----------- Portfolio
+@import "../Pages/Portfolio/portfolio.scss";
+// ----------- Portfolio
 
 
 @import "../Pages/Contact/contact.scss";
+@import "../Pages/Info/info.scss";
 
 @import "../Components/Shared/Footer/footer.scss";
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ScrollRestoration } from "react-router-dom";
 
-import { images, images2 } from "../Utlits/marqueeItems";
+import { images, images2 } from "../Utils/marqueeItems";
 import About from "../Components/About/About";
 import Projects from "../Components/Projects/Projects";
 import Enfoque from "../Components/Enfoque/Enfoque";

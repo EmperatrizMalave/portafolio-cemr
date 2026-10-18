@@ -1,42 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-import {
-  Facebook,
-  Linkedin,
-  Instagram,
-  PlayFill,
-} from "react-bootstrap-icons";
 
 import bannerMan from "../../assets/img/banner/banner-man.png";
 import scrollDown from "../../assets/img/banner/scroll-down.png";
-import VideoPlay from "../Shared/VideoPlay/VideoPlay";
+import { socialIcons } from "../../Utils/socialIcons";
 
-const socalIcon = [
-  {
-    id: 1,
-    icon: <Facebook />,
-    href: "https://www.facebook.com/profile.php?id=61593324203754",
-  },
-  {
-    id: 2,
-    icon: <Linkedin />,
-    href: "https://www.linkedin.com/in/coromoto-malave-rengel/",
-  },
-  {
-    id: 3,
-    icon: <Instagram />,
-    href: "https://www.instagram.com/cemrtechspace/",
-  },
-];
 const Banner = () => {
   const { t } = useTranslation();
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-
-  const openLightbox = () => {
-    setLightboxOpen(true);
-  };
 
   return (
     <section id="home">
@@ -50,48 +19,40 @@ const Banner = () => {
                 {t("banner.profile")}
                 </span>
               </h1>
-              <div className="video__area">
-                <div onClick={openLightbox} className="video__80 video-btn">
-                  <i>
-                    <PlayFill color="#000" />
-                  </i>
-                </div>
-                <span className="proces">{t("banner.workProcess")}</span>
-              </div>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="banner__thumb right_up_animat">
-              <img src={bannerMan} alt="man-img" />
+              <img src={bannerMan} alt={t("common.portraitAlt")} />
             </div>
           </div>
         </div>
       </div>
       <div className="banner__leftinfo">
         <div className="right__infoscroll">
-          <Link className="scroll">
+          <a className="scroll" href="#about">
             {t("banner.scrollDown")}
-          </Link>
-          <Link className="scroll__bar">
-            <img src={scrollDown} alt="img" />
-          </Link>
+          </a>
+          <a className="scroll__bar" href="#about" aria-label={t("banner.scrollDown")}>
+            <img src={scrollDown} alt="" />
+          </a>
         </div>
       </div>
       <div className="banner__rightinfo">
         <div className="right__infoscroll">
-          <Link to={""} className="scroll">
+          <span className="scroll">
             {t("banner.followMe")}
-          </Link>
-          <Link to={""} className="scroll__bar">
-            <img src={scrollDown} alt="img" />
-          </Link>
+          </span>
+          <span className="scroll__bar">
+            <img src={scrollDown} alt="" />
+          </span>
         </div>
         <div className="banner__xlsocial">
           <ul className="banner__soci d-grid justify-content-center">
-            {socalIcon.map(({ icon, id, href }) => {
+            {socialIcons.map(({ icon, id, href, label }) => {
               return (
                 <li key={id}>
-                  <a href={href} target="_blank" rel="noopener noreferrer">
+                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
                     <i>{icon}</i>
                   </a>
                 </li>
@@ -100,12 +61,6 @@ const Banner = () => {
           </ul>
         </div>
       </div>
-      {lightboxOpen && (
-        <VideoPlay
-          setLightboxOpen={setLightboxOpen}
-          url="https://www.youtube.com/embed/tgbNymZ7vqY"
-        />
-      )}
     </section>
   );
 };

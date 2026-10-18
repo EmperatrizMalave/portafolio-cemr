@@ -1,26 +1,7 @@
-import { Facebook, Linkedin, Instagram } from "react-bootstrap-icons";
-
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import personalInfoThumb from "../../assets/img/about/personal-infothumb.webp";
-
-const socialContacts = [
-  {
-    id: 1,
-    icon: <Facebook />,
-    href: "https://www.facebook.com/profile.php?id=61593324203754",
-  },
-  {
-    id: 2,
-    icon: <Linkedin />,
-    href: "https://www.linkedin.com/in/coromoto-malave-rengel/",
-  },
-  {
-    id: 3,
-    icon: <Instagram />,
-    href: "https://www.instagram.com/cemrtechspace/",
-  },
-];
+import { cvLink, emailLink, socialIcons } from "../../Utils/socialIcons";
 
 const contactInfo = [
   {
@@ -33,10 +14,31 @@ const contactInfo = [
     system: "about.aboutMe.address",
     contact: "about.aboutMe.location",
   },
+  ...(emailLink
+    ? [
+        {
+          id: 4,
+          system: "about.aboutMe.email",
+          href: emailLink.href,
+          text: emailLink.label,
+        },
+      ]
+    : []),
+  ...(cvLink
+    ? [
+        {
+          id: 5,
+          system: "about.aboutMe.cv",
+          href: cvLink.href,
+          textKey: "about.aboutMe.cvAction",
+          download: true,
+        },
+      ]
+    : []),
   {
     id: 3,
     system: "about.aboutMe.followers",
-    socalContact: socialContacts,
+    socalContact: socialIcons,
   },
 ];
 const AboutMe = ({ isTabActive }) => {
@@ -51,7 +53,7 @@ const AboutMe = ({ isTabActive }) => {
               data-aos="zoom-in"
               data-aos-duration="500"
             >
-              <img src={personalInfoThumb} alt="img" className="personal-image"
+              <img src={personalInfoThumb} alt={t("common.portraitAlt")} className="personal-image"
               />
             </div>
           </div>
@@ -73,7 +75,7 @@ const AboutMe = ({ isTabActive }) => {
                 </p>
               <div className="about__contactwrap">
                 <div className="row g-4">
-                  {contactInfo.map(({ id, contact, socalContact, system }) => {
+                  {contactInfo.map(({ id, contact, socalContact, system, href, text, textKey, download }) => {
                     return (
                       <div
                         key={id}
@@ -86,11 +88,23 @@ const AboutMe = ({ isTabActive }) => {
                               {t(system)}
                             </span>
                             {contact && <Link to={""}>{t(contact)}</Link>}
+                            {href && (
+                              <a
+                                href={href}
+                                {...(download
+                                  ? { download: true }
+                                  : href.startsWith("mailto:")
+                                    ? {}
+                                    : { target: "_blank", rel: "noopener noreferrer" })}
+                              >
+                                {text || t(textKey)}
+                              </a>
+                            )}
                             {socalContact && (
                               <ul className="d-flex align-items-center gap-2 gap-xl-4">
-                                {socalContact.map(({ icon, href: sHref, id: sId }) => (
+                                {socalContact.map(({ icon, href: sHref, id: sId, label }) => (
                                   <li key={sId}>
-                                    <a href={sHref} target="_blank" rel="noopener noreferrer">
+                                    <a href={sHref} target="_blank" rel="noopener noreferrer" aria-label={label}>
                                       {icon}
                                     </a>
                                   </li>

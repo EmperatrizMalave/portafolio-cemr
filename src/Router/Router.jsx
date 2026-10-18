@@ -1,13 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate, useParams } from "react-router-dom";
 import Root from "../Layouts/Root";
 import Home from "../Pages/Home";
-import AllServices from "../Pages/AllServices";
-import ServiceDetails from "../Pages/ServiceDetails";
 import Contact from "../Pages/Contact/Contact";
-import AllBlogs from "../Pages/AllBlogs/AllBlogs";
-import BlogDetails from "../Pages/BlogDetails/BlogDetails";
-import Protfolio from "../Pages/Protfolio/Protfolio";
-import ProtfolioDetails from "../Pages/ProtfolioDetails/ProtfolioDetails";
+import Portfolio from "../Pages/Portfolio/Portfolio";
+import ProjectDetail from "../Pages/Portfolio/ProjectDetail";
+import NotFound from "../Pages/Info/NotFound";
+import Legal from "../Pages/Info/Legal";
+
+const LegacyProjectRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={`/portfolio/${slug}`} replace />;
+};
 
 export const router = createBrowserRouter([
   {
@@ -19,32 +22,56 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/all-services",
-        element: <AllServices />,
-      },
-      {
-        path: "/service-details",
-        element: <ServiceDetails />,
-      },
-      {
-        path: "/all-blog",
-        element: <AllBlogs />,
-      },
-      {
-        path: "/blog-details",
-        element: <BlogDetails />,
-      },
-      {
         path: "/contact",
         element: <Contact />,
       },
       {
+        path: "/portfolio",
+        element: <Portfolio />,
+      },
+      {
+        path: "/portfolio/:slug",
+        element: <ProjectDetail />,
+      },
+      {
+        path: "/terminos",
+        element: <Legal kind="terms" />,
+      },
+      {
+        path: "/privacidad",
+        element: <Legal kind="privacy" />,
+      },
+      {
         path: "/protfolio",
-        element: <Protfolio />,
+        element: <Navigate to="/portfolio" replace />,
+      },
+      {
+        path: "/protfolio/:slug",
+        element: <LegacyProjectRedirect />,
       },
       {
         path: "/protfolio-details",
-        element: <ProtfolioDetails />,
+        element: <Navigate to="/portfolio" replace />,
+      },
+      {
+        path: "/all-services",
+        element: <Navigate to="/" replace />,
+      },
+      {
+        path: "/service-details",
+        element: <Navigate to="/" replace />,
+      },
+      {
+        path: "/all-blog",
+        element: <Navigate to="/" replace />,
+      },
+      {
+        path: "/blog-details",
+        element: <Navigate to="/" replace />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

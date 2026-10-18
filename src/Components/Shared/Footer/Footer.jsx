@@ -1,38 +1,45 @@
-import { ArrowUpShort, Facebook, Instagram, Linkedin } from "react-bootstrap-icons";
+import { ArrowUpShort } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import avatar from "../../../assets/img/banner/banner-man.png";
-
-const LINKEDIN_URL = "https://www.linkedin.com/in/coromoto-malave-rengel/";
-const INSTAGRAM_URL = "https://www.instagram.com/cemrtechspace/";
-const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61593324203754";
-
-const contactButtons = [
-  {
-    id: 1,
-    label: "LinkedIn",
-    icon: <Linkedin />,
-    href: LINKEDIN_URL,
-    target: "_blank",
-  },
-  {
-    id: 2,
-    label: "Instagram",
-    icon: <Instagram />,
-    href: INSTAGRAM_URL,
-    target: "_blank",
-  },
-  {
-    id: 3,
-    label: "Facebook",
-    icon: <Facebook />,
-    href: FACEBOOK_URL,
-    target: "_blank",
-  },
-];
+import { cvLink, emailLink, socialIcons } from "../../../Utils/socialIcons";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const footerOrder = ["LinkedIn", "Instagram", "Facebook", "GitHub"];
+  const contactButtons = [
+    ...footerOrder
+      .map((name) => socialIcons.find((item) => item.label === name))
+      .filter(Boolean)
+      .map(({ id, label, icon, href }) => ({
+        id,
+        label,
+        icon,
+        href,
+        target: "_blank",
+      })),
+    ...(emailLink
+      ? [
+          {
+            id: "email",
+            label: emailLink.label,
+            icon: emailLink.icon,
+            href: emailLink.href,
+          },
+        ]
+      : []),
+    ...(cvLink
+      ? [
+          {
+            id: "cv",
+            label: t("footer.cv"),
+            icon: cvLink.icon,
+            href: cvLink.href,
+            download: true,
+          },
+        ]
+      : []),
+  ];
   return (
     <footer className="footer__section">
       <div className="container">
@@ -52,13 +59,14 @@ const Footer = () => {
             </div>
             <div className="col-lg-6">
               <div className="footer__list">
-                {contactButtons.map(({ id, label, icon, href, target }) => (
+                {contactButtons.map(({ id, label, icon, href, target, download }) => (
                   <a
                     key={id}
                     href={href}
                     className="footer__button"
                     target={target}
                     rel={target ? "noopener noreferrer" : undefined}
+                    {...(download ? { download: true } : {})}
                   >
                     <span className="footer__arrow">&rarr;</span>
                     <span className="footer__icon">{icon}</span>
@@ -74,7 +82,7 @@ const Footer = () => {
         <div className="container">
           <div className="copyright">
             <p className="fisrtp">
-              Copyright © 2025{" "}
+              Copyright © 2026{" "}
               <Link to={"/"} className="inici">
                 CEMR.
               </Link>{" "}
@@ -82,10 +90,10 @@ const Footer = () => {
             </p>
             <ul className="terms">
               <li>
-                <a href="#0"> {t("footer.terms")} </a>
+                <Link to="/terminos"> {t("footer.terms")} </Link>
               </li>
               <li>
-                <a href="#0"> {t("footer.privacy")} </a>
+                <Link to="/privacidad"> {t("footer.privacy")} </Link>
               </li>
             </ul>
             <a href="#about" className="toparrow">

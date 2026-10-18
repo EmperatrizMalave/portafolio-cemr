@@ -224,3 +224,35 @@
     border-color: var(--buttoncolor);
   }
 }
+
+.chatbot__composer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  padding: 0 28px 24px;
+  background-color: var(--white);
+  textarea {
+    flex: 1;
+    resize: vertical;
+    min-height: 72px;
+    border: 1px solid var(--cborder);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--title);
+  }
+}
+
+.chatbot__send {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background-color: var(--buttoncolor);
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

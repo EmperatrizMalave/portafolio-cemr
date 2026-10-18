@@ -5,7 +5,7 @@ const Preloader = () => {
     <div className="preloader__matias">
       <div className="box text-center">
         <div className="matias mb-10">
-          <img src={manimg} alt="img" />
+          <img src={manimg} alt="" />
         </div>
         <span className="fz-30 coro fw-600 text-uppercase">CEMR</span>
       </div>

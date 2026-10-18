@@ -11,7 +11,7 @@ const PageHeader = ({heading, page, className}) => {
             <h1>{heading}</h1>
             <ul className="breakcrumnd__cont justify-content-center">
               <li>
-                <Link to="index-2.html">{t("pageHeader.home")}</Link>
+                <Link to="/">{t("pageHeader.home")}</Link>
               </li>
               <li className="white">/</li>
               <li className="base">{page}</li>

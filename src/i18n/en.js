@@ -6,13 +6,23 @@ export default {
     camino: "My Path",
     contact: "Contact",
     letsTalk: "Let's Talk",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
   },
   banner: {
     qaEngineer: "QA Engineer",
     profile: "Doc & QA Testing",
-    workProcess: "Work Process",
     scrollDown: "scroll down",
     followMe: "Follow Me",
+  },
+  common: {
+    portraitAlt: "Coromoto Malavé",
+    logoAlt: "CEMR",
+  },
+  seo: {
+    title: "Coromoto Malavé | QA Engineer and Frontend",
+    description:
+      "Portfolio of Coromoto Malavé, QA Engineer and frontend developer. Quality assurance, technical documentation and web development.",
   },
   drawer: {
     name: "Coromoto Malave",
@@ -29,6 +39,8 @@ export default {
     personal: "Website created for personal purposes",
     terms: "Terms & Condition",
     privacy: "Privacy Policy",
+    email: "Email",
+    cv: "Download CV",
   },
   about: {
     description:
@@ -47,6 +59,9 @@ export default {
       address: "Address",
       location: "Guadalajara, Jalisco, Mexico",
       followers: "Followers",
+      email: "Email",
+      cv: "CV",
+      cvAction: "Download CV",
     },
     skills: {
       title: "My Skills",
@@ -58,22 +73,22 @@ export default {
       items: {
         qa: { date: "July 2026 - Present", role: "QA Engineer", desc: "Quality Assurance & Documentation" },
         treasury: { date: "August 2025 - July 2026", role: "Treasury & Finance", desc: "Treasury Area" },
-        software2024: { date: "In 2024", role: "Software Engineer", desc: "Expense Control Assistant" },
-        designer2023: { date: "In 2023", role: "Product Designer", desc: "Junior Frontend Developer" },
-        ui2022: { date: "In 2022", role: "Senior UI Designer", desc: "Advertising website development — Freelance project" },
-        crc: { date: "In 2020-2021", role: "Software Engineer", desc: "CRC Operator" },
+        software2024: { date: "2024", role: "Expense Control Assistant", desc: "Expense control" },
+        designer2023: { date: "2023", role: "Junior Frontend Developer", desc: "Frontend development" },
+        ui2022: { date: "2022", role: "Freelance Web Developer", desc: "Advertising website" },
+        crc: { date: "2020-2021", role: "CRC Operator", desc: "CRC operations" },
       },
     },
     education: {
       title: "My Education",
       text: "Solid training in Public Accounting, complemented with Web Development, Data Analytics and AI fundamentals from Google. This background allows me to apply an analytical vision to the design of innovative technology solutions.",
       items: {
-        ai: { date: "2025", course: "Programming Course", desc: "Accelerate your job search with Google AI" },
-        analytics: { date: "2025", course: "Web Design Course", desc: "Google Data Analytics" },
-        fundamentals: { date: "2024", course: "University of Design", desc: "Google AI Essentials" },
-        mendix: { date: "2024", course: "Web Design Course", desc: "Mendix Developer" },
-        fullstack: { date: "2024", course: "Web Design Course", desc: "Java Full Stack Developer" },
-        accountant: { date: "2012-2018", course: "Web Design Course", desc: "Public Accountant. UDO Venezuela" },
+        ai: { date: "2025", course: "Accelerate Your Job Search with AI", desc: "Google" },
+        analytics: { date: "2025", course: "Data Analytics", desc: "Google" },
+        fundamentals: { date: "2024", course: "AI Essentials", desc: "Google" },
+        mendix: { date: "2024", course: "Mendix Developer", desc: "Mendix" },
+        fullstack: { date: "2024", course: "Java Full Stack Developer", desc: "Java" },
+        accountant: { date: "2012-2018", course: "Public Accountant", desc: "UDO Venezuela" },
       },
     },
     awards: {
@@ -94,6 +109,8 @@ export default {
     list: {
       logos: { heading: "Logos in css", subHeading: "Brand Identity & Motion Design" },
       queen: { heading: "Landing page Queen Dance", subHeading: "Design & Branding Mockup" },
+      xml: { heading: "XML reader generator", subHeading: "Python, CSS, HTML and JavaScript" },
+      drbanner: { heading: "Drbanner page", subHeading: "Java, Spring Boot and MySQL" },
     },
   },
   camino: {
@@ -123,17 +140,6 @@ export default {
     docs: "Technical Documentation & Manuals",
     testing: "Functional Testing & UI/UX",
   },
-  partner: {
-    title: "More than 100+ companies trusted us worldwide",
-  },
-  form: {
-    title: "Leave a Reply",
-    text: "Your email address will not be published. Required fields are marked with *.",
-    name: "Name",
-    email: "email",
-    comment: "Write comments",
-    submit: "Post Comment",
-  },
   pageHeader: {
     home: "Home",
   },
@@ -158,98 +164,34 @@ export default {
       },
       message: {
         label: "Send a Message",
-        response: "Great! You can connect with me on LinkedIn or my social networks.",
       },
       hi: {
         label: "Just saying hi!",
         response: "Thanks for visiting the portfolio! Have an excellent day. 😊",
       },
     },
+    placeholder: "Write your message",
+    send: "Send",
+    mailSubject: "Message from the portfolio",
+    sent: "Your email app opened with the message. If it did not, check that the browser allows mail links.",
+    noEmail: "There is no email on the site yet, so the message was not sent. You can write to me on LinkedIn.",
   },
-  services: {
-    heading: "Services All",
-    page: "Services All",
+  notFound: {
+    heading: "Page not found",
+    page: "404",
+    text: "That address does not exist.",
+    home: "Go home",
+    work: "View work",
   },
-  pricing: {
-    title: "The best pricing plans to get your best",
-    sub: "Choose Your Plan",
-    basic: "Basic Plan",
-    ultra: "Ultra Plan",
-    gold: "Gold Plan",
-    perMonth: "per month",
-    features: [
-      "Web Development",
-      "Mobile Development",
-      "Advertising",
-      "Graphic design",
-      "Project management",
-    ],
-    start: "Start My Project Now",
-  },
-  serviceDetails: {
-    heading: "Business Branding",
-    page: "Business Branding",
-    aboutTitle: "About Business Branding Service",
-    aboutText1:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.",
-    aboutText2:
-      "Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem fugiat quo voluptas nulla the Lorem Ipsum generators on the Internet tend to repeat predefined chunks.",
-    specialTitle: "Specialization & Working Process",
-    specialText:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a you need to be sure there isn't anything embarrassing hidden in the middle of text. All the generators on the Internet tend to repeat predefined chunks as necessary, Making this the first true generator on the Internet. It uses a dictionary of over combined with a handful of structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from injected humour, or non-characteristic words etc.",
-    questions: "Questions ? You're Covered",
-    accordion: [
-      {
-        heading: "Simple process for workflow?",
-        para: "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over words, combined with a handful of model structures, to generate Lorem Ipsum which looks reasonable.",
-      },
-      {
-        heading: "Unique brand identity and strategy",
-        para: "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over words, combined with a handful of model structures, to generate Lorem Ipsum which looks reasonable.",
-      },
-      {
-        heading: "Tailor-made digital products",
-        para: "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over words, combined with a handful of model structures, to generate Lorem Ipsum which looks reasonable.",
-      },
-    ],
-    serviceList: "Service List",
-    serviceItems: [
-      "Illustration Design",
-      "Business Branding",
-      "Web UI/UX Design",
-      "Application Design",
-      "Digital Marketing",
-      "Web Development",
-    ],
-    contactMe: "Contact Me",
-  },
-  blog: {
-    standard: "Blog Standard",
-    heading: "Brand design that helps the company grow",
-    page: "Brand design that helps the company grow",
-    meta: "By: admin / Lifestyle / Posted on September 19, 2023 / Comments: 0",
-    para1:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum the Internet tend to repeat predefined chunks as necessary.",
-    para2:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, adipisci velit, sed quia non numquam eius modi tempora incidunts ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem the corporis suscipit laboriosam, nisi ut aliquid.",
-    quote: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, adipisci velit, sed quia non numquam.",
-    quoteAuthor: "David Kingston",
-    para3:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
-    onlyTheme: "is the only theme you will ever need",
-    para4:
-      "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as from these cases are perfectly simple and easy to distinguish. In a free hour.",
-    list: [
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain.",
-      "On the other hand, we denounce with righteous indignation and dislike.",
-    ],
-    para5:
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.",
-    postedIn: "Posted in :",
-    business: "Business",
-    digital: "Digital",
-    share: "Share :",
+  legal: {
+    termsTitle: "Terms & Condition",
+    termsPage: "Terms",
+    termsText:
+      "This site is Coromoto Malavé's personal portfolio. It shows experience and projects. Links to LinkedIn, Instagram and Facebook leave this site.",
+    privacyTitle: "Privacy Policy",
+    privacyPage: "Privacy",
+    privacyText:
+      "There are no accounts and no server storing messages. The chosen language is saved in this browser. If an email is configured, Send opens your mail app and the message is not stored here.",
   },
   portfolio: {
     heading: "My Work & Portfolio",
@@ -261,34 +203,34 @@ export default {
       landing: "Landing Page",
       website: "Website",
     },
-    sub: "Portfolio",
-    related: "Related Work",
-    details: {
-      heading: "Brand Identity & Motion Design",
-      page: "Brand Identity & Motion Design",
-      projectInfo: "Project Info",
-      clients: "Clients",
-      date: "Date",
-      dateValue: "Sept 19, 2023",
-      category: "Category",
-      categoryValue: "Branding Design",
-      location: "Location",
-      locationValue: "24 Fifth st., Los Angeles, USA",
-      para1:
-        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.",
-      para2:
-        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
-      challenge: "Challenge",
-      challengeText:
-        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
-      challengeList: [
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally.",
-        "On the other hand, we denounce with righteous indignation and dislike.",
-      ],
-      solution: "Solution & Result",
-      solutionText:
-        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+    detail: {
+      problem: "Problem",
+      role: "Role",
+      stack: "Stack",
+      result: "Result",
+      year: "Year",
+    },
+    cases: {
+      logos: {
+        problem: "The logos had to be recognizable and animated using only HTML and CSS.",
+        role: "Frontend development",
+        result: "A series of animated logos for brand identity.",
+      },
+      queen: {
+        problem: "Queen Dance needed a landing page to present the brand.",
+        role: "Frontend development",
+        result: "A landing page with the project's visual mockup.",
+      },
+      xml: {
+        problem: "An XML file had to be read and shown without checking it by hand.",
+        role: "Development",
+        result: "An XML reader generator.",
+      },
+      drbanner: {
+        problem: "The Drbanner page had to store and display its information.",
+        role: "Web development",
+        result: "A page built with Java, Spring Boot and MySQL.",
+      },
     },
   },
 };
