@@ -5,31 +5,19 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
-    min-height: 752px;
-    @include breakpoint(max-xxl) {
-        min-height: 612px;
-    }
-    @include breakpoint(max-lg) {
-        min-height: 0;
-    }
+    min-height: 0;
 }
 .banner__content{
-    padding: 100px 30px 180px;
-    .bn__currently{
-        font-size: $fs-lg;
-        margin-bottom: 50px;
-        border-bottom: 1px solid black;
-        color: black;
-        display: inline-block;
-        padding-bottom: 16px;
-        &:hover{
-            color: var(--buttoncolor);
-            border-color: var(--buttoncolor);
-        }
-    }
+    padding: 72px 30px 36px;
     h1{
         font-size: $fs-7xl;
-        margin-bottom: 50px;
+        margin-bottom: 28px;
+    }
+    .banner__cv{
+        display: inline-flex;
+        &[aria-disabled="true"]{
+            cursor: default;
+        }
     }
     @include breakpoint(max-xxxl){
         @include breakpoint(xl){
@@ -44,14 +32,14 @@
         }
         h1{
             font-size: $fs-7xl;
-            margin-bottom: 50px;
+            margin-bottom: 28px;
         }
     }
     @include breakpoint(max-xl){
-        padding: 120px 0 230px;
+        padding: 80px 0 40px;
     }
     @include breakpoint(max-lg){
-        padding: 90px 0 180px;
+        padding: 72px 0 36px;
         .bn__currently{
             font-size: $fs-xl;
             margin-bottom: 40px;
@@ -59,11 +47,11 @@
         }
         h1{
             font-size: $fs-6xl;
-            margin-bottom: 50px;
+            margin-bottom: 24px;
         }
     }
     @include breakpoint(max-md){
-        padding: 80px 0 165px;
+        padding: 64px 0 32px;
         .bn__currently{
             font-size: $fs-lg;
             margin-bottom: 35px;
@@ -71,11 +59,11 @@
         }
         h1{
             font-size: $fs-4xl;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
     }
     @include breakpoint(max-sm){
-        padding: 60px 0 115px;
+        padding: 48px 0 28px;
         .bn__currently{
             font-size: $fs-base;
             margin-bottom: 35px;
@@ -83,17 +71,17 @@
         }
         h1{
             font-size: $fs-3xl;
-            margin-bottom: 30px;
+            margin-bottom: 16px;
         }
     }
     @include breakpoint(max-sm){
-        padding: 60px 0 110px;
+        padding: 48px 0 24px;
         .bn__currently{
             margin-bottom: 28px;
         }
         h1{
             font-size: $fs-xxl;
-            margin-bottom: 30px;
+            margin-bottom: 16px;
         }
     }
 }
@@ -113,8 +101,8 @@
 .banner__leftinfo{
     position: absolute;
     left: -55px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 168px;
+    transform: none;
     display: grid;
     gap: 220px;
     @include breakpoint(max-xxxl){
@@ -184,11 +172,11 @@
 }
 .banner__rightinfo{
     right: 0px;
-    gap: 150px;
-    top: 55%;
+    gap: 40px;
+    top: 130px;
     display: grid;
     position: absolute;
-    transform: translateY(-50%);
+    transform: none;
     .right__infoscroll{
         margin-bottom: 0;
     }
