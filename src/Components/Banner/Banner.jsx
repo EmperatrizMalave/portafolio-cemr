@@ -2,7 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import bannerMan from "../../assets/img/banner/banner-man.png";
 import scrollDown from "../../assets/img/banner/scroll-down.png";
-import { cvLink, socialIcons } from "../../Utils/socialIcons";
+import { socialIcons } from "../../Utils/socialIcons";
+import ResumeMenu from "../Shared/Resume/ResumeMenu";
 
 const Banner = () => {
   const { t } = useTranslation();
@@ -19,15 +20,10 @@ const Banner = () => {
                 {t("banner.profile")}
                 </span>
               </h1>
-              <a
-                className="banner__cv cmn--btn"
-                {...(cvLink ? { href: cvLink.href, download: true } : { "aria-disabled": "true" })}
-              >
-                {t("footer.cv")}
-              </a>
+              <ResumeMenu />
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 banner__photo">
             <div className="banner__thumb right_up_animat">
               <img src={bannerMan} alt={t("common.portraitAlt")} />
             </div>

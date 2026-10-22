@@ -37,7 +37,7 @@
   align-items: center;
   gap: 24px;
   justify-content: center;
-  width: 333px;
+  width: min(333px, 100%);
   margin: 0 auto 30px;
   &::after,
   &::before {
@@ -57,7 +57,8 @@
     background: var(--buttoncolor);
   }
   @include breakpoint(max-xs) {
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     gap: 14px;
     &::before {
       left: 0;

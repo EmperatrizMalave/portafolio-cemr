@@ -15,52 +15,23 @@ const Experience = ({isTabActive}) => {
           <div className="col-lg-7">
             <div className="about__onecontent">
               <h2>{t("about.experience.title")}</h2>
-              <p>{t("about.experience.text")}</p>
-              <div className="exprience_box mt-30">
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.qa.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.experience.items.qa.role")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.experience.items.qa.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.treasury.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.experience.items.treasury.role")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.experience.items.treasury.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.software2024.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.experience.items.software2024.role")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.experience.items.software2024.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.designer2023.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.experience.items.designer2023.role")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.experience.items.designer2023.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.ui2022.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.experience.items.ui2022.role")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.experience.items.ui2022.desc")}</p>
-                  </div>
-                </div>
-              </div>
+              <p>{t("resume.summary")}</p>
               <div className="exprience__box mt-30">
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.experience.items.crc.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.experience.items.crc.role")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.experience.items.crc.desc")}</p>
+                {t("resume.jobs", { returnObjects: true }).map((job) => (
+                  <div className="exri__item" key={job.role}>
+                    <div className="expri__cont">
+                      <h4>{job.role}</h4>
+                      <p className="exri__org">{job.org}</p>
+                      <p className="exri__date">{job.date}</p>
+                      {job.note ? <p className="exri__note">{job.note}</p> : null}
+                      <ul className="cv-duties">
+                        {job.duties.map((duty) => (
+                          <li key={duty}>{duty}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

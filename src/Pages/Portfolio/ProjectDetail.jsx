@@ -15,6 +15,7 @@ const ProjectDetail = () => {
   return (
     <>
       <PageHeader
+        className="project-detail__header"
         heading={t(project.headingKey)}
         page={t("portfolio.page")}
       />

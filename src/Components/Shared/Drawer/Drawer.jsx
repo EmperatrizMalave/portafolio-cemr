@@ -7,7 +7,10 @@ import { useTranslation } from "react-i18next";
 const Drawer = ({ isSidebarActive, setIsSidebarActive }) => {
   const { t } = useTranslation();
   return (
-    <div className={`subside__barmenu ${isSidebarActive ? "active" : ""}`}>
+    <div
+      className={`subside__barmenu ${isSidebarActive ? "active" : ""}`}
+      aria-hidden={!isSidebarActive}
+    >
       <button
         type="button"
         onClick={() => setIsSidebarActive(false)}

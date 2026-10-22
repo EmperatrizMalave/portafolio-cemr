@@ -1,39 +1,10 @@
-import "react";
 import { useTranslation } from "react-i18next";
 import personalInfothumb from "../../assets/img/about/personal-infothumb.webp";
-import html from "../../assets/img/about/html.png";
-import css from "../../assets/img/about/css.png";
-import js from "../../assets/img/about/js.png";
-import react from "../../assets/img/about/react.png";
-import git from "../../assets/img/about/git.png";
-import boot from "../../assets/img/about/boot.png";
-import mui from "../../assets/img/about/materialui.png";
-import figma from "../../assets/img/about/figma.png";
-import excel from "../../assets/img/about/excel.png";
-import gs from "../../assets/img/about/gs.png";
-import postman from "../../assets/img/about/postman.svg";
-import cursor from "../../assets/img/about/cursor.svg";
-import opencode from "../../assets/img/about/opencode.svg";
 
-
-
-const skillsList = [
-  { id: 1, skill: "Html", image: html },
-  { id: 2, skill: "Css", image: css },
-  { id: 3, skill: "Javascript", image: js },
-  { id: 4, skill: "React", image: react },
-  { id: 5, skill: "git", image: git },
-  { id: 6, skill: "Bootstrap", image: boot },
-  { id: 7, skill: "Material UI", image: mui },
-  { id: 8, skill: "Figma", image: figma },
-  { id: 9, skill: "Excel", image: excel },
-  { id: 10, skill: "Google sheets", image: gs },
-  { id: 11, skill: "Postman", image: postman },
-  { id: 12, skill: "Cursor", image: cursor },
-  { id: 13, skill: "OpenCode", image: opencode },
-];
 const Skills = ({ isTabActive }) => {
   const { t } = useTranslation();
+  const skills = t("resume.skills", { returnObjects: true });
+
   return (
     <div className={`tabitem ${isTabActive === "skills" ? "active" : ""} `}>
       <div className="about__v1wrap">
@@ -49,21 +20,16 @@ const Skills = ({ isTabActive }) => {
               <p>{t("about.skills.text")}</p>
               <div className="about__contactwrap">
                 <div className="row g-4">
-                  {skillsList.map(({id, skill, image}) => {
-                    return (
-                      <div key={id} className="col-xxl-6 col-xl-6 col-lg-12 col-md-6">
-                        <div className="abox myskill__item">
-                          <div className="thumb">
-                            <img src={image} alt={skill} />
-                          </div>
-                          <div className="mys">
-                            <span className="skill-name">{skill}</span>
-                          </div>
+                  {skills.map((group) => (
+                    <div key={group.label} className="col-12">
+                      <div className="abox myskill__item">
+                        <div className="mys">
+                          <span className="skill-name">{group.label}</span>
+                          <p className="cv-skill-items">{group.items}</p>
                         </div>
                       </div>
-                    );
-                  })}
-
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

@@ -14,8 +14,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/cemrtechspace/";
 // Pega la URL cuando la tengas. Vacío = el icono no se muestra.
 export const githubUrl = "";
 
-// PENDIENTE: correo. Vacío = no se muestra.
-export const emailAddress = "";
+export const emailAddress = "coromotoemperatriz.malave@gmail.com";
 
 // PENDIENTE: CV. PDF en public/, por ejemplo "/cv-coromoto-malave.pdf". Vacío = no se muestra.
 export const cvPath = "";

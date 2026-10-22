@@ -124,6 +124,19 @@
         font-size: $fs-lg;
         font-weight: 500;
       }
+      .footer__label--mail {
+        font-size: 15px;
+        text-transform: none;
+        overflow-wrap: anywhere;
+      }
+    }
+    button.footer__button {
+      width: 100%;
+      border: 0;
+      font: inherit;
+      text-align: left;
+      text-transform: none;
+      cursor: pointer;
     }
   }
   @include breakpoint(max-xxl) {

@@ -72,9 +72,6 @@ const Enfoque = () => {
           </span>
         </div>
         <div className="enfoque-contenedor" data-aos="zoom-in">
-          <p className="instruccion">
-            {t("camino.instruction")}
-          </p>
           <div className="camino-wrapper">
             <div className="camino-tech">
               {vistas.map((vista, v) => {

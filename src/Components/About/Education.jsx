@@ -17,48 +17,15 @@ const Education = ({isTabActive}) => {
               <h2>{t("about.education.title")}</h2>
               <p>{t("about.education.text")}</p>
               <div className="exprience__box mt-30">
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.education.items.ai.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.education.items.ai.course")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.education.items.ai.desc")}</p>
+                {t("resume.education", { returnObjects: true }).map((item) => (
+                  <div className="exri__item" key={item.course}>
+                    <div className="expri__cont">
+                      <h4>{item.course}</h4>
+                      <p className="exri__org">{item.place}</p>
+                      <p className="exri__date">{item.date}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.education.items.analytics.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.education.items.analytics.course")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.education.items.analytics.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.education.items.fundamentals.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.education.items.fundamentals.course")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.education.items.fundamentals.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.education.items.mendix.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.education.items.mendix.course")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.education.items.mendix.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500"  style={{ color: "#38A3D6" }}>{t("about.education.items.fullstack.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.education.items.fullstack.course")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.education.items.fullstack.desc")}</p>
-                  </div>
-                </div>
-                <div className="exri__item">
-                  <span className="fz-18 fw-500" style={{ color: "#38A3D6" }}>{t("about.education.items.accountant.date")}</span>
-                  <div className="expri__cont">
-                    <h4 className="mb-15 text-white">{t("about.education.items.accountant.course")}</h4>
-                    <p className="fz-18 pra d-block">{t("about.education.items.accountant.desc")}</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

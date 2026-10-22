@@ -45,7 +45,7 @@ const About = () => {
           <div className="personal__head text-center">
             <img
               src={sectionStar}
-              className="mb-20"
+              className="personal__star"
               alt=""
               data-aos="fade-up"
               data-aos-duration="1000"

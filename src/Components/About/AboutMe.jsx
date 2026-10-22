@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import personalInfoThumb from "../../assets/img/about/personal-infothumb.webp";
+import EmailCompose from "../Shared/EmailCompose/EmailCompose";
 import { cvLink, emailLink, socialIcons } from "../../Utils/socialIcons";
 
 const contactInfo = [
@@ -43,7 +45,9 @@ const contactInfo = [
 ];
 const AboutMe = ({ isTabActive }) => {
   const { t } = useTranslation();
+  const [mailOpen, setMailOpen] = useState(false);
   return (
+    <>
     <div className={`tabitem ${isTabActive === "about" ? "active" : ""} `}>
       <div className="about__v1wrap">
         <div className="row g-4 align-items-lg-start align-items-center">
@@ -88,14 +92,17 @@ const AboutMe = ({ isTabActive }) => {
                               {t(system)}
                             </span>
                             {contact && <Link to={""}>{t(contact)}</Link>}
-                            {href && (
+                            {href && href.startsWith("mailto:") && (
+                              <button type="button" className="about__mail" onClick={() => setMailOpen(true)}>
+                                {text || t(textKey)}
+                              </button>
+                            )}
+                            {href && !href.startsWith("mailto:") && (
                               <a
                                 href={href}
                                 {...(download
                                   ? { download: true }
-                                  : href.startsWith("mailto:")
-                                    ? {}
-                                    : { target: "_blank", rel: "noopener noreferrer" })}
+                                  : { target: "_blank", rel: "noopener noreferrer" })}
                               >
                                 {text || t(textKey)}
                               </a>
@@ -123,6 +130,8 @@ const AboutMe = ({ isTabActive }) => {
         </div>
       </div>
     </div>
+    <EmailCompose open={mailOpen} onClose={() => setMailOpen(false)} />
+    </>
   );
 };
 

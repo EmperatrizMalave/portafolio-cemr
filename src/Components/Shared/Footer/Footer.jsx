@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { ArrowUpShort } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import avatar from "../../../assets/img/banner/banner-man.png";
+import EmailCompose from "../EmailCompose/EmailCompose";
 import { cvLink, emailLink, socialIcons } from "../../../Utils/socialIcons";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const [mailOpen, setMailOpen] = useState(false);
   const footerOrder = ["LinkedIn", "Instagram", "Facebook", "GitHub"];
   const contactButtons = [
     ...footerOrder
@@ -22,7 +25,7 @@ const Footer = () => {
       ? [
           {
             id: "email",
-            label: emailLink.label,
+            label: t("footer.email"),
             icon: emailLink.icon,
             href: emailLink.href,
           },
@@ -59,20 +62,33 @@ const Footer = () => {
             </div>
             <div className="col-lg-6">
               <div className="footer__list">
-                {contactButtons.map(({ id, label, icon, href, target, download }) => (
-                  <a
-                    key={id}
-                    href={href}
-                    className="footer__button"
-                    target={target}
-                    rel={target ? "noopener noreferrer" : undefined}
-                    {...(download ? { download: true } : {})}
-                  >
-                    <span className="footer__arrow">&rarr;</span>
-                    <span className="footer__icon">{icon}</span>
-                    <span className="footer__label">{label}</span>
-                  </a>
-                ))}
+                {contactButtons.map(({ id, label, icon, href, target, download }) =>
+                  id === "email" ? (
+                    <button
+                      key={id}
+                      type="button"
+                      className="footer__button"
+                      onClick={() => setMailOpen(true)}
+                    >
+                      <span className="footer__arrow">&rarr;</span>
+                      <span className="footer__icon">{icon}</span>
+                      <span className="footer__label">{label}</span>
+                    </button>
+                  ) : (
+                    <a
+                      key={id}
+                      href={href}
+                      className="footer__button"
+                      target={target}
+                      rel={target ? "noopener noreferrer" : undefined}
+                      {...(download ? { download: true } : {})}
+                    >
+                      <span className="footer__arrow">&rarr;</span>
+                      <span className="footer__icon">{icon}</span>
+                      <span className="footer__label">{label}</span>
+                    </a>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -104,6 +120,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <EmailCompose open={mailOpen} onClose={() => setMailOpen(false)} />
     </footer>
   );
 };

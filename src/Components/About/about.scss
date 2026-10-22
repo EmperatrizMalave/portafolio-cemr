@@ -1,13 +1,18 @@
 //about 
 .about__section{
+    &.pt-120{
+        padding-top: 20px;
+    }
     .singletab{
         .tablinks{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
             margin-bottom: 100px;
             li{
+                flex: 0 0 auto;
                 button{
                     border-radius: 10px;
                     background-color: white;
@@ -18,6 +23,7 @@
                     padding: 16px 30px;
                     color: black;
                     text-align: center;
+                    white-space: nowrap;
                 }
                 &.active{
                     button{
@@ -45,45 +51,38 @@
             }
             @include breakpoint(max-sm){
                 flex-wrap: wrap;
+                gap: 8px;
                 margin-bottom: 50px;
+                li{
+                    button{
+                        padding: 10px 10px;
+                    }
+                }
             }
         }
     }
 }
 .personal__head{
-    margin: 0 auto 60px;
+    margin: 0 auto 28px;
     p{
         font-size: $fs-xxl;
         font-weight: 500;
         color:black;
-    }
-    img{
-        animation: cir360 10s linear infinite;
-    }
-    @include breakpoint(max-xl){
-        margin: 0 auto 50px;
-    }
-    @include breakpoint(max-lg){
-        p{
+        @include breakpoint(max-lg){
             font-size: $fs-xl;
         }
-    }
-    @include breakpoint(max-md){
-        margin: 0 auto 30px;
-        img{
-            width: 30px;
-        }
-        p{
+        @include breakpoint(max-md){
             font-size: $fs-md;
         }
-    }
-    @include breakpoint(max-xs){
-        img{
-            width: 30px;
-        }
-        p{
+        @include breakpoint(max-xs){
             font-size: $fs-base;
         }
+    }
+    img{
+        width: 36px;
+        height: auto;
+        margin-bottom: 8px;
+        animation: cir360 10s linear infinite;
     }
 }
 .about__v1wrap{
@@ -129,8 +128,12 @@
 }
 .about__onecontent{
     h2{
-        font-size: $fs-3xl;
+        font-size: clamp(24px, 3vw, 36px);
+        line-height: 1.2;
         color: var(--bgsection);
+    }
+    > p{
+        text-align: justify;
     }
     .about__contactwrap{
         flex-wrap: wrap;
@@ -144,6 +147,21 @@
             a{
                 font-size: $fs-lg;
                 color: black;
+            }
+            .about__mail{
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1.4;
+                text-transform: none;
+                overflow-wrap: anywhere;
+            }
+            button.about__mail{
+                border: 0;
+                padding: 0;
+                background: none;
+                color: black;
+                text-align: left;
+                cursor: pointer;
             }
             transition: all 0.4s;
             ul{
@@ -261,35 +279,37 @@
 
 //exprience
 .exri__item{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: block;
     border-top: 1px solid var(--cusborder);
-    padding-top: 4px;
-    padding-bottom: 4px;
-    transition: all 0.4s;
-    &:hover{
-        border-color: var(--hover);
-    }
-    > span{
-        flex-shrink: 0;
-        min-width: 200px;
-    }
+    padding: 18px 0 16px;
     .expri__cont{
-        flex: 1;
         text-align: left;
+        h4{
+            margin: 0 0 4px;
+            color: #121212;
+            font-family: $font-body;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.35;
+            text-transform: none;
+        }
     }
-    @include breakpoint(max-xs){
-        gap: 12px;
-        > span{
-            min-width: 0;
-            flex-shrink: 1;
-        }
-        .expri__cont{
-            h4{
-                font-size: $fs-md;
-            }
-        }
+    .exri__org,
+    .exri__note{
+        margin: 0;
+        color: #3d4a57;
+        font-family: $font-body;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .exri__date{
+        margin: 2px 0 0;
+        color: #38A3D6;
+        font-family: $font-body;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.5;
     }
 }
 //exprience
@@ -307,9 +327,32 @@
     .skill-name{
         display: block;
         margin: 0;
-        color: var(--mtitle);
-        font-size: $fs-xl;
+        color: #121212;
+        font-family: $font-body;
+        font-size: 18px;
         font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: 0;
+    }
+}
+.cv-skill-items {
+    margin: 6px 0 0;
+    color: #3d4a57;
+    font-family: $font-body;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.cv-duties {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    li {
+        color: #3d4a57;
+        font-family: $font-body;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 4px;
     }
 }
 //my skill

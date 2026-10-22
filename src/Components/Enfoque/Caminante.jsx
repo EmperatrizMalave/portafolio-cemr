@@ -10,6 +10,12 @@ const scrollY = () =>
   document.body.scrollTop ||
   0;
 
+const preview = (text) => {
+  const clean = String(text).replace(/\s+/g, " ").trim();
+  const words = clean.split(" ").slice(0, 2).join(" ");
+  return words.length < clean.length ? `${words}…` : words;
+};
+
 const Caminante = () => {
   const ref = useRef(null);
   const { t } = useTranslation();
@@ -41,19 +47,28 @@ const Caminante = () => {
     let jumping = false;
     let manualY = null;
 
+    const syncLane = () => {
+      const sample =
+        document.querySelector(".footer__section .container") ||
+        document.querySelector("#home .container");
+      const avatarRight = 12 + el.offsetWidth + 12;
+      const left = sample ? sample.getBoundingClientRect().left : 0;
+      const need = Math.max(0, Math.round(avatarRight - (left + 12)));
+      document.documentElement.style.setProperty("--caminante-lane", `${need}px`);
+    };
+
     const limits = () => {
+      const header = document.querySelector(".header-section");
+      let minY = header ? Math.round(header.getBoundingClientRect().bottom + 12) : 130;
       const label = document.querySelector(".banner__leftinfo .scroll");
-      let minY = 130;
       if (label) {
         const style = getComputedStyle(label);
         const box = label.getBoundingClientRect();
-        if (style.display !== "none" && box.height > 8) {
-          const bottom = box.bottom + scrollY();
-          if (bottom < window.innerHeight * 0.85) {
-            minY = Math.max(minY, Math.round(bottom + 12));
-          }
+        if (style.display !== "none" && box.height > 8 && box.bottom < window.innerHeight * 0.85) {
+          minY = Math.max(minY, Math.round(box.bottom + 12));
         }
       }
+      if (el.querySelector(".caminante__bubble")) minY += 22;
       const maxY = Math.max(window.innerHeight - el.offsetHeight - 8, minY);
       return { minY, maxY };
     };
@@ -82,6 +97,7 @@ const Caminante = () => {
     };
 
     const place = () => {
+      syncLane();
       if (manualY !== null) return;
       paint(yFromScroll());
     };
@@ -175,10 +191,11 @@ const Caminante = () => {
   return (
     <div className="caminante" ref={ref}>
       {location.pathname === "/contact" && bubble && (
-        <p className="caminante__bubble">{bubble}</p>
+        <p className="caminante__bubble">{preview(bubble)}</p>
       )}
       <button type="button" className="caminante__hit" onClick={openChat} aria-label={t("contact.talk")}>
         <img src={cori} alt="" />
+        <span className="caminante__ask" aria-hidden="true">?</span>
       </button>
     </div>
   );

@@ -34,55 +34,77 @@
             font-size: $fs-7xl;
             margin-bottom: 28px;
         }
+        .hone {
+            display: inline-block;
+            max-width: 6.8em;
+        }
+        .profile-heading,
+        .profile-heading::before {
+            white-space: normal;
+            max-width: 11em;
+        }
+        .profile-heading {
+            overflow: hidden;
+        }
     }
     @include breakpoint(max-xl){
-        padding: 80px 0 40px;
+        padding: 16px 0 12px;
+        max-width: 100%;
+        h1 {
+            font-size: clamp(68px, 8vw, 84px);
+            margin-bottom: 8px;
+            line-height: 0.92;
+        }
+        .hone {
+            max-width: none;
+        }
+        .profile-heading {
+            font-size: 0.46em;
+            max-width: 14em;
+            line-height: 1.05;
+            white-space: normal;
+            color: var(--buttoncolor);
+            -webkit-text-stroke: 0;
+            overflow: visible;
+        }
+        .profile-heading::before {
+            display: none;
+        }
     }
     @include breakpoint(max-lg){
-        padding: 72px 0 36px;
+        padding: 28px 0 8px;
+        max-width: calc(100% - min(240px, 32vw) - 16px);
         .bn__currently{
-            font-size: $fs-xl;
-            margin-bottom: 40px;
+            font-size: $fs-lg;
+            margin-bottom: 24px;
             padding-bottom: 10px;
         }
         h1{
-            font-size: $fs-6xl;
-            margin-bottom: 24px;
+            font-size: clamp(30px, 8vw, 44px);
+            margin-bottom: 18px;
+        }
+        .hone,
+        .profile-heading,
+        .profile-heading::before {
+            max-width: 100%;
+            white-space: normal;
         }
     }
     @include breakpoint(max-md){
-        padding: 64px 0 32px;
-        .bn__currently{
-            font-size: $fs-lg;
-            margin-bottom: 35px;
-            padding-bottom: 10px;
-        }
-        h1{
-            font-size: $fs-4xl;
-            margin-bottom: 20px;
-        }
+        max-width: 100%;
     }
     @include breakpoint(max-sm){
-        padding: 48px 0 28px;
-        .bn__currently{
-            font-size: $fs-base;
-            margin-bottom: 35px;
-            padding-bottom: 10px;
-        }
+        padding: 20px 0 4px;
         h1{
-            font-size: $fs-3xl;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
     }
-    @include breakpoint(max-sm){
-        padding: 48px 0 24px;
-        .bn__currently{
-            margin-bottom: 28px;
-        }
-        h1{
-            font-size: $fs-xxl;
-            margin-bottom: 16px;
-        }
+}
+#home{
+    @include breakpoint(max-lg){
+        position: relative;
+        min-height: 0;
+        padding-bottom: 8px;
     }
 }
 .banner__thumb{
@@ -90,12 +112,53 @@
     left: calc(50% - -120px);
     top: 47px;
     bottom: auto;
+    max-width: calc(50vw - 250px);
+    img{
+        max-width: 100%;
+        height: auto;
+    }
     @include breakpoint(max-xxl){
         left: calc(50% - -80px);
         max-width: 500px;
         img{
             width: 80%;
         }
+    }
+    @include breakpoint(max-xl){
+        left: auto;
+        right: 96px;
+        width: min(180px, 20vw);
+        max-width: none;
+        img{
+            width: 100%;
+        }
+    }
+    @include breakpoint(max-lg){
+        position: absolute;
+        top: 12px;
+        right: 8px;
+        left: auto;
+        bottom: auto;
+        width: min(240px, 32vw);
+        max-width: none;
+        margin: 0;
+        img{
+            width: 100%;
+            height: 168px;
+            object-fit: cover;
+            object-position: top center;
+        }
+    }
+    @include breakpoint(max-md){
+        display: none;
+    }
+}
+.banner__photo{
+    @include breakpoint(max-lg){
+        display: contents;
+    }
+    @include breakpoint(max-md){
+        display: none;
     }
 }
 .banner__leftinfo{
@@ -177,6 +240,7 @@
     display: grid;
     position: absolute;
     transform: none;
+    z-index: 4;
     .right__infoscroll{
         margin-bottom: 0;
     }
@@ -206,7 +270,14 @@
         } 
     }
     @include breakpoint(max-xxl){
-        margin-right: -30px;
+        margin-right: 0;
+        right: 16px;
+        .right__infoscroll{
+            margin-bottom: 16px;
+        }
+        .scroll__bar{
+            display: none;
+        }
         .banner__xlsocial{
             .banner__soci{
                 gap: 10px;
@@ -220,6 +291,19 @@
                     }
                 }
             } 
+        }
+    }
+    @include breakpoint(max-xl){
+        right: 10px;
+        margin-right: 0;
+        top: 86px;
+        z-index: 6;
+        .right__infoscroll{
+            gap: 0;
+            margin-bottom: 20px;
+        }
+        .scroll__bar{
+            display: none;
         }
     }
     @include breakpoint(max-lg){

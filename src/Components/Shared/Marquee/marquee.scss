@@ -4,39 +4,52 @@
 .marquee-item {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
-  margin-right: 48px;
+  gap: 14px;
+  margin-right: 32px;
   img {
-    width: 44px;
+    width: 26px;
     height: auto;
     flex-shrink: 0;
   }
 }
 .marquee-text {
   color: var(--white);
-  font-size: $fs-3xl;
+  font-size: 22px;
   font-weight: 600;
   line-height: 1.1;
   white-space: nowrap;
 }
 .text-slider {
-  padding-top: 14px;
-  font-size: $fs-3xl;
-  height: 95px;
-  @include breakpoint(max-xxl) {
-    font-size: $fs-3xl;
+  width: 100%;
+  height: 52px;
+  overflow: hidden;
+  padding-top: 0;
+  padding-left: var(--caminante-lane, 0px);
+  .marquee-inner {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    > * {
+      flex: 1 1 auto;
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
   }
   @include breakpoint(max-md) {
-    height: 70px;
-    padding: 1px 0;
+    height: 44px;
     .marquee-item {
-      gap: 14px;
-      margin-right: 28px;
+      gap: 10px;
+      margin-right: 22px;
       img {
-        width: 28px;
+        width: 20px;
       }
       .marquee-text {
-        font-size: $fs-xl;
+        font-size: 16px;
       }
     }
   }

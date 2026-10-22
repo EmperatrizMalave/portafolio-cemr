@@ -19,25 +19,9 @@
 
 .project__head {
   max-width: 920px;
-  margin: 0 auto 60px;
+  margin: 0 auto clamp(36px, 5vw, 60px);
   h2 {
-    font-size: $fs-5xl;
-  }
-  @include breakpoint(max-lg) {
-    h2 {
-      font-size: $fs-4xl;
-    }
-  }
-  @include breakpoint(max-md) {
-    margin: 0 auto 50px;
-    h2 {
-      font-size: $fs-3xl;
-    }
-  }
-  @include breakpoint(max-xs) {
-    h2 {
-      font-size: $fs-xxl;
-    }
-    margin: 0 auto 45px;
+    font-size: clamp(26px, 3.6vw, 48px);
+    line-height: 1.15;
   }
 }

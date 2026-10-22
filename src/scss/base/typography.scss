@@ -18,36 +18,30 @@ h6 {
 }
 
 h1 {
-  font-size: $fs-4xl;
-  font-weight: 800;
-  line-height: 120%;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.15;
   @include titlefont;
 }
 
 h2 {
-  font-size: $fs-3xl;
-  line-height: 120%;
-  font-weight: 800;
-  @include breakpoint(max-sm) {
-    font-size: $fs-xxl;
-  }
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.2;
+  font-weight: 600;
   @include titlefont;
 }
 
 h3 {
-  font-size: $fs-xxl;
-  line-height: 120%;
-  font-weight: 800;
-  @include breakpoint(max-sm) {
-    font-size: $fs-xl;
-  }
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  font-weight: 600;
   @include titlefont;
 }
 
 h4 {
-  font-size: $fs-xl;
-  line-height: 130%;
-  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.35;
+  font-weight: 600;
   @include titlefont;
 }
 
@@ -91,7 +85,7 @@ input {
   color: var(--white);
 }
 p {
-  font-size: $fs-md;
+  font-size: clamp(15px, 1.05vw, 16px);
   line-height: 1.5;
   margin-bottom: 0;
   color: var(--pra);
