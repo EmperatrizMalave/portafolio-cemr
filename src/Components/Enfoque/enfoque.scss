@@ -189,6 +189,10 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 0 40px; /* Deja espacio para la mitad del personaje a la izquierda */
+  @include breakpoint(max-sm) {
+    padding: 0;
+    max-width: 100%;
+  }
 }
 
 .camino-tech {
@@ -203,8 +207,10 @@
   padding-left: 52px; /* SeparaciÃ³n entre el riel y los banderines */
   @include breakpoint(max-sm) {
     gap: 60px;
-    margin-left: 30px;
-    padding-left: 46px;
+    margin-left: 8px;
+    padding-left: 16px;
+    width: calc(100% - 8px);
+    max-width: 100%;
   }
 }
 
@@ -251,6 +257,10 @@
   left: 0;
   top: 0;
   z-index: 20;
+
+  &--home {
+    position: absolute;
+  }
   width: 84px;
   height: 148px;
   pointer-events: none;
@@ -405,7 +415,7 @@
   transition: transform 0.3s ease, filter 0.3s ease;
   font-family: inherit;
   @include breakpoint(max-sm) {
-    width: 170px;
+    width: min(170px, 100%);
     padding: 20px 14px 18px 14px;
   }
 }

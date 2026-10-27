@@ -127,16 +127,17 @@ $cv-glow: 0 8px 20px rgba(56, 163, 214, 0.38);
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 16px 20px;
+  gap: 8px;
+  padding: 12px 16px;
   background: $cv-card;
   border-bottom: 1px solid $cv-line;
 }
 
 .resume-modal__actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
   margin-left: auto;
 }
 
@@ -144,19 +145,21 @@ $cv-glow: 0 8px 20px rgba(56, 163, 214, 0.38);
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  padding: 3px;
+  height: 32px;
+  padding: 2px;
   border: 2px solid $cv-cyan;
   border-radius: 999px;
   background: $cv-card;
+  box-sizing: border-box;
 
   button {
-    width: 34px;
-    height: 34px;
+    width: 26px;
+    height: 24px;
     border: 0;
     border-radius: 50%;
     background: transparent;
     color: $cv-ink;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1;
     cursor: pointer;
 
@@ -174,7 +177,8 @@ $cv-glow: 0 8px 20px rgba(56, 163, 214, 0.38);
 
 .resume-modal__zoom-value {
   width: auto !important;
-  min-width: 52px;
+  min-width: 42px;
+  height: 24px;
   border-radius: 999px !important;
   color: $cv-cyan !important;
   font-size: 13px !important;
@@ -183,10 +187,18 @@ $cv-glow: 0 8px 20px rgba(56, 163, 214, 0.38);
 
 .resume-modal__download,
 .resume-modal__close {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  height: 32px;
   border-radius: 999px;
-  padding: 10px 18px;
+  padding: 0 12px;
+  box-sizing: border-box;
   font-family: Montserrat, "Segoe UI", sans-serif;
+  font-size: 13px;
   font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -194,7 +206,7 @@ $cv-glow: 0 8px 20px rgba(56, 163, 214, 0.38);
   border: 2px solid $cv-cyan;
   background: $cv-cyan;
   color: #fff;
-  box-shadow: $cv-glow;
+  box-shadow: none;
 
   &:hover {
     background: $cv-cyan-deep;
@@ -318,12 +330,26 @@ p.resume-modal__date {
 
   .resume-modal__bar {
     flex-wrap: wrap;
-    padding: 12px;
+    justify-content: flex-end;
+    padding: 10px 12px;
+  }
+
+  .resume-modal__zoom {
+    height: 28px;
+    margin-right: auto;
+
+    button,
+    .resume-modal__zoom-value {
+      height: 20px;
+    }
   }
 
   .resume-modal__download,
   .resume-modal__close {
-    flex: 1 1 calc(50% - 10px);
+    flex: 0 0 auto;
+    height: 28px;
+    padding: 0 10px;
+    font-size: 12px;
   }
 
   .resume-modal__body {

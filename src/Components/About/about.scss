@@ -239,29 +239,35 @@
                     .table__title{
                         font-size: $fs-3xl;
                     }
-                                    }
                     @include breakpoint(max-lg){
                         font-size: $fs-md;
                     }
                     @include breakpoint(max-md){
                         font-size: $fs-base;
-                        .table__view{
-                            font-size: $fs-base;
-                            margin-top: 28px !important;
-                        }
-                        .table__title{
-                            font-size: $fs-xxl;
-                        }
-                    }
-                    @include breakpoint(max-xs){
-                        font-size: $fs-sm;
+                        padding: 18px 6px;
                         .table__view{
                             font-size: $fs-sm;
-                            margin-top: 0px !important;
+                            margin-top: 0 !important;
                         }
                         .table__title{
-                            font-size: $fs-lg;
-                            line-height: 1.2;
+                            font-size: 26px;
+                            line-height: 1.15;
+                        }
+                    }
+                    @include breakpoint(max-sm){
+                        font-size: 13px;
+                        line-height: 1.35;
+                        padding: 12px 4px;
+                        .table__view{
+                            font-size: 13px;
+                            margin-top: 0 !important;
+                        }
+                        .table__title{
+                            font-size: 22px;
+                            line-height: 1.1;
+                        }
+                        a{
+                            font-size: 13px;
                         }
                     }
                 }
@@ -273,6 +279,7 @@
             }
         }
     }
+}
 
 
 //awoard

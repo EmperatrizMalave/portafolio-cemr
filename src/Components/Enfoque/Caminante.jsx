@@ -47,7 +47,23 @@ const Caminante = () => {
     let jumping = false;
     let manualY = null;
 
+    const pequeno = () => window.matchMedia("(max-width: 767px)").matches;
+
+    const rol = () => document.querySelector(".project-detail__role");
+
+    const juntoAlRol = () => pequeno() && Boolean(rol());
+
+    const roleTop = () => {
+      const bloque = rol();
+      if (!bloque) return limits().minY;
+      return Math.round(bloque.getBoundingClientRect().top + scrollY());
+    };
+
     const syncLane = () => {
+      if (pequeno()) {
+        document.documentElement.style.setProperty("--caminante-lane", "0px");
+        return;
+      }
       const sample =
         document.querySelector(".footer__section .container") ||
         document.querySelector("#home .container");
@@ -97,7 +113,22 @@ const Caminante = () => {
     };
 
     const place = () => {
+      const quieta = pequeno();
+      const enRol = juntoAlRol();
+      el.classList.toggle("caminante--home", quieta);
       syncLane();
+      if (enRol) {
+        manualY = null;
+        el.classList.remove("caminante--walk");
+        el.classList.remove("caminante--left");
+        paint(roleTop());
+        return;
+      }
+      if (quieta) {
+        manualY = null;
+        paint(limits().minY);
+        return;
+      }
       if (manualY !== null) return;
       paint(yFromScroll());
     };
@@ -107,7 +138,7 @@ const Caminante = () => {
       const delta = y - last;
       last = y;
       place();
-      if (Math.abs(delta) < 1) return;
+      if (juntoAlRol() || Math.abs(delta) < 1) return;
       walk(delta);
     };
 
@@ -125,6 +156,7 @@ const Caminante = () => {
       if (esCampo) return;
 
       if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        if (pequeno()) return;
         event.preventDefault();
         const dir = event.key === "ArrowDown" ? 1 : -1;
         const { minY, maxY } = limits();
@@ -143,6 +175,8 @@ const Caminante = () => {
         walk(dir);
         return;
       }
+
+      if (juntoAlRol()) return;
 
       if ((event.key === " " || event.code === "Space") && !jumping) {
         event.preventDefault();
@@ -177,7 +211,7 @@ const Caminante = () => {
       el.removeEventListener("animationend", onAnimationEnd);
       window.clearTimeout(idleTimer);
     };
-  }, []);
+  }, [location.pathname]);
 
   const openChat = () => {
     if (location.pathname === "/contact") {

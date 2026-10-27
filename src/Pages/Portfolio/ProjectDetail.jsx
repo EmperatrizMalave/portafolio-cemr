@@ -25,8 +25,10 @@ const ProjectDetail = () => {
             <div className="col-lg-8">
               <h2>{t("portfolio.detail.problem")}</h2>
               <p>{t(`portfolio.cases.${project.caseKey}.problem`)}</p>
-              <h2>{t("portfolio.detail.role")}</h2>
-              <p>{t(`portfolio.cases.${project.caseKey}.role`)}</p>
+              <div className="project-detail__role">
+                <h2>{t("portfolio.detail.role")}</h2>
+                <p>{t(`portfolio.cases.${project.caseKey}.role`)}</p>
+              </div>
               <h2>{t("portfolio.detail.result")}</h2>
               <p>{t(`portfolio.cases.${project.caseKey}.result`)}</p>
               {project.imagesList?.length > 0 && (

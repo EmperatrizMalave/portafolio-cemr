@@ -64,7 +64,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 1199px)");
+    const media = window.matchMedia("(max-width: 991px)");
     const sync = () => {
       setIsCompactNav(media.matches);
       if (!media.matches) setMenuActive(false);

@@ -36,6 +36,12 @@
       text-align: left;
     }
   }
+  &__role {
+    @include breakpoint(max-md) {
+      min-height: 168px;
+      padding-left: 100px;
+    }
+  }
   &__gallery {
     display: grid;
     gap: 16px;

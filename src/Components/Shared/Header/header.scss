@@ -366,7 +366,7 @@ body.nav-open {
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1399px) {
+@media screen and (min-width: 992px) and (max-width: 1399px) {
   .header-wrapper {
     flex-wrap: nowrap;
     align-items: center;
@@ -387,14 +387,21 @@ body.nav-open {
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 991px) {
+  .header-section.header-section--open {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: #0f1c27;
+  }
+
   .header-section {
     z-index: 100;
     background: transparent;
     padding: 12px 14px 0;
 
     &.menu-fixed {
-      background: transparent;
+      background: #fff;
       box-shadow: none;
     }
 
@@ -411,7 +418,7 @@ body.nav-open {
     z-index: 1;
     border: 0;
     padding: 0;
-    background: rgba(15, 28, 39, 0.28);
+    background: #0f1c27;
     cursor: pointer;
   }
 

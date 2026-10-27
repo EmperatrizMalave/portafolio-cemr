@@ -92,9 +92,10 @@
     }
     @include breakpoint(max-md){
         max-width: 100%;
+        padding-left: 110px;
     }
     @include breakpoint(max-sm){
-        padding: 20px 0 4px;
+        padding: 20px 0 4px 110px;
         h1{
             margin-bottom: 14px;
         }
